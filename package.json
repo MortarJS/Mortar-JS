@@ -1,7 +1,7 @@
 {
-  "name": "fuzzy-reaction",
-  "version": "1.0.0",
-  "description": "Fuzzy Reaction - a React Library",
+  "name": "mortarjs",
+  "version": "2.0.0",
+  "description": "Mortar.js - An Admin UI Library",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers .:tests/helpers/compiler.js tests/*.js",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "Simon Yousoufov <syousoufov@fuzzproductions.com> (http://www.fuzzproductions.com)",
+  "author": "Fuzz Productions <syousoufov@fuzzproductions.com> (http://www.fuzzproductions.com)",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^6.0.3",
