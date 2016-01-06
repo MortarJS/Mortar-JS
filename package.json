@@ -1,0 +1,49 @@
+{
+  "name": "fuzzy-reaction",
+  "version": "1.0.0",
+  "description": "Fuzzy Reaction - a React Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers .:tests/helpers/compiler.js tests/*.js",
+    "document": "jsdoc -p -r lib -d documentation/ -R README.md && open documentation/index.html",
+    "doc": "jsdoc -p -r lib -d documentation/ -R README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Simon Yousoufov <syousoufov@fuzzproductions.com> (http://www.fuzzproductions.com)",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.0.3",
+    "classnames": "^2.1.1",
+    "flux": "^2.0.3",
+    "fuse.js": "^1.3.0",
+    "jsdoc": "^3.4.0",
+    "lodash": "^3.9.3",
+    "medium-editor": "^5.6.0",
+    "react": "^0.13.x",
+    "react-bootstrap": "^0.22.6",
+    "react-input-calendar": "^0.1.19",
+    "react-router": "^0.13.3",
+    "react-time-picker": "^1.1.0",
+    "reqwest": "^1.1.5",
+    "validator": "^3.40.0"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "jsdom": "^6.5.1",
+    "mocha": "^2.3.3",
+    "mocha-jsdom": "^1.0.0",
+    "react-tools": "^0.13.3"
+  },
+  "eslintConfig": {
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    },
+    "env": {
+      "es6": true
+    }
+  }
+}

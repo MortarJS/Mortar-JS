@@ -1,0 +1,9 @@
+!./lib
+.idea
+.DS_Store
+
+node_modules
+documentation
+
+*.css
+*.css.map
