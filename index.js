@@ -1,16 +1,19 @@
 var _       = require('lodash');
 var lib     = './lib/';
-var exports = {};
+var MortarJS = {};
 
-exports.Actions = {
+MortarJS.Actions = {
 	ErrorHandlingActionCreators: require('./lib/actions/ErrorHandlingActionCreators'),
+	PaginationActionCreators: require('./lib/actions/PaginationActionCreators'),
+	GeneralCmsActionCreators: require('./lib/actions/GeneralCmsActionCreators'),
 	FormActions: require('./lib/actions/FormActionCreators')
 };
 
-exports.Components = {
+MortarJS.Components = {
 	Global: {
 		AlertHandler: require('./lib/components/global/alert-handler/AlertHandler'),
 		Modal: require('./lib/components/global/modal/ModalContainer'),
+		OpenModalButton: require('./lib/components/global/modal/OpenModalButton'),
 		Button: require('./lib/components/global/button/Button'),
 		ButtonDrawer: require('./lib/components/global/button-drawer/ButtonDrawer'),
 		Spinner: require('./lib/components/global/spinner/Spinner')
@@ -55,32 +58,31 @@ exports.Components = {
 		},
 		Tables: {
 			Table: require('./lib/components/visualization/tables/TableContainer')
-		},
-		Exports: {
-			Exporter: require('./lib/components/visualization/exports/Exporter')
 		}
 	}
 };
 
-exports.Constants = require('./lib/constants/AppActionConstants');
+MortarJS.Constants = require('./lib/constants/AppActionConstants');
 
-exports.Dispatcher = require('./lib/dispatcher/AppDispatcher');
+MortarJS.Dispatcher = require('./lib/dispatcher/AppDispatcher');
 
-exports.Mixins = {
+MortarJS.Mixins = {
 	FormKeyMixin           : require('./lib/mixins/FormKeyMixin'),
 	TabbedComponentMixin   : require('./lib/mixins/TabbedComponentMixin'),
 	ResourceComponentMixin : require('./lib/mixins/ResourceComponentMixin')
 };
 
-exports.Stores = {
+MortarJS.Stores = {
 	BaseStore: require('./lib/stores/BaseStore'),
 	ModelStore: require('./lib/stores/ModelStore'),
 	AlertStore: require('./lib/stores/AlertStore'),
 	FormStore: require('./lib/stores/FormStore')
 };
 
-exports.Utils = {
+MortarJS.Utils = {
 	ErrorHandler: require('./lib/utils/ErrorHandler'),
+	SuccessHandler: require('./lib/utils/SuccessHandler'),
+	QueryHelper: require('./lib/utils/QueryHelper'),
 	isEmpty: require('./lib/utils/isEmpty')
 };
 
@@ -92,7 +94,7 @@ exports.Utils = {
  * @param paths
  * @returns {*}
  */
-exports.Flatten = function (object, path, paths) {
+MortarJS.Flatten = function (object, path, paths) {
 	for (var key in object) {
 		if (object.hasOwnProperty(key)) {
 			// Only include functions (stop at require() statements)
@@ -118,20 +120,20 @@ exports.Flatten = function (object, path, paths) {
  * @param type
  * @returns {{}}
  */
-exports.require = function (type) {
+MortarJS.require = function (type) {
 	var required = {};
 	var exportType = type.toLowerCase().charAt(0).toUpperCase() + type.slice(1);
-	var flattened = exports.Flatten(exports[exportType], '', {});
+	var flattened = MortarJS.Flatten(MortarJS[exportType], '', {});
 
 	for (var key in arguments) {
 		var argument = arguments[key];
 		if (flattened.hasOwnProperty(argument)) {
-			required[argument] = _.get(exports[exportType], flattened[argument]);
+			required[argument] = _.get(MortarJS[exportType], flattened[argument]);
 		}
 	}
 
 	return required;
 };
 
-return exports;
+module.exports = MortarJS;
 
