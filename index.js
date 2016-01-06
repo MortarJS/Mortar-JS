@@ -92,7 +92,7 @@ exports.Utils = {
  * @param paths
  * @returns {*}
  */
-function flatten(object, path, paths) {
+exports.Flatten = function (object, path, paths) {
 	for (var key in object) {
 		if (object.hasOwnProperty(key)) {
 			// Only include functions (stop at require() statements)
@@ -108,7 +108,7 @@ function flatten(object, path, paths) {
 		}
 	}
 	return paths;
-}
+};
 
 /**
  * Dynamically and intelligently parse string requirements
@@ -121,7 +121,7 @@ function flatten(object, path, paths) {
 exports.require = function (type) {
 	var required = {};
 	var exportType = type.toLowerCase().charAt(0).toUpperCase() + type.slice(1);
-	var flattened = flatten(exports[exportType], '', {});
+	var flattened = exports.Flatten(exports[exportType], '', {});
 
 	for (var key in arguments) {
 		var argument = arguments[key];
