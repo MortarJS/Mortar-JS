@@ -105,7 +105,7 @@ MortarJS.Flatten = function (object, path, paths) {
 					paths[key] = key;
 				}
 			} else if (typeof object[key] === 'object') {
-				flatten(object[key], path + '.' + key, paths);
+				MortarJS.Flatten(object[key], path + '.' + key, paths);
 			}
 		}
 	}
