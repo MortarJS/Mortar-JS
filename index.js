@@ -159,7 +159,7 @@ module.exports = function (config) {
 	/**
 	 * Dynamically and intelligently parse string requirements
 	 *
-	 * Format: FuzzyReaction.require('type(components|action|etc)', 'require1', 'require2');
+	 * Format: Mortar.require('type(components|action|etc)', 'require1', 'require2');
 	 *
 	 * @param type
 	 * @returns {{}}
