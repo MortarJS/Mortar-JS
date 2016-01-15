@@ -1,6 +1,7 @@
 {
   "name": "MortarJS",
   "version": "1.0.0",
+  "homepage": "http://www.mortarjs.io",
   "description": "Mortar JS - an Admin UI framework",
   "main": "index.js",
   "scripts": {
