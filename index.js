@@ -89,7 +89,6 @@ module.exports = function (config) {
 				}
 			},
 			Filter: require('./lib/components/visualization/filter/FilterDropdown'),
-			Filters: require('./lib/components/visualization/filter/Filters'),
 			PageSearch: require('./lib/components/visualization/page-search/PageSearch'),
 			Pagination: {
 				PaginatedButtons: require('./lib/components/visualization/paginator/Paginator'),
