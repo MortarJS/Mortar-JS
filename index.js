@@ -42,6 +42,9 @@ MortarJS.Components = {
 		CreateResourceAction: require('./lib/components/resource-editing/create-resource/AddNewResourceActionButton')
 	},
 
+	/**
+	 * @namespace VisualizationComponents
+	 */
 	Visualization: {
 		Buttons: {
 			Actions: {
