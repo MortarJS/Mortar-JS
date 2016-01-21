@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?34iul5');
-    src:    url('fonts/icomoon.eot?34iul5#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?34iul5') format('truetype'),
-        url('fonts/icomoon.woff?34iul5') format('woff'),
-        url('fonts/icomoon.svg?34iul5#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot');
+    src:    url('fonts/icomoon.eot') format('embedded-opentype'),
+        url('fonts/icomoon.ttf') format('truetype'),
+        url('fonts/icomoon.woff') format('woff'),
+        url('fonts/icomoon.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -78,4 +78,3 @@
 .icon-paint-brush:before {
     content: "\f1fc";
 }
-
