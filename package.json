@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers .:tests/helpers/compiler.js tests/*.js",
-    "document": "jsdoc -p -r lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json && open documentation/index.html",
-    "doc": "jsdoc -p -r lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json"
+    "document": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json && open documentation/index.html",
+    "doc": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json"
   },
   "repository": {
     "type": "git",
