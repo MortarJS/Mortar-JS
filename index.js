@@ -10,6 +10,9 @@ MortarJS.Actions = {
 };
 
 MortarJS.Components = {
+	/**
+	 * @namespace GlobalComponents
+	 */
 	Global: {
 		AlertHandler: require('./lib/components/global/alert-handler/AlertHandler'),
 		Modal: require('./lib/components/global/modal/ModalContainer'),
