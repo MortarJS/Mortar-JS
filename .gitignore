@@ -5,5 +5,4 @@
 node_modules
 documentation
 
-*.css
 *.css.map
