@@ -113,6 +113,9 @@ module.exports = function (config) {
 		ResourceComponentMixin : require('./lib/mixins/ResourceComponentMixin')
 	};
 
+	/**
+	 * @namespace Stores
+	 */
 	exports.Stores = {
 		BaseStore: require('./lib/stores/BaseStore'),
 		ModelStore: require('./lib/stores/ModelStore'),
