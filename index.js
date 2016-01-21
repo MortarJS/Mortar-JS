@@ -45,6 +45,9 @@ module.exports = function (config) {
 			RequirePermissions: require('./lib/components/authentication/RequirePermissions')
 		},
 
+		/**
+		 * @namespace GobalComponents
+		 */
 		Global: {
 			AlertHandler: require('./lib/components/global/alert-handler/AlertHandler'),
 			Header: {
@@ -82,6 +85,9 @@ module.exports = function (config) {
 			CreateResourceAction: require('./lib/components/resource-editing/create-resource/AddNewResourceActionButton')
 		},
 
+		/**
+		 * @namespace VisualizationComponents
+		 */
 		Visualization: {
 			Buttons: {
 				Actions: {
