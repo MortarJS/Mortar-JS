@@ -1,0 +1,100 @@
+$red: #ff5555;
+$green: #8ce196;
+$gray: #ddd;
+$white: #fbfbfb;
+
+.mortar-toggle {
+  display: inline-block;
+  width: 300px;
+
+  input {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+
+    &:disabled {
+      + label:before {
+        background-color: rgba($gray, .5) !important;
+      }
+      + label:after {
+        background-color: $gray !important;
+        box-shadow: none;
+        border: none;
+      }
+    }
+
+    + label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      padding: 2px;
+      width: 60px;
+      height: 26px;
+      border-radius: 26px;
+      transition: background 0.3s;
+
+      &:before,
+      &:after {
+        display: block;
+        position: absolute;
+        content: "";
+      }
+
+      &:before {
+        height: 16px;
+        top: 8px;
+        left: 10px;
+        bottom: 1px;
+        right: 10px;
+        background-color: rgba($red ,0.5);
+        border-radius: 16px;
+        transition: background 0.3s;
+      }
+
+      &:after {
+        top: 1px;
+        bottom: 2px;
+        width: 26px;
+        height: 26px;
+        background-color: $red;
+        border: 1px rgba($red, .5) solid;
+        border-radius: 26px;
+        transition: margin 0.3s, background 0.3s, box-shadow 0.3s, border 0.3s;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.15),0 2px 1px 0 rgba(0,0,0,.14),0 1px 2px -1px rgba(0,0,0,.12);
+      }
+    }
+  }
+}
+
+.mortar-toggle.simple {
+  input + label {
+    &:before {
+      background: $gray;
+    }
+    &:after {
+      width: 25px;
+      background: $white;
+      border: 1px rgba($gray, .5) solid !important;
+    }
+  }
+  input:checked + label {
+    &:before {
+      background: $gray;
+    }
+    &:after {
+      background: $white;
+    }
+  }
+}
+
+.mortar-toggle input:checked + label:before {
+  background-color: rgba($green, .5);
+}
+.mortar-toggle input:checked + label:after {
+  margin-left: 40px;
+  background-color: $green;
+  border-color: rgba($green, .5);
+}
+
