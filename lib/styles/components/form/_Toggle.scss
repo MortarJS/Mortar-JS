@@ -3,6 +3,79 @@ $green: #8ce196;
 $gray: #ddd;
 $white: #fbfbfb;
 
+$small-ball: 18px;
+$reg-ball: 26px;
+$large-ball: 36px;
+
+$small-bar-h: 10px;
+$reg-bar-h: 16px;
+$large-bar-h: 22px;
+
+
+$small-bar-w: 50px;
+$reg-bar-w: 60px;
+$large-bar-w: 80px;
+
+.mortar-toggle.small {
+  input + label {
+    width: $small-bar-w;
+    height: $small-ball;
+    border-radius: $small-ball;
+
+    &:before {
+      height: $small-bar-h;
+    }
+
+    &:after {
+      top: 3px;
+      width: $small-ball;
+      height: $small-ball;
+      border-radius: $small-ball;
+    }
+  }
+
+  input:checked + label:after {
+    margin-left: $small-bar-w * (2/3) - 5px;
+  }
+
+  &.simple {
+    input + label:after {
+      top: 2px;
+      width: $small-ball - 1px;
+    }
+  }
+
+}
+
+.mortar-toggle.large {
+  input + label {
+    width: $large-bar-w;
+    height: $large-ball;
+    border-radius: $large-ball;
+
+    &:before {
+      height: $large-bar-h;
+    }
+
+    &:after {
+      width: $large-ball;
+      height: $large-ball;
+      border-radius: $large-ball;
+    }
+  }
+
+  input:checked + label:after {
+    margin-left: $large-bar-w * (2/3);
+  }
+
+  &.simple {
+    input + label:after {
+      width: $large-ball - 1px;
+    }
+  }
+
+}
+
 .mortar-toggle {
   display: inline-block;
   width: 300px;
@@ -30,9 +103,9 @@ $white: #fbfbfb;
       outline: none;
       user-select: none;
       padding: 2px;
-      width: 60px;
-      height: 26px;
-      border-radius: 26px;
+      width: $reg-bar-w;
+      height: $reg-ball;
+      border-radius: $reg-ball;
       transition: background 0.3s;
 
       &:before,
@@ -43,7 +116,7 @@ $white: #fbfbfb;
       }
 
       &:before {
-        height: 16px;
+        height: $reg-bar-h;
         top: 8px;
         left: 10px;
         bottom: 1px;
@@ -56,11 +129,11 @@ $white: #fbfbfb;
       &:after {
         top: 1px;
         bottom: 2px;
-        width: 26px;
-        height: 26px;
+        width: $reg-ball;
+        height: $reg-ball;
         background-color: $red;
         border: 1px rgba($red, .5) solid;
-        border-radius: 26px;
+        border-radius: $reg-ball;
         transition: margin 0.3s, background 0.3s, box-shadow 0.3s, border 0.3s;
         box-shadow: 0 1px 3px 0 rgba(0,0,0,.15),0 2px 1px 0 rgba(0,0,0,.14),0 1px 2px -1px rgba(0,0,0,.12);
       }
@@ -74,7 +147,7 @@ $white: #fbfbfb;
       background: $gray;
     }
     &:after {
-      width: 25px;
+      width: $reg-ball - 1px;
       background: $white;
       border: 1px rgba($gray, .5) solid !important;
     }
@@ -92,9 +165,9 @@ $white: #fbfbfb;
 .mortar-toggle input:checked + label:before {
   background-color: rgba($green, .5);
 }
+
 .mortar-toggle input:checked + label:after {
-  margin-left: 40px;
+  margin-left: $reg-bar-w * (2/3) - 10px;
   background-color: $green;
   border-color: rgba($green, .5);
 }
-
