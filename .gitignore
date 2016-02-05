@@ -1,4 +1,7 @@
 !./lib
+
+dist/*
+
 .idea
 .DS_Store
 
