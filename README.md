@@ -1,4 +1,9 @@
 # Mortar JS
+
+<p align="center">
+  <img src="https://cdn.rawgit.com/fuzz-productions/mortar-js/dev/assets/logo.svg" />
+</p>
+
 Mortar JS is an open source framework built with [React](https://facebook.github.io/react/) that aims to make interacting and updating data quick, easy, and powerful.  It can best be described as an Admin UI, allowing developers to quickly build sites to interface with an API, allowing users to safely interface with data, without accessing the database directly.
 
 Mortar is made of multiple *Bricks* (components) that work together to display and edit data.  Tables, modal windows, buttons, form inputs and more are all included.  Checkout the [demo](http://playground.mortarjs.io) to see what's included!
