@@ -1,1 +1,0 @@
-"use strict";var ErrorActions=require("../actions/ErrorHandlingActionCreators"),ErrorHandler={logError:function(r){console.error(r)},failedDataRetrieval:function(r,o){this.logError(o),ErrorActions.failedDataRetrieval(r,o)}};module.exports=ErrorHandler;

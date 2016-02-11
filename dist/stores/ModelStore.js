@@ -1,1 +1,0 @@
-"use strict";var EventEmitter=require("events").EventEmitter,AppDispatcher=require("../dispatcher/AppDispatcher"),assign=require("react/lib/Object.assign"),BaseStore=require("./BaseStore"),CHANGE_EVENT="change",ModelStore=assign({},BaseStore,{});module.exports=ModelStore;

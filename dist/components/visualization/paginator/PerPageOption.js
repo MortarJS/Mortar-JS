@@ -1,1 +1,0 @@
-"use strict";var React=require("react/addons"),PerPageOption=React.createClass({displayName:"PerPageOption",setPerPage:function(){this.props.onChangeCallback(this.props.value)},render:function(){return React.createElement("option",{value:this.props.value},this.props.value)}});module.exports=PerPageOption;

@@ -1,1 +1,0 @@
-"use strict";var AppDispatcher=require("../dispatcher/AppDispatcher"),AppActionConstants=require("../constants/AppActionConstants"),ActionTypes=AppActionConstants.ActionTypes.alerts;module.exports={success:function(t,s){AppDispatcher.dispatch({type:ActionTypes.ALERT_SUCCESS,message:s,actionOrError:t})}};
