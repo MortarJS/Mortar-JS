@@ -5,9 +5,10 @@
   "description": "Mortar JS - an Admin UI framework",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "npm run build-js && npm run build-css",
+    "prepublish": "npm run build-js && npm run build-css && npm run build-fonts",
     "build-js": "gulp js",
     "build-css": "gulp sass",
+    "build-fonts": "gulp fonts",
     "test": "mocha --compilers .:tests/helpers/compiler.js tests/*.js",
     "document": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json && open documentation/index.html",
     "doc": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json"

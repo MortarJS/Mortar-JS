@@ -27,6 +27,12 @@ gulp.task('js', function() {
         .pipe(gulp.dest('dist'));
 });
 
+// Copy the font files
+gulp.task('fonts', function() {
+    return gulp.src(['lib/styles/fonts/icomoon/fonts/**/*'])
+        .pipe(gulp.dest('dist/styles/fonts/icomoon/fonts'));
+});
+
 // Clean the /dist directory
 gulp.task('clean', function () {
 	return gulp.src('dist', {read: false})
@@ -34,4 +40,4 @@ gulp.task('clean', function () {
 });
 
 // Default Task
-gulp.task('default', ['clean', 'sass', 'js']);
+gulp.task('default', ['sass', 'js', 'fonts']);
