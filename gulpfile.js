@@ -23,9 +23,6 @@ gulp.task('js', function() {
         .pipe(babel({
           presets: ['es2015', 'react']
         }))
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest('dist'))
-        .pipe(rename('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });

@@ -1,0 +1,1 @@
+"use strict";var SuccessActions=require("../actions/SuccessActionCreators"),ErrorHandler={success:function(s,c){SuccessActions.success(s,c)}};module.exports=ErrorHandler;

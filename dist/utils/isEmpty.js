@@ -1,0 +1,1 @@
+"use strict";function isEmpty(r){if(null==r)return!0;if(r.length>0)return!1;if(0===r.length)return!0;for(var t in r)if(hasOwnProperty.call(r,t))return!1;return!0}var hasOwnProperty=Object.prototype.hasOwnProperty;module.exports=isEmpty;

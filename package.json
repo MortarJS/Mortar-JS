@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "npm run build-js && npm run build-css",
-    "build-js": "babel lib --out-dir dist",
-    "build-css": "node-sass lib/styles/main.scss dist/styles/main.css",
+    "build-js": "gulp js",
+    "build-css": "gulp sass",
     "test": "mocha --compilers .:tests/helpers/compiler.js tests/*.js",
     "document": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json && open documentation/index.html",
     "doc": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json"
@@ -40,9 +40,9 @@
     "validator": "^3.40.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "browserify": "^13.0.0",
     "chai": "^3.3.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
@@ -56,7 +56,6 @@
     "jsdom": "^6.5.1",
     "mocha": "^2.3.3",
     "mocha-jsdom": "^1.0.0",
-    "node-sass": "^3.4.2",
     "react-tools": "^0.13.3"
   },
   "eslintConfig": {

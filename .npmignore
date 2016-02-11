@@ -1,1 +1,13 @@
-lib/
+./lib
+
+.idea
+.DS_Store
+
+npm-debug.log
+
+node_modules
+documentation
+
+*.css.map
+
+tags
