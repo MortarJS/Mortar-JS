@@ -17,7 +17,7 @@ Mortar is made of multiple *Bricks* (components) that work together to display a
 
 
 ## Getting Started
-Mortar is very easy to plug and play.  We recommend using the yeoman generator that we've created to get up and running in no time.  If you need something more custom, you can follow our getting started guide to bootstrap Mortar into your workflow!
+Mortar is very easy to plug and play.  We recommend using the yeoman generator that we've created to get up and running in no time.  If you need something more custom, you can follow our getting started guide to bootstrap Mortar into your workflow!  Checkout the [wiki](https://github.com/fuzz-productions/Mortar-JS/wiki) for more information on developing with Mortar.
 
 ### Automated Installation
 The easiest way to get started is using the [Mortar Yeoman Generator](https://github.com/fuzz-productions/generator-mortar) that we've created.  Simply `npm install -g generator-mortar` then run `yo mortar` to get up and running in no time.
