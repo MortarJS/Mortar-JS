@@ -1,1 +1,0 @@
-"use strict";var FormKeyMixin={_generateFormKey:function(){for(var r="",e="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",o=0;16>o;o++)r+=e.charAt(Math.floor(Math.random()*e.length));return r}};module.exports=FormKeyMixin;

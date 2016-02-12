@@ -1,6 +1,7 @@
 !./lib
 .idea
 .DS_Store
+dist
 
 npm-debug.log
 

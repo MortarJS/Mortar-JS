@@ -1,1 +1,0 @@
-"use strict";var schma=require("js-schema"),FormValidator=function(r){this.schema=r,this.validate=function(r){return this.schema.errors(r)}};module.exports=FormValidator;

@@ -1,1 +1,0 @@
-"use strict";module.exports={serialize:function(e){var n=[];for(var o in e)n.push(encodeURIComponent(o)+"="+encodeURIComponent(e[o]));return n.join("&")},deserialize:function(e){var n=e.split("&"),o={};return n.forEach(function(e){e=e.split("="),o[e[0]]=decodeURIComponent(e[1]||"")}),o}};
