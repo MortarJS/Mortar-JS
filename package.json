@@ -1,6 +1,6 @@
 {
   "name": "mortarjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "http://mortar.fuzzpro.com",
   "description": "Mortar JS - an Admin UI framework",
   "main": "dist/index.js",
