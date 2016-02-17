@@ -40,4 +40,4 @@ Contributions come in many forms: code, documentation, issues, etc.  We're open 
 ## Users
 Mortar has been in development for about 5 months.  It started being developed internally at [Fuzz](http://www.fuzzproductions.com) for client work.  After the second project that leveraged Mortar for the Admin UI, it became clear that this could be a valuable resource to the open source community.
 
-Right now, Mortar is being used on 3 production sites, with more on the way.  The [playground](http://playground.mortarjs.io) was build with Mortar!
+Right now, Mortar is being used on 3 production sites, with more on the way.  The [playground](http://playground.mortarjs.io) was built with Mortar!
