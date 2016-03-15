@@ -4,29 +4,25 @@
   "homepage": "http://mortar.fuzzpro.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fuzz-productions/Mortar-JS"
+    "url": ""
   },
   "description": "Mortar JS - an Admin UI framework",
   "main": "dist/index.js",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
-    "prepublish": "npm run build-js && npm run build-css && npm run build-fonts",
+    "prepublish": "npm run lint && npm run build-js && npm run build-css && npm run build-fonts",
     "build-js": "gulp js",
     "build-css": "gulp sass",
     "build-fonts": "gulp fonts",
+    "lint": "eslint lib",
     "document": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json && open documentation/index.html",
     "doc": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
   },
   "author": "Fuzz Productions <web@fuzzproductions.com> (http://www.fuzzproductions.com)",
   "contributors": [
     "Simon Yousoufov <syousoufov@fuzzproductions.com>",
     "Kyle Mendes <kmendes@fuzzproductions.com>"
   ],
-  "license": "ISC",
   "dependencies": {
     "classnames": "^2.1.1",
     "flux": "^2.0.3",
@@ -44,8 +40,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
+    "babel-eslint": "^5.0.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "eslint": "^2.4.0",
+    "eslint-plugin-react": "^4.2.3",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.1",
@@ -56,14 +55,5 @@
     "ink-docstrap": "^1.1.0",
     "jsdoc": "^3.4.0",
     "react-tools": "^0.13.3"
-  },
-  "eslintConfig": {
-    "ecmaFeatures": {
-      "modules": true,
-      "jsx": true
-    },
-    "env": {
-      "es6": true
-    }
   }
 }
