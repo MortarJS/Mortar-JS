@@ -4,11 +4,11 @@
   "homepage": "http://mortar.fuzzpro.com",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/fuzz-productions/Mortar-JS"
   },
   "description": "Mortar JS - an Admin UI framework",
   "main": "dist/index.js",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "prepublish": "npm run lint && npm run build-js && npm run build-css && npm run build-fonts",
     "build-js": "gulp js",
