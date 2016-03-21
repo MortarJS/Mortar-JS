@@ -189,7 +189,10 @@
     "space-unary-ops": [1,                         // Require or disallow spaces before/after unary operators (words on by default, nonwords off by default)
         {
             words: true,
-            nonwords: true
+            nonwords: false,
+            /* { overrides: { */
+            /*     "!", true */
+            /* }} */
         }
     ],
     "spaced-line-comment": 0,                      // require or disallow a space immediately following the // in a line comment (off by default)
