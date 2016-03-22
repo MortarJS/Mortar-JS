@@ -10,7 +10,7 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "prepublish": "npm run lint && npm run build-js && npm run build-css && npm run build-fonts",
+    "prepublish": "npm run build-js && npm run build-css && npm run build-fonts",
     "build-js": "gulp js",
     "build-css": "gulp sass",
     "build-fonts": "gulp fonts",
