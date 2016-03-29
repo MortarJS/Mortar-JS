@@ -1,0 +1,21 @@
+$fuzz: #f54029;
+$navy: #0d2038;
+
+body {
+  font-size: 16px;
+  color: $navy;
+}
+
+.navbar-inverse.navbar {
+  background-color: #EB6864;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 200px;
+
+  a {
+    color: $fuzz;
+  }
+}
