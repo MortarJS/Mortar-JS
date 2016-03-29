@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var MortarJS = require('../../../bootstrap').MortarJS;
 var AuthenticationActionCreators = require('../../../actions/AuthenticationServerActionCreators');
 

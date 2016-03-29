@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var Router= require('react-router');
 var MortarJS = require('../../../bootstrap').MortarJS;
 var Modal = MortarJS.Components.Global.Modal;

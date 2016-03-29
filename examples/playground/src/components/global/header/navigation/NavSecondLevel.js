@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var NavThirdLevel = require('./NavThirdLevel');
 
 // @todo keep it DRY. This and third level can be combined. Indirect CSS.

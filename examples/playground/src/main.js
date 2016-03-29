@@ -4,7 +4,8 @@
  * Packages
  * @type {exports}
  */
-var React = require('react/addons');
+var React = require('react');
+var reactDOM = require('react-dom');
 var config = require('./config/config');
 var Router  = require('react-router');
 var CmsUserStore = require('./stores/CmsUserStore');
@@ -21,7 +22,7 @@ var Routes = require('./routes');
 // Attach react router
 window.__app_container = document.getElementById('root');
 Router.run(Routes, function (Handler) {
-	React.render(
+	reactDOM.render(
 		(
 			<div>
 				<Handler/>

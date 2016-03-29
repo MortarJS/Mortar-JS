@@ -1,5 +1,5 @@
 // External Requirements
-var React    = require('react/addons');
+var React    = require('react');
 var MortarJS = require('../../app-container').MortarJS;
 
 // Assets
