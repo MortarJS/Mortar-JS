@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var MortarJS = require('../../../bootstrap').MortarJS;
 var Form = MortarJS.Components.ResourceBinding.Form.Form;
 var Modal = MortarJS.Components.Global.Modal;

@@ -1,5 +1,5 @@
 // External Requirements
-var React                  = require('react/addons');
+var React                  = require('react');
 var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
 
@@ -23,34 +23,34 @@ var Table = React.createClass({
 
 	getInitialState: function () {
 		return {
-			workingResource : [
+			workingResource: [
 				{
-					'name': 'Leia Organa',
-					'username': 'lorgana',
-					'email': 'lorgana@galaxyfarfaraway.com'
+					'name'     : 'Leia Organa',
+					'username' : 'lorgana',
+					'email'    : 'lorgana@galaxyfarfaraway.com'
 				},
 				{
-					'name': 'Luke Skywalker',
-					'username': 'lskywalker',
-					'email': 'lskywalker@galaxyfarfaraway.com'
+					'name'     : 'Luke Skywalker',
+					'username' : 'lskywalker',
+					'email'    : 'lskywalker@galaxyfarfaraway.com'
 				},
 				{
-					'name': 'Han Solo',
-					'username': 'solocup',
-					'email': 'solocup@galaxyfarfaraway.com'
+					'name'     : 'Han Solo',
+					'username' : 'solocup',
+					'email'    : 'solocup@galaxyfarfaraway.com'
 				},
 				{
-					'name': 'Chewbacca',
-					'username': 'chewonthis',
-					'email': 'chewie@galaxyfarfaraway.com'
+					'name'     : 'Chewbacca',
+					'username' : 'chewonthis',
+					'email'    : 'chewie@galaxyfarfaraway.com'
 				}],
-			params          : {},
-			openEditModal   : false,
-			formIsValid     : true
+			params        : {},
+			openEditModal : false,
+			formIsValid   : true,
+			modalResource : {}
+
 		};
 	},
-
-	//resourceActions: new ResourceActions('users'),
 
 	pageConfig: function() {
 		return {
@@ -69,7 +69,6 @@ var Table = React.createClass({
 	},
 
 	componentDidMount: function() {
-		//this.requestTableData();
 		this._componentDidMount();
 	},
 
@@ -96,17 +95,6 @@ var Table = React.createClass({
 		}
 	},
 
-	//requestTableData: function(modifiers) {
-	//	this.getOptions.modifiers = assign(this.getOptions.modifiers, modifiers, {});
-	//
-	//	this.resourceActions.listResource(this.getOptions);
-	//},
-	//
-	//performOperation: function () {
-	//	this.resourceActions.updateResource(this.state.workingResource, this.getOptions);
-	//	this.closeModal();
-	//},
-
 	closeModal: function () {
 		this.setState({
 			openEditModal: false
@@ -120,7 +108,6 @@ var Table = React.createClass({
 	},
 
 	render: function() {
-		console.log('workingResource', this.state.workingResource, this.state.users);
 		var tableOptions = {};
 		var editableOptions = {
 			actionableRows: true,
@@ -159,12 +146,12 @@ var Table = React.createClass({
 						</Br.Column>
 
 						<Br.Modal openWhen={this.state.openEditModal}
-						       title="Edit User"
-							   closeText="Close" saveText="Save"
+								title="Edit User"
+								closeText="Close" saveText="Save"
 								afterClose={this.closeModal}>
 							<div className="edit-modal">
 								<Br.Row>
-									<Br.Form key="editUser" formKey={this.formKey}
+									<Br.Form key="editUser" formKey="modalForm"
 										bindResource={this.state.modalResource}>
 										<Br.Row>
 											<Br.Column grid="sm" size="6">

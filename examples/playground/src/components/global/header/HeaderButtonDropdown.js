@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var HeaderButtonDropDownItem = require('./HeaderButtonDropdownItem');
 var SignOutLink = require('../../authentication/login/SignOutHeaderLink');
 var RequirePermissions = require('../../authentication/RequirePermissions');

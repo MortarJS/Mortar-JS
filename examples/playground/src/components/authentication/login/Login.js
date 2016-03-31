@@ -1,5 +1,5 @@
 var MortarJS = require('../../../bootstrap').MortarJS;
-var React = require('react/addons');
+var React = require('react');
 var Router = require('react-router');
 var _ = require('lodash');
 var AuthenticationActionCreators = MortarJS.Actions.AuthenticationServerActionCreators;

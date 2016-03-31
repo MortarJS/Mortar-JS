@@ -1,5 +1,5 @@
 // External Requirements
-var React                  = require('react/addons');
+var React                  = require('react');
 var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
 
@@ -84,7 +84,7 @@ var TextArea = React.createClass({
 															fieldKey="userComment"
 															label="Comment"
 															placeholder="Sample text area component. Type away!"
-															required="true"
+															required={true}
 															/>
 
 													</Br.Column>
@@ -102,7 +102,7 @@ var TextArea = React.createClass({
 															fieldKey="userComplaint"
 															label="Complaints"
 															placeholder="This text area is disabled. No input is accepted!"
-															required="true"
+															required={true}
 															disabled={true}
 															/>
 													</Br.Column>

@@ -1,5 +1,5 @@
 module.exports = function (navbarConfig) {
-	var React = require('react/addons');
+	var React = require('react');
 	var NavButton = require('./NavButton');
 	var NavSearch = require('./NavSearch');
 	var RequirePermissions = require('../../../authentication/RequirePermissions');

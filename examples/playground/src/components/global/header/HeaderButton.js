@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var HeaderButtonDropdown = require('./HeaderButtonDropdown');
 
 var HeaderButton = React.createClass({

@@ -8,7 +8,7 @@ var Login = require('./login/Login');
  * @constructor
  */
 var RequireAuthentication = function (Component) {
-	var React = require('react/addons');
+	var React = require('react');
 	return React.createClass({
 		/**
 		 * Handle redirects if not authenticated

@@ -1,5 +1,5 @@
 'use strict';
-var React = require('react/addons');
+var React = require('react');
 
 var CmsUserStore = require('../../stores/CmsUserStore');
 var _ = require('lodash');
