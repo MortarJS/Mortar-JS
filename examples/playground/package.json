@@ -21,6 +21,7 @@
     "classnames": "^2.1.1",
     "flux": "^2.0.3",
     "jquery": "^2.1.4",
+    "keymirror": "^0.1.1",
     "lodash": "^3.9.3",
     "moment": "^2.10.6",
     "normalize.css": "~3.0.3",
