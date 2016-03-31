@@ -8,8 +8,6 @@ var React = require('react');
 var reactDOM = require('react-dom');
 var config = require('./config/config');
 var Router  = require('react-router');
-var CmsUserStore = require('./stores/CmsUserStore');
-var MortarJS = require('./bootstrap').MortarJS;
 var AppContainer = require('./app-container').MortarJS;
 
 /**
@@ -28,8 +26,7 @@ Router.run(Routes, function (Handler) {
 				<Handler/>
 				<footer>Made by <a href="http://fuzzproductions.com">Fuzz Productions</a></footer>
 			</div>
-		)
-	, window.__app_container);
+		), window.__app_container);
 });
 
 /**
