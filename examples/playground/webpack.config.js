@@ -12,8 +12,8 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const PATHS = {
-	app: path.join(__dirname, 'src'),
-	main: path.join(__dirname, 'src/main.js'),
+	app   : path.join(__dirname, 'src'),
+	main  : path.join(__dirname, 'src/main.js'),
 	output: path.join(__dirname, 'build')
 };
 
@@ -21,99 +21,103 @@ console.error('DIRECTORY:', __dirname);
 
 module.exports = {
 	context: PATHS.app,
-	entry: PATHS.main,
-	output: {
-		path: PATHS.output,
-		filename:   'main.js',
+	entry  : PATHS.main,
+	output : {
+		path    : PATHS.output,
+		filename: 'main.js'
 	},
 
 	cache:   true,
 	stats: {
-		colors:  true,
+		colors :  true,
 		reasons: true
 	},
 
 	resolve: {
 		extensions: ['', '.js'],
-		alias:      {
-			'styles':     __dirname + '/src/styles',
-			'mixins':     __dirname + '/src/mixins',
+		alias     :      {
+			'styles'    : __dirname + '/src/styles',
+			'mixins'    : __dirname + '/src/mixins',
 			'components': __dirname + '/src/components/'
 		}
+	},
+
+	resolveLoader: {
+		fallback: path.join(__dirname, "node_modules")
 	},
 
 	module:  {
 		loaders:    [
 			// compile all javascript files using the babel-loader module
 			{
-				test:    /\.js$/,
+				test   :    /\.js$/,
 				exclude: /node_modules/,
-				loader:  'babel',
-				query: {
-					presets: ['es2015','react'],
+				loader :  'babel',
+				query  : {
+					presets       : ['es2015', 'react'],
 					cacheDirectory: true
 				}
 			},
 			{
-				test: /\.html$/,
+				test  : /\.html$/,
 				loader: 'file',
-				query: {
-					name:'[name].[ext]'
+				query : {
+					name: '[name].[ext]'
 				}
 			},
 			// compile sass files using the sass-loader module
 			// stored in the compiled javascript file
 			{
-				test: /\.scss$/,
+				test   : /\.scss$/,
 				loaders: ['style', 'css', 'sass']
 			},
 			// compile css files using the css-loader module
 			// stored in the compiled javascript file
 			{
-				test: /\.css$/,
+				test   : /\.css$/,
 				loaders: ['style', 'css', 'autoprefixer']
 			},
 			// compile local images
 			// hash file names to prevent cacheing
 			// copy into 'assets/img' sub-directory
 			{
-				test: /\.(png|jpg|gif|svg)$/,
+				test   : /\.(png|jpg|gif|svg)$/,
 				exclude: /node_modules/,
-				loader: 'file',
-				query: {
+				loader : 'file',
+				query  : {
 					name: 'assets/img/img-[hash:6].[ext]'
 				}
 			},
 			{
-				test: /\.ico$/,
+				test   : /\.ico$/,
 				exclude: /node_modules/,
-				loader:'file',
-				query: {
+				loader : 'file',
+				query  : {
 					name: '[name].[ext]'
 				}
 			},
 			{
-				test:   /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				test  : /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				loader: 'url',
-				query: {
-					limit: 10000,
+				query : {
+					limit   : 10000,
 					minetype: 'application/font-woff',
-					name: 'assets/fonts/[name].[ext]'
+					name    : 'assets/fonts/[name].[ext]'
 				}
 			},
 			{
-				test:   /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				test  : /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				loader: 'url',
-				query: {
+				query : {
 					limit: 8192,
-					name: 'assets/fonts/[name].[ext]'
+					name : 'assets/fonts/[name].[ext]'
 				}
 			}
 		]
 	},
 	plugins: [
 		new CleanWebpackPlugin(['build'], {
-			root: __dirname,
+			root   : __dirname,
 			verbose: true
 		})
 	]
