@@ -13,10 +13,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const PATHS = {
 	app: path.join(__dirname, 'src'),
-  main: path.join(__dirname, 'src/main.js'),
-  output: path.join(__dirname, 'build')
+	main: path.join(__dirname, 'src/main.js'),
+	output: path.join(__dirname, 'build')
 };
 
+console.error('DIRECTORY:', __dirname);
 
 module.exports = {
 	context: PATHS.app,
@@ -49,9 +50,9 @@ module.exports = {
 				exclude: /node_modules/,
 				loader:  'babel',
 				query: {
-          presets: ['es2015','react'],
+					presets: ['es2015','react'],
 					cacheDirectory: true
-        }
+				}
 			},
 			{
 				test: /\.html$/,
@@ -61,36 +62,36 @@ module.exports = {
 				}
 			},
 			// compile sass files using the sass-loader module
-      // stored in the compiled javascript file
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
-      },
-      // compile css files using the css-loader module
-      // stored in the compiled javascript file
-      {
-        test: /\.css$/,
-        loaders: ['style', 'css', 'autoprefixer']
-      },
+			// stored in the compiled javascript file
+			{
+				test: /\.scss$/,
+				loaders: ['style', 'css', 'sass']
+			},
+			// compile css files using the css-loader module
+			// stored in the compiled javascript file
+			{
+				test: /\.css$/,
+				loaders: ['style', 'css', 'autoprefixer']
+			},
 			// compile local images
-      // hash file names to prevent cacheing
-      // copy into 'assets/img' sub-directory
-      {
-        test: /\.(png|jpg|gif|svg)$/,
+			// hash file names to prevent cacheing
+			// copy into 'assets/img' sub-directory
+			{
+				test: /\.(png|jpg|gif|svg)$/,
 				exclude: /node_modules/,
-        loader: 'file',
+				loader: 'file',
 				query: {
 					name: 'assets/img/img-[hash:6].[ext]'
 				}
-      },
+			},
 			{
-		  	test: /\.ico$/,
-		   	exclude: /node_modules/,
-		   	loader:'file',
+				test: /\.ico$/,
+				exclude: /node_modules/,
+				loader:'file',
 				query: {
 					name: '[name].[ext]'
 				}
-		 	},
+			},
 			{
 				test:   /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				loader: 'url',
@@ -115,6 +116,6 @@ module.exports = {
 			root: __dirname,
 			verbose: true
 		})
-  ]
+	]
 
 };
