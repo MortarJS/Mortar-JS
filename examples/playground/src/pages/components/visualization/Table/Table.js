@@ -25,24 +25,24 @@ var Table = React.createClass({
 		return {
 			workingResource: [
 				{
-					'name': 'Leia Organa',
-					'username': 'lorgana',
-					'email': 'lorgana@galaxyfarfaraway.com'
+					'name'     : 'Leia Organa',
+					'username' : 'lorgana',
+					'email'    : 'lorgana@galaxyfarfaraway.com'
 				},
 				{
-					'name': 'Luke Skywalker',
-					'username': 'lskywalker',
-					'email': 'lskywalker@galaxyfarfaraway.com'
+					'name'     : 'Luke Skywalker',
+					'username' : 'lskywalker',
+					'email'    : 'lskywalker@galaxyfarfaraway.com'
 				},
 				{
-					'name': 'Han Solo',
-					'username': 'solocup',
-					'email': 'solocup@galaxyfarfaraway.com'
+					'name'     : 'Han Solo',
+					'username' : 'solocup',
+					'email'    : 'solocup@galaxyfarfaraway.com'
 				},
 				{
-					'name': 'Chewbacca',
-					'username': 'chewonthis',
-					'email': 'chewie@galaxyfarfaraway.com'
+					'name'     : 'Chewbacca',
+					'username' : 'chewonthis',
+					'email'    : 'chewie@galaxyfarfaraway.com'
 				}],
 			params        : {},
 			openEditModal : false,
