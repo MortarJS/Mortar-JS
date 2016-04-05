@@ -34,6 +34,9 @@ var TextArea       = require('./pages/components/form/TextArea/TextArea');
 // Visualization Components
 var Table          = require('./pages/components/visualization/Table/Table');
 
+// Global Components
+var ModalContainer = require('./pages/components/global/ModalContainer/ModalContainer');
+
 /**
  * Routing
  *
@@ -48,6 +51,8 @@ var Routes = (
 		<Route name="index"                                            handler={Dashboard} />
 
 		<Route name="table"          path="/components/table"          handler={Table} />
+
+		<Route name="modalcontainer" path="/components/modalcontainer" handler={ModalContainer} />
 
 		<Route name="dropdown"       path="/components/dropdown"       handler={DropdownSelect} />
 		<Route name="input"          path="/components/input"          handler={Input} />
