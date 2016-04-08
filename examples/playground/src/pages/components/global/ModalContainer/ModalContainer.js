@@ -79,9 +79,7 @@ var ModalContainer = React.createClass({
 						<Br.Row>
 							<Br.Column grid="lg" size="6">
 								<h1 className="page-header">Modal Container</h1>
-								<p>
-									Use Mortar modals to display additional information, open resource editing forms, or whatever else your application needs.
-								</p>
+								<p>Use Mortar modals to display additional information, open resource editing forms, or whatever else your application needs.</p>
 								<Br.Button
 									action='open'
 									text='Open Modal'
@@ -98,18 +96,18 @@ var ModalContainer = React.createClass({
 										<Br.Form.Input fieldKey="title" type="text" label="Title" required="true" />
 									</Br.Row>
 									<Br.Row>
-										<Br.Form.Input fieldKey="confirmText" type="text" label="Confirm Text"  placeholder="Confirm"/>
+										<Br.Form.Input fieldKey="confirmText" type="text" label="Confirm Text" placeholder="Confirm"/>
 									</Br.Row>
 									<Br.Row>
-										<Br.Form.Input fieldKey="closeText" type="text" label="Close Text"  placeholder="Close"/>
+										<Br.Form.Input fieldKey="closeText" type="text" label="Close Text" placeholder="Close"/>
 									</Br.Row>
 									<Br.Row>
-										<Br.Form.Input fieldKey="width" type="text" label="Width"  placeholder="600px"/>
+										<Br.Form.Input fieldKey="width" type="text" label="Width" placeholder="600px"/>
 									</Br.Row>
 									<Br.Row>
 										<Br.Form.Toggle fieldKey="toggle" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods, 'simple']} />
 									</Br.Row>
-								</Br.Form>
+								</Br.Form>
 							</Br.Column>
 						</Br.Row>
 						<Br.Row>
@@ -122,9 +120,7 @@ var ModalContainer = React.createClass({
 								disableConfirm={this.state.workingResource.toggle}
 								width={this.state.workingResource.width} >
 
-								<p>
-									Modals are highly customizable and serve as a shell for many other components.
-								</p>
+								<p>Modals are highly customizable and serve as a shell for many other components.</p>
 
 							</Br.Modal>
 						</Br.Row>
