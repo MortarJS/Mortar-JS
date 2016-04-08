@@ -17,7 +17,7 @@ describe("ModalContainer", function () {
 	context("Basic functionality", function() {
 		it("can open", function () {
 			cy.get('button').contains("Open Modal").click();
-			cy.get('.mortar-modal-dialog').should("contain", "This is a Mortar Modal")
+			cy.get('.mortar-modal-dialog').should("contain", "This is a Mortar Modal");
 		});
 
 		it("can close with the Close button", function () {
@@ -85,6 +85,13 @@ describe("ModalContainer", function () {
 			cy.get('form').find("input").eq(4).check({force:true});
 			cy.get('button').contains("Open Modal").click();
 			cy.get('.mortar-modal-footer').children().eq(1).should("be.disabled");
+		});
+
+		it("can be kept open", function() {
+			cy.get('form').find("input").eq(5).check({force:true});
+			cy.get('button').contains("Open Modal").click();
+			cy.get('#page-content').click(15, 40);
+			cy.get('.mortar-modal-dialog').should("contain", "This is a Mortar Modal");
 		});
 	});
 });

@@ -105,7 +105,10 @@ var ModalContainer = React.createClass({
 										<Br.Form.Input fieldKey="width" type="text" label="Width" placeholder="600px"/>
 									</Br.Row>
 									<Br.Row>
-										<Br.Form.Toggle fieldKey="toggle" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods, 'simple']} />
+										<Br.Form.Toggle fieldKey="toggleConfirm" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods, 'simple']} />
+									</Br.Row>
+									<Br.Row>
+										<Br.Form.Toggle fieldKey="toggleKeepOpen" fieldLabel="Keep Modal Open" mods={[this.state.workingResource.mods, 'simple']} />
 									</Br.Row>
 								</Br.Form>
 							</Br.Column>
@@ -117,7 +120,10 @@ var ModalContainer = React.createClass({
 								closeText={this.state.workingResource.closeText}
 								confirmText={this.state.workingResource.confirmText}
 								afterClose={this.closeModal}
-								disableConfirm={this.state.workingResource.toggle}
+								disableConfirm={this.state.workingResource.toggleConfirm}
+								options={{
+									keepOpen: this.state.workingResource.toggleKeepOpen
+								}}
 								width={this.state.workingResource.width} >
 
 								<p>Modals are highly customizable and serve as a shell for many other components.</p>
