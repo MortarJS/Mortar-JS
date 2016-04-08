@@ -1,0 +1,199 @@
+.mortar-modal.in {
+  display: block;
+}
+
+.mortar-modal-dialog {
+  max-height: 90%;
+}
+
+.mortar-modal-body {
+  padding-top: 16px !important;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+.mortar-modal-content {
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.mortar-modal-content .mortar-modal-header {
+  border-bottom: none;
+  padding-top: 24px;
+  padding-right: 24px;
+  padding-bottom: 0px;
+  padding-left: 24px;
+}
+
+.mortar-modal-content .mortar-modal-body {
+  padding-top: 0px;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+}
+
+.mortar-modal-content .mortar-modal-footer {
+  border-top: none;
+  padding: 7px;
+}
+
+.mortar-modal-content .mortar-modal-footer button {
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: auto;
+}
+
+.mortar-modal-content .mortar-modal-footer button.pull-left {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  left: -5px;
+}
+
+.mortar-modal-content .mortar-modal-footer button + button {
+  margin-bottom: 16px;
+}
+
+.mortar-modal-content .mortar-modal-body + .mortar-modal-footer {
+  padding-top: 0;
+}
+
+.mortar-modal-backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.mortar-modal-open {
+  overflow: hidden;
+}
+
+.mortar-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.mortar-modal.fade .mortar-modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+      -ms-transform: translate(0, -25%);
+       -o-transform: translate(0, -25%);
+          transform: translate(0, -25%);
+}
+
+.mortar-modal.in .mortar-modal-dialog {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+       -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.mortar-modal-open .mortar-modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mortar-modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.mortar-modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  outline: 0;
+}
+
+.mortar-modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+
+.mortar-modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.mortar-modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.mortar-modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mortar-modal-header .close {
+  margin-top: -2px;
+}
+
+.mortar-modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+
+.mortar-modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+.mortar-modal-footer {
+  padding: 15px;
+  text-align: right;
+}
+
+.mortar-modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+.mortar-modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
+.mortar-modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+.mortar-modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+@media (min-width: 768px) {
+  .mortar-modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .mortar-modal-content {
+  }
+  .mortar-modal-sm {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .mortar-modal-lg {
+    width: 900px;
+  }
+}

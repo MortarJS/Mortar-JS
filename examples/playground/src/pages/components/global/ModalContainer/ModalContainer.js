@@ -113,21 +113,20 @@ var ModalContainer = React.createClass({
 							</Br.Column>
 						</Br.Row>
 						<Br.Row>
-	            <Br.Modal
+							<Br.Modal
 								openWhen={this.state.openModal}
-                title={this.state.workingResource.title}
-                closeText={this.state.workingResource.closeText}
+								title={this.state.workingResource.title}
+								closeText={this.state.workingResource.closeText}
 								confirmText={this.state.workingResource.confirmText}
 								afterClose={this.closeModal}
 								disableConfirm={this.state.workingResource.toggle}
-								options={{
-									width: this.state.workingResource.width
-								}}
-              >
+								width={this.state.workingResource.width} >
+
 								<p>
 									Modals are highly customizable and serve as a shell for many other components.
 								</p>
-	            </Br.Modal>
+
+							</Br.Modal>
 						</Br.Row>
 					</div>
 				</div>
