@@ -10,25 +10,72 @@ describe("ModalContainer", function () {
 			.get("h1").should("contain", "Modal Container")
 	});
 
-
 	beforeEach(function () {
 		cy.visit("http://localhost:8080/#/components/modalcontainer")
 	});
 
-	it("can open the modal", function () {
-		cy.get('button').contains("Open Modal").click();
-		cy.get('.modal-dialog').should("contain", "This is a Mortar Modal")
+	context("Basic functionality", function() {
+		it("can open", function () {
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-dialog').should("contain", "This is a Mortar Modal")
+		});
+
+		it("can close with the Close button", function () {
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-dialog').get('button').contains('Cancel').click();
+			cy.get('.modal-component').should(function($p){
+				expect($p.children()).to.have.length(0)
+			});
+		});
+
+		it("can close with the X button", function () {
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-header').get('.close').click();
+			cy.get('.modal-component').should(function($p){
+				expect($p.children()).to.have.length(0)
+			});
+		});
+
+		it("can close by clicking outside the modal", function () {
+			cy.get('button').contains("Open Modal").click();
+			cy.get('#page-content').click(15, 40);
+			cy.get('.modal-component').should(function($modal){
+				expect($modal.children()).to.have.length(0)
+			});
+		});
 	});
 
-	it("can close the modal with the Close button", function () {
-		cy.get('button').contains("Open Modal").click();
-		cy.get('.modal-dialog').get('button').contains('Close').click();
-		cy.get('.modal-component').siblings().should('not.have.class','.modal-content');
-	});
+	context("Customization", function() {
+		it("can have a variable title", function() {
+			cy.get('form').find("input").eq(0).clear().type('The Dude abides.');
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-title').should("contain", "The Dude abides.")
+		});
 
-	it("can close the modal with the x button", function () {
-		cy.get('button').contains("Open Modal").click();
-		cy.get('.modal-header').get('.close').click();
-		cy.get('.modal-component').siblings().should('not.have.class','.modal-content');
+		it("can have variable confirm button text", function() {
+			cy.get('form').find("input").eq(1).clear().type('Let\'s go bowling.');
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-footer').children().eq(1).should("contain", "Let\'s go bowling.")
+		});
+
+		it("can have variable cancel button text", function() {
+			cy.get('form').find("input").eq(2).clear().type('Mark it zero!');
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-footer').children().eq(0).should("contain", "Mark it zero!")
+		});
+
+		it("can have variable width", function() {
+			cy.get('form').find("input").eq(3).clear().type('300');
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-component').should(function($modal){
+				expect(Cypress.$('.modal-content').width()).to.equal(300);
+			});
+		});
+
+		it("can have the confirm button be disabled", function() {
+			cy.get('form').find("input").eq(4).check({force:true});
+			cy.get('button').contains("Open Modal").click();
+			cy.get('.modal-footer').children().eq(1).should("be.disabled");
+		});
 	});
 });
