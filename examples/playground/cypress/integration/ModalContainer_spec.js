@@ -43,6 +43,15 @@ describe("ModalContainer", function () {
 				expect($modal.children()).to.have.length(0)
 			});
 		});
+
+		it("can close by hitting the ESC key", function () {
+			cy.get('button').contains("Open Modal").click();
+			cy.get('input').first().type("{esc}", {force: true});
+
+			cy.get('.modal-component').should(function($modal){
+				expect($modal.children()).to.have.length(0)
+			});
+		});
 	});
 
 	context("Customization", function() {
