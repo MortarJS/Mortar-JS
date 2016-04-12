@@ -63,7 +63,7 @@ var Input = React.createClass({
 				<div id="page-content">
 					<div id="content">
 						<Br.Row>
-							<Br.Column grid="lg" size="6">
+							<Br.Column grid="lg" size="10"  classes="col-lg-offset-1">
 								<h1 className="page-header">Input</h1>
 							</Br.Column>
 						</Br.Row>
@@ -71,12 +71,6 @@ var Input = React.createClass({
 						<Br.Row>
 							<Br.Column grid="lg" size="10"  classes="col-lg-offset-1">
 								<div className="panel panel-default">
-									<Br.Row>
-										<Br.Column grid="lg" size="12">
-											<p></p>
-										</Br.Column>
-									</Br.Row>
-
 									<Br.Row>
 										<Br.Column grid="lg" size="10">
 											<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>

@@ -7,64 +7,74 @@ module.exports = {
 	base: require('./base-config'),
 
 	header: {
-		title: 'Mortar JS',
+		title   : 'Mortar JS',
 		homepage: 'http://mortar.fuzzpro.com',
-		buttons: []
+		buttons : []
 	},
 
 	navbar: [
 		{
 			"buttonName": "Home",
-			"href": "/#/"
+			"href"      : "/#/"
 		},
 
 		{
 			"buttonName": "Form Components",
-			"href": "",
-			"children": [
+			"href"      : "",
+			"children"  : [
 				{
 					"buttonName": "Input",
-					"href":       "#/components/input"
+					"href"      : "#/components/input"
 				},
 				{
 					"buttonName": "DropdownSelect",
-					"href":       "#/components/dropdown"
+					"href"      : "#/components/dropdown"
 				},
 				{
 					"buttonName": "Radio Buttons",
-					"href":       "#/components/radio"
+					"href"      : "#/components/radio"
 				},
 				{
 					"buttonName": "Toggle",
-					"href":       "#/components/toggle"
+					"href"      : "#/components/toggle"
 				},
 				{
 					"buttonName": "Checkbox",
-					"href":       "#/components/checkbox"
+					"href"      : "#/components/checkbox"
 				},
 				{
 					"buttonName": "File Input",
-					"href":       "#/components/fileinput"
+					"href"      : "#/components/fileinput"
 				},
 				{
 					"buttonName": "Type-Ahead Input",
-					"href":       "#/components/typeaheadinput"
+					"href"      : "#/components/typeaheadinput"
 				},
 				{
 					"buttonName": "Text Area",
-					"href":       "#/components/textarea"
-				},
-
+					"href"      : "#/components/textarea"
+				}
 			]
 		},
 
 		{
 			"buttonName": "Visualization Components",
-			"href": "",
-			"children": [
+			"href"      : "",
+			"children"  : [
 				{
 					"buttonName": "Table",
-					"href":       "#/components/table"
+					"href"      : "#/components/table"
+				}
+			]
+		},
+
+		{
+			"buttonName": "Global Components",
+			"href"      : "",
+			"children"  : [
+				{
+					"buttonName": "ModalContainer",
+					"href"      : "#/components/modalcontainer"
 				}
 			]
 		}
