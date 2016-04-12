@@ -3,16 +3,18 @@ node_js:
   - "4.2"
 
 install:
+  - cd examples/playground
+  - npm install
+  - cd ../..
   - npm install
 
   ## install the Cypress CLI Tools
   ## which gives us access to the
   ## `cypress` command used below
   - npm install -g cypress-cli
-  - cd examples/playground
-  - npm install
 
 before_script:
+  - cd examples/playground
   - npm run serve -- --silent &
 
 script:
