@@ -109,8 +109,12 @@ var ModalContainer = React.createClass({
 												<Br.Row>
 													<Br.Form.Input fieldKey="width" type="text" label="Width" placeholder="600px"/>
 												</Br.Row>
+
 												<Br.Row>
-													<Br.Form.Toggle fieldKey="toggle" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods]} />
+													<Br.Form.Toggle fieldKey="toggleConfirm" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods]} />
+												</Br.Row>
+												<Br.Row>
+													<Br.Form.Toggle fieldKey="toggleKeepOpen" fieldLabel="Keep Modal Open" mods={[this.state.workingResource.mods]} />
 												</Br.Row>
 
 												<Br.Button
@@ -123,24 +127,28 @@ var ModalContainer = React.createClass({
 											</Br.Form>
 										</Br.Column>
 									</Br.Row>
-
-									<Br.Row>
-										<Br.Modal
-											openWhen={this.state.openModal}
-											title={this.state.workingResource.title}
-											closeText={this.state.workingResource.closeText}
-											confirmText={this.state.workingResource.confirmText}
-											afterClose={this.closeModal}
-											disableConfirm={this.state.workingResource.toggle}
-											width={this.state.workingResource.width} >
-
-											<p>Modals are highly customizable and serve as a shell for many other components.</p>
-
-										</Br.Modal>
-									</Br.Row>
 								</div>
 							</Br.Column>
 						</Br.Row>
+
+						<Br.Row>
+							<Br.Modal
+								openWhen={this.state.openModal}
+								title={this.state.workingResource.title}
+								closeText={this.state.workingResource.closeText}
+								confirmText={this.state.workingResource.confirmText}
+								afterClose={this.closeModal}
+								disableConfirm={this.state.workingResource.toggleConfirm}
+								options={{
+									keepOpen: this.state.workingResource.toggleKeepOpen
+								}}
+								width={this.state.workingResource.width} >
+
+								<p>Modals are highly customizable and serve as a shell for many other components.</p>
+
+							</Br.Modal>
+						</Br.Row>
+
 					</div>
 				</div>
 			</div>
