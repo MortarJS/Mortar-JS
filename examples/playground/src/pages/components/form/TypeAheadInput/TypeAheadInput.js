@@ -118,7 +118,7 @@ var TypeAheadInput = React.createClass({
 				<div id="page-content">
 					<div id="content">
 						<Br.Row>
-							<Br.Column grid="lg" size="6">
+							<Br.Column grid="lg" size="10" classes="col-lg-offset-1">
 								<h1>Type-Ahead</h1>
 							</Br.Column>
 						</Br.Row>
