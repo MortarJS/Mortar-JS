@@ -26,7 +26,9 @@
     "lodash": "^3.9.3",
     "moment": "^2.10.6",
     "normalize.css": "~3.0.3",
-    "react-router": "0.13.3",
+    "react": "0.14.8",
+    "react-dom": "0.14.8",
+    "react-router": "^0.13.5",
     "reqwest": "1.1.5",
     "validator": "3.40.0"
   },
