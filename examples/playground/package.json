@@ -10,7 +10,8 @@
   "dist": "dist",
   "main": "main.js",
   "scripts": {
-    "serve": "open http://localhost:8080/webpack-dev-server/ && webpack-dev-server --progress --colors --watch --quiet",
+    "open": "open http://localhost:8080/webpack-dev-server/ && webpack-dev-server --progress --colors --watch --quiet",
+    "serve": "webpack-dev-server --progress --colors --watch --quiet",
     "watch": "webpack --progress --colors --watch",
     "build": "webpack --progress --colors",
     "production": "webpack -production --progress --colors",
