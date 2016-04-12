@@ -31,9 +31,9 @@
     "keymirror": "^0.1.1",
     "lodash": "^3.9.3",
     "react": "^0.14.x",
-    "react-bootstrap": "^0.22.6",
-    "react-dom": "^0.14.8",
-    "react-router": "^1.0.1",
+    "react-bootstrap": "0.22.6",
+    "react-dom": "0.14.8",
+    "react-router": "1.0.1",
     "reqwest": "^1.1.5",
     "validator": "^3.40.0"
   },
