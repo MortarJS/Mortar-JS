@@ -12,3 +12,4 @@ documentation
 *.css.map
 
 tags
+*.md.html
