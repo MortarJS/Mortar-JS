@@ -28,7 +28,7 @@
     "react-bootstrap": "^0.28.2",
     "react-router": "^0.13.3",
     "reqwest": "^1.1.5",
-    "sassify": "^0.7.0",
+    "sassify": "^0.10.0",
     "validator": "^3.40.0"
   },
   "devDependencies": {
