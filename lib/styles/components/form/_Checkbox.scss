@@ -1,0 +1,11 @@
+.checkbox-label {
+  margin-left: 5px;
+}
+
+input[type="checkbox"]:checked:disabled + .checkbox-material .check {
+  color: inherit !important;
+
+  &:before {
+    color: inherit !important;
+  }
+}
