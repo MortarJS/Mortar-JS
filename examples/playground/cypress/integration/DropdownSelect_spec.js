@@ -12,14 +12,14 @@ describe("DropdownSelect", function () {
 
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/dropdown")
+		cy.visit("http://localhost:8080/#/components/dropdown");
 	});
 
 	context("Selecting Values", function() {
 		it("can select a season and show it's been selected", function () {
 			cy.contains("Select a Season").click()
 				.get(".dropdown-container").within(function () {
-					cy.contains("Winter").click()
+					cy.contains("Winter").click();
 				});
 
 			cy.contains("Season value:")
@@ -29,7 +29,7 @@ describe("DropdownSelect", function () {
 		it("will close after selecting a value for a single select", function () {
 			cy.contains("Select a Season").click()
 				.get(".dropdown-container").within(function () {
-					cy.contains("Winter").click()
+					cy.contains("Winter").click();
 				});
 
 			cy.get(".dropdown-container").first()
