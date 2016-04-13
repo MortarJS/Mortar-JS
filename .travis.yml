@@ -3,6 +3,8 @@ node_js:
 - '5'
 - '4.2'
 - '4.0'
+- '0.12'
+- 'iojs'
 git:
   depth: 3
 install:
