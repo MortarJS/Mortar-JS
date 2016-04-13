@@ -1,13 +1,13 @@
 describe("DropdownSelect", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080")
+		cy.visit("http://localhost:8080");
 	});
 
 	it("can navigate to DropdownSelect", function () {
 		cy.contains("Form Components").click();
 		cy.contains("DropdownSelect").click()
 			.hash().should("eq", "#/components/dropdown")
-			.get("h1").should("contain", "Dropdown Select")
+			.get("h1").should("contain", "Dropdown Select");
 	});
 
 

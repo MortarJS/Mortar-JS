@@ -2,6 +2,7 @@
 .idea
 .DS_Store
 dist
+build
 
 npm-debug.log
 
@@ -11,3 +12,4 @@ documentation
 *.css.map
 
 tags
+*.md.html

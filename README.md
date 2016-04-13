@@ -1,4 +1,4 @@
-# Mortar JS
+# [Mortar JS](http://mortar.fuzzpro.io) [![Build Status](https://img.shields.io/travis/fuzz-productions/Mortar-JS/dev.svg?style=flat)](https://travis-ci.org/fuzz-productions/Mortar-JS)
 
 <p align="center">
   <img src="https://cdn.rawgit.com/fuzz-productions/mortar-js/dev/assets/logo.svg" />
