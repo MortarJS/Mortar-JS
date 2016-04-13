@@ -96,7 +96,7 @@ var RadioButton = React.createClass({
 									<Br.Row>
 										<Br.Column grid="lg" size="10">
 											<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>
-												<Br.Row>
+												<Br.Row classes="season-select">
 													<h3>Radio Buttons</h3>
 													<Br.Column grid="lg" size="4">
 														<Br.Form.RadioButtons key="seasonRadio" fieldKey='season'
