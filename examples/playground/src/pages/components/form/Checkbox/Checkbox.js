@@ -101,7 +101,7 @@ var Checkbox = React.createClass({
 											<Br.Column grid="lg" size="6">
 												<Br.Form.Checkbox fieldKey='season'
 													options={this.checkboxOptions1}
-													label='Select a Season' />
+													inputLabel='Select a Season' />
 											</Br.Column>
 										</Br.Row>
 
@@ -110,7 +110,7 @@ var Checkbox = React.createClass({
 												<Br.Column grid="lg" size="6">
 													<Br.Form.Checkbox fieldKey='colors'
 														options={this.checkboxOptions2}
-														label='Select a Color'
+														inputLabel='Select a Color'
 														disabled={true} />
 												</Br.Column>
 										</Br.Row>
