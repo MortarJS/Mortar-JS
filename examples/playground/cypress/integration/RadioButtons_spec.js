@@ -21,20 +21,29 @@ describe("RadioButtons", function () {
 			.contains("Winter")
 			.click();
 
-		cy.contains("Season value")
-			.get("p").should("contain", "Winter");
+		cy.get(".season-value").should("contain", "Winter");
 	});
 
 	it("can change the selection by clicking another radio button", function() {
-		cy.get(".season-select").first().contains("Winter").click();
-		cy.get(".season-select").first().contains("Fall").click();
+		cy.get(".season-select")
+			.first()
+			.contains("Winter")
+			.click();
+		cy.get(".season-select")
+			.first()
+			.contains("Fall")
+			.click();
 
-		cy.contains("Season value")
-			.get("p").should("contain", "Fall");
+		cy.get(".season-value")
+			.should("contain", "Fall");
 	});
 
 	it("can't select disabled radio buttons", function () {
-		cy.contains("Select a Color")
-			.get("[type='radio']").should("be.disabled");
+		cy.get(".disabled-select")
+			.get("[type='radio']")
+			.should("be.disabled");
+
+		cy.get(".disabled-value")
+			.should("contain", "Pink")
 	});
 });
