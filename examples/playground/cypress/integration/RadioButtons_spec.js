@@ -16,7 +16,11 @@ describe("RadioButtons", function () {
 	});
 
 	it("can select a season and show it's been selected", function () {
-		cy.get(".season-select").first().contains("Winter").click();
+		cy.get(".season-select")
+			.first()
+			.contains("Winter")
+			.click();
+
 		cy.contains("Season value")
 			.get("p").should("contain", "Winter");
 	});
