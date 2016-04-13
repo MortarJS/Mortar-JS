@@ -22,7 +22,13 @@ var Checkbox = React.createClass({
 
 	getInitialState: function () {
 		return {
-			workingResource: {},
+			workingResource: {
+				seasons: [],
+				colors: [
+					{label: 'Blue',   value: 'blue'},
+					{label: 'Pink',   value: 'pink'}
+				],
+			},
 			params: {},
 			formIsValid: true
 		}
@@ -53,6 +59,12 @@ var Checkbox = React.createClass({
 		this.setState({
 			workingResource: FormStore.getResource(this.formKey)
 		});
+	},
+
+	checkboxValue: function(array) {
+		return array.map((value) => {
+			return value.label;
+		}).join(', ');
 	},
 
 	checkboxOptions1: [
@@ -96,22 +108,30 @@ var Checkbox = React.createClass({
 							<Br.Row>
 								<Br.Column grid="lg" size="10">
 									<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>
-										<Br.Row>
-											<h3>Checkbox Field</h3>
+										<Br.Row classes="seasons-select">
+											<h3>Seasons Checkbox</h3>
 											<Br.Column grid="lg" size="6">
-												<Br.Form.Checkbox fieldKey='season'
+												<Br.Form.Checkbox fieldKey='seasons'
 													options={this.checkboxOptions1}
 													inputLabel='Select a Season' />
 											</Br.Column>
+											<Br.Column grid="lg" size="6">
+												<b>Seasons value:</b>
+												<p className="seasons-value">{this.checkboxValue(this.state.workingResource.seasons)}</p>
+											</Br.Column>
 										</Br.Row>
 
-										<Br.Row>
-											<h3>Disabled Checkbox Field</h3>
+										<Br.Row classes="disabled-select">
+											<h3>Disabled Checkbox</h3>
 												<Br.Column grid="lg" size="6">
 													<Br.Form.Checkbox fieldKey='colors'
 														options={this.checkboxOptions2}
 														inputLabel='Select a Color'
 														disabled={true} />
+												</Br.Column>
+												<Br.Column grid="lg" size="6">
+													<b>Colors value:</b>
+													<p className="disabled-value">{this.checkboxValue(this.state.workingResource.colors)}</p>
 												</Br.Column>
 										</Br.Row>
 									</Br.Form>
