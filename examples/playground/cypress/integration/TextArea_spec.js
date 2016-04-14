@@ -15,13 +15,13 @@ describe("Text Area", function () {
 		cy.visit("http://localhost:8080/#/components/textarea");
 	});
 
-	it("can type comment in input field", function () {
+	it("can type into the text area", function () {
 		cy.contains("Comment")
 			.get("textarea[placeholder='Sample text area component. Type away!']")
 			.type('I really like MortarJS!');
 	});
 
-	it("can't type complaint in the disabled input field", function () {
+	it("can't type in disabled text areas", function () {
 		cy.contains("Complaints")
 			.get("textarea[disabled]").should('be.disabled');
 	});

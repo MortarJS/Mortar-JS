@@ -73,5 +73,4 @@ describe("Checkbox", function () {
 				.should("be.empty");
 		});
 	});
-
 });
