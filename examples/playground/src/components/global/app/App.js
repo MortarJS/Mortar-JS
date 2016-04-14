@@ -1,7 +1,6 @@
 var MortarJS = require('../../../bootstrap').MortarJS;
 var React = require('react');
 var Router = require('react-router');
-var assign = require('react/lib/Object.assign');
 var RouteHandler = Router.RouteHandler;
 var Login = MortarJS.Components.Authentication.Login.Login;
 var AlertHandler = MortarJS.Components.Global.AlertHandler;

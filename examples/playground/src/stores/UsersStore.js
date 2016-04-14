@@ -1,6 +1,5 @@
 var FuzzyReaction      = require('../bootstrap').MortarJS;
 
-var assign             = require('react/lib/Object.assign');
 var Paginator          = FuzzyReaction.Utils.Paginator;
 var ModelStore         = FuzzyReaction.Stores.ModelStore;
 var AppDispatcher      = FuzzyReaction.Dispatcher;
@@ -22,7 +21,7 @@ var _user = {};
  *
  * @type {*|exports}
  */
-var UsersStore = assign({}, ModelStore, {
+var UsersStore = Object.assign({}, ModelStore, {
 	getResourceListData: function () {
 		//return this._mutateAttributes();
 		return _resourceListData
