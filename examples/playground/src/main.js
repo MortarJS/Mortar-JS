@@ -9,7 +9,10 @@ var reactDOM = require('react-dom');
 var config = require('./config/config');
 var AppContainer = require('./app-container').MortarJS;
 
-import {Router, hashHistory} from 'react-router';
+import {Router, useRouterHistory} from 'react-router';
+import {createHashHistory} from 'history';
+
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
 /**
  * Pull in application routes
@@ -23,7 +26,7 @@ window.__app_container = document.getElementById('root');
 
 reactDOM.render((
 	<div>
-		<Router history={hashHistory} routes={Routes} />
+		<Router history={appHistory} routes={Routes} />
 		<footer>Made by <a href="http://fuzzproductions.com">Fuzz Productions</a></footer>
 	</div>
 ), window.__app_container)
