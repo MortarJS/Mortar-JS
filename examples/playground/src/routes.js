@@ -1,10 +1,6 @@
 var React         = require('react');
-var Router        = require('react-router');
 
-var Link          = Router.Link;
-var Route         = Router.Route;
-var NotFoundRoute = Router.NotFoundRoute;
-var DefaultRoute  = Router.DefaultRoute;
+import {Router, Route, Link, IndexRoute} from 'react-router';
 
 /**
  * Components
@@ -47,24 +43,27 @@ var ModalContainer = require('./pages/components/global/ModalContainer/ModalCont
  * @TODO: build all these pages
  */
 var Routes = (
-	<Route path="/" handler={App}>
-		<Route name="index"                                            handler={Dashboard} />
+		<Route path="/" component={App}>
+			<IndexRoute component={Dashboard} />
 
-		<Route name="table"          path="/components/table"          handler={Table} />
+			<Route path="components/">
+				<Route path="table"          component={Table} />
 
-		<Route name="modalcontainer" path="/components/modalcontainer" handler={ModalContainer} />
+				<Route path="modalcontainer" component={ModalContainer} />
 
-		<Route name="dropdown"       path="/components/dropdown"       handler={DropdownSelect} />
-		<Route name="input"          path="/components/input"          handler={Input} />
-		<Route name="toggle"         path="/components/toggle"         handler={Toggle} />
-		<Route name="typeaheadinput" path="/components/typeaheadinput" handler={TypeAheadInput} />
-		<Route name="radio"          path="/components/radio"          handler={RadioButtons} />
-		<Route name="checkbox"       path="/components/checkbox"       handler={Checkbox} />
-		<Route name="fileinput"      path="/components/fileinput"      handler={FileInput} />
-		<Route name="textarea"       path="/components/textarea"       handler={TextArea} />
+				<Route path="dropdown"       component={DropdownSelect} />
+				<Route path="input"          component={Input} />
+				<Route path="toggle"         component={Toggle} />
+				<Route path="typeaheadinput" component={TypeAheadInput} />
+				<Route path="radio"          component={RadioButtons} />
+				<Route path="checkbox"       component={Checkbox} />
+				<Route path="fileinput"      component={FileInput} />
+				<Route path="textarea"       component={TextArea} />
+			</Route>
 
-		<NotFoundRoute handler={Dashboard} />
-	</Route>
+
+			<Route path="*" component={Dashboard} />
+		</Route>
 );
 
 module.exports = Routes;

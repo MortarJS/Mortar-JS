@@ -7,8 +7,9 @@
 var React = require('react');
 var reactDOM = require('react-dom');
 var config = require('./config/config');
-var Router  = require('react-router');
 var AppContainer = require('./app-container').MortarJS;
+
+import {Router, hashHistory} from 'react-router';
 
 /**
  * Pull in application routes
@@ -19,15 +20,13 @@ var Routes = require('./routes');
 
 // Attach react router
 window.__app_container = document.getElementById('root');
-Router.run(Routes, function (Handler) {
-	reactDOM.render(
-		(
-			<div>
-				<Handler/>
-				<footer>Made by <a href="http://fuzzproductions.com">Fuzz Productions</a></footer>
-			</div>
-		), window.__app_container);
-});
+
+reactDOM.render((
+	<div>
+		<Router history={hashHistory} routes={Routes} />
+		<footer>Made by <a href="http://fuzzproductions.com">Fuzz Productions</a></footer>
+	</div>
+), window.__app_container)
 
 /**
  * Pull in index.html!
