@@ -75,6 +75,10 @@ module.exports = {
 				{
 					"buttonName": "ModalContainer",
 					"href"      : "#/components/modalcontainer"
+				},
+				{
+					"buttonName": "ButtonDrawer",
+					"href"      : "#/components/buttondrawer"
 				}
 			]
 		}

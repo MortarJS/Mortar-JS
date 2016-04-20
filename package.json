@@ -63,6 +63,7 @@
     "jquery": "^2.1.4",
     "jsdoc": "^3.4.0",
     "jshint-loader": "^0.8.3",
+    "json-loader": "^0.5.4",
     "moment": "^2.10.6",
     "node-sass": "^3.4.2",
     "normalize.css": "~3.0.3",

@@ -36,6 +36,7 @@ var Table          = require('./pages/components/visualization/Table/Table');
 
 // Global Components
 var ModalContainer = require('./pages/components/global/ModalContainer/ModalContainer');
+var ButtonDrawer   = require('./pages/components/global/ButtonDrawer/ButtonDrawer');
 
 /**
  * Routing
@@ -53,6 +54,7 @@ var Routes = (
 		<Route name="table"          path="/components/table"          handler={Table} />
 
 		<Route name="modalcontainer" path="/components/modalcontainer" handler={ModalContainer} />
+		<Route name="buttondrawer" path="/components/buttondrawer"     handler={ButtonDrawer} />
 
 		<Route name="dropdown"       path="/components/dropdown"       handler={DropdownSelect} />
 		<Route name="input"          path="/components/input"          handler={Input} />

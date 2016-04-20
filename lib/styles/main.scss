@@ -148,10 +148,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  > a {
-    line-height: 20px !important;
-    font-size: 38px !important;
-  }
+  padding-top: 30px;
+
   &:hover {
     .hidden-buttons {
       bottom: 58px;
@@ -159,6 +157,7 @@
       z-index: 1;
     }
   }
+
   .hidden-buttons {
     z-index: -1;
     transition: all 0.3s ease-in-out;
@@ -166,26 +165,13 @@
     left: 0px;
     opacity: 0;
     bottom: 0px;
-    button {
-      margin: 3px 0;
+
+    .btn {
+      margin-bottom: 3px;
       border-radius: 50% !important;
       width: 58px;
       height: 58px;
-      background-color: #f5821f;
       position: relative;
-      span {
-        color: #fff;
-        position: absolute;
-        right: 0px;
-        top: 50%;
-        margin-top: -7px;
-        width: 100%;
-        &:before {
-          display: block;
-          width: 100%;
-          text-align: center;
-        }
-      }
     }
   }
 }
