@@ -18,6 +18,7 @@ var DefaultTable           = require('./components/DefaultTable');
 var ActionableRows         = require('./components/ActionableRows');
 var DraggableRows          = require('./components/DraggableRows');
 var SummableRows           = require('./components/SummableRows');
+var SpinnerToggle          = require('./components/SpinnerToggle');
 // var SortableColumns        = require('./components/SortableColumns');
 
 /**
@@ -114,6 +115,10 @@ var Table = React.createClass({
 			'summable rows': {
 				'mods'    : [],
 				'content' : <SummableRows tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			},
+			'spinner': {
+				'mods'    : [],
+				'content' : <SpinnerToggle tableKeys={this.tableKeys} />
 			}
 			// 'sortable columns': {
 			// 	'mods'    : [],
