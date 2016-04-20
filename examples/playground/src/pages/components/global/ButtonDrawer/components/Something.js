@@ -4,7 +4,7 @@ var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
-var Br                     = MortarJS.require('components', 'Row', 'Column', 'Form', 'ButtonDrawer');
+var Br                     = MortarJS.require('components', 'Row', 'Column', 'Form', 'ButtonDrawer', 'Tooltip');
 var icomoonConfig = require('json!../../../../../../../../lib/styles/fonts/icomoon/selection.json');
 
 // Stores
@@ -24,7 +24,7 @@ var Something = React.createClass({
 	getInitialState: function () {
 		return {
 			workingResource: {
-				mod: 'warning'
+				mod: 'primary'
 			},
 			formIsValid: true
 		};
@@ -69,10 +69,13 @@ var Something = React.createClass({
 				name = name.slice(0, name.indexOf(","));
 			}
 
-			console.log(this.state.workingResource);
+			let width = name.length > 15 ? name.length * 10 : name.length * 15;
 
-			// @TODO hover for icon name? or just some label?
-			return (<a key={index} style={ {"marginLeft": "10px"} } className={`btn btn-${this.state.workingResource.mod} btn-fab btn-raised icon icon-${name}`} />);
+			return (
+				<Br.Tooltip key={index} text={name} width={width} orientation="top" >
+					<a style={ {"margin": "0 5px"} } className={`btn btn-${this.state.workingResource.mod} btn-fab btn-raised icon icon-${name}`} />
+				</Br.Tooltip>
+			);
 		});
 	},
 
