@@ -72,7 +72,7 @@ var Something = React.createClass({
 			let width = name.length > 15 ? name.length * 10 : name.length * 15;
 
 			return (
-				<Br.Tooltip key={index} text={name} width={width} orientation="top" >
+				<Br.Tooltip key={index} text={name} width={width} orientation="top">
 					<a style={ {"margin": "0 5px"} } className={`btn btn-${this.state.workingResource.mod} btn-fab btn-raised icon icon-${name}`} />
 				</Br.Tooltip>
 			);
