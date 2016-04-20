@@ -17,6 +17,7 @@ var TabbedComponentMixin   = MortarJS.Mixins.TabbedComponentMixin;
 var DefaultTable           = require('./components/DefaultTable');
 var ActionableRows         = require('./components/ActionableRows');
 var DraggableRows          = require('./components/DraggableRows');
+// var SortableColumns        = require('./components/SortableColumns');
 
 /**
  * Table
@@ -109,6 +110,10 @@ var Table = React.createClass({
 				'mods'    : [],
 				'content' : <DraggableRows tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
 			},
+			// 'sortable columns': {
+			// 	'mods'    : [],
+			// 	'content' : <SortableColumns tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			// },
 		}
 	},
 
