@@ -11,6 +11,8 @@ const path = require('path');
 // cleans the bundled directory between build
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const autoprefixer = require('autoprefixer');
+
 const PATHS = {
 	app   : path.join(__dirname, '/src'),
 	main  : path.join(__dirname, '/src/main.js'),
@@ -75,7 +77,7 @@ module.exports = {
 			// stored in the compiled javascript file
 			{
 				test   : /\.css$/,
-				loaders: ['style', 'css', 'autoprefixer']
+				loaders: ['style', 'css', 'postcss'],
 			},
 			// compile local images
 			// hash file names to prevent cacheing
@@ -115,6 +117,7 @@ module.exports = {
 			}
 		]
 	},
+	postcss: [ autoprefixer({ browsers: ['last 2 versions']  })  ],
 	plugins: [
 		new CleanWebpackPlugin(['build'], {
 			root   : __dirname + '/',
