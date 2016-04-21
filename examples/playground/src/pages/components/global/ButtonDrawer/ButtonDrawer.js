@@ -6,7 +6,7 @@ var MortarJS               = require('../../../../app-container').MortarJS;
 // Bricks
 var Br                     = MortarJS.require('components', 'Row', 'Column', 'Form', 'Table', 'Modal');
 var Example                = require('./components/Example');
-var Something              = require('./components/Something');
+var Details                = require('./components/Details');
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
@@ -26,7 +26,7 @@ var ButtonDrawer = React.createClass({
 
 	getInitialState: function () {
 		return {
-			activeTab: 'something',
+			activeTab: 'details',
 			workingResource: {}
 		};
 	},
@@ -49,9 +49,9 @@ var ButtonDrawer = React.createClass({
 
 	tabs: function() {
 		return {
-			'something': {
+			'details': {
 				'mods'    : [],
-				'content' : <Something />
+				'content' : <Details />
 			},
 			'example': {
 				'mods'    : [],

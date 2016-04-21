@@ -18,7 +18,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  *
  * @type {*|Function}
  */
-var Something = React.createClass({
+var Details = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
 	getInitialState: function () {
@@ -121,7 +121,7 @@ var Something = React.createClass({
 								{this.buildIcomoonButtonExamples()}
 							</Br.Column>
 
-							<Br.Column grid="lg" classes="col-lg-offset-1" size="2">
+							<Br.Column grid="lg" classes="col-lg-offset-3" size="3">
 								<Br.Form key="modForm" formKey={this.formKey} bindResource={this.state.workingResource}>
 									<Br.Form.RadioButtons fieldKey='mod'
 										options={this.modOptions}
@@ -138,4 +138,4 @@ var Something = React.createClass({
 	}
 });
 
-module.exports = Something;
+module.exports = Details;

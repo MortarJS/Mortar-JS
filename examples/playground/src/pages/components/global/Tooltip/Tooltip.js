@@ -63,6 +63,13 @@ var Tooltip = React.createClass({
 		});
 	},
 
+	orientations: [
+		{label: 'Top',    value: 'top'},
+		{label: 'Bottom', value: 'bottom'},
+		{label: 'Left',   value: 'left'},
+		{label: 'Right',  value: 'right'},
+	],
+
 	doNothing: function() {},
 
 	render: function() {
@@ -88,47 +95,7 @@ var Tooltip = React.createClass({
 									</Br.Row>
 
 									<Br.Row>
-										<Br.Column grid="lg" size="3">
-											<h3>Customizable Options</h3>
-											<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>
-												<Br.Row>
-													<Br.Form.Input fieldKey="text" type="text" label="Title" required="true" />
-												</Br.Row>
-
-												<Br.Row>
-													<Br.Form.Input fieldKey="orientation" type="text" label="Orientation" placeholder="top" required="true" />
-												</Br.Row>
-
-												<Br.Row>
-													<Br.Form.Input fieldKey="width" type="text" label="Width" placeholder="300px"/>
-												</Br.Row>
-
-												<Br.Row>
-													<Br.Form.Input fieldKey="height" type="text" label="Height" placeholder="50px"/>
-												</Br.Row>
-
-												<Br.Row>
-													<Br.Form.Input fieldKey="color" type="text" label="Color" placeholder="50px"/>
-												</Br.Row>
-
-												<Br.Row>
-													<Br.Form.Input fieldKey="background" type="text" label="Background" placeholder="50px"/>
-												</Br.Row>
-
-												<Br.Row>
-													<Br.Form.Toggle fieldKey="keepOpen" fieldLabel="Keep Open" mods={[this.state.workingResource.mods]} />
-												</Br.Row>
-
-												<Br.Button
-													action='open'
-													text='Open Modal'
-													mods={['primary']}
-													handleAction={this.openModal}
-												/>
-
-											</Br.Form>
-										</Br.Column>
-										<Br.Column grid="lg" size="3" classes="col-lg-offset-2">
+										<Br.Column grid="lg" size="6" classes="col-lg-offset-5">
 											<br />
 											<br />
 											<br />
@@ -143,6 +110,55 @@ var Tooltip = React.createClass({
 
 												<Br.Button action="null" text="Hover me!" handleAction={this.doNothing} mods={['danger']} />
 											</Br.Tooltip>
+										</Br.Column>
+									</Br.Row>
+
+									<Br.Row>
+										<Br.Column grid="lg" size="12">
+											<h3>Customizable Options</h3>
+											<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>
+
+												<Br.Column grid="lg" size="4">
+													<Br.Row>
+														<Br.Form.Input fieldKey="text" type="text" label="Title" required="true" />
+													</Br.Row>
+
+													<Br.Row>
+														<Br.Form.Input fieldKey="width" type="number" label="Width" placeholder="300px"/>
+													</Br.Row>
+													<Br.Row>
+														<Br.Form.Input fieldKey="height" type="number" label="Height" placeholder="50px"/>
+													</Br.Row>
+
+												</Br.Column>
+
+												<Br.Column grid="lg" size="4">
+													<Br.Row>
+														<Br.Form.RadioButtons fieldKey="orientation" options={this.orientations}
+															label="Orientation"
+															required="true" />
+													</Br.Row>
+												</Br.Column>
+
+												<Br.Column grid="lg" size="4">
+													<Br.Tooltip text="Try a hex value, or a css color constant!" orientation="top" width="200" height="75">
+														<Br.Row>
+															<Br.Form.Input fieldKey="color" type="text" label="Color" placeholder="50px"/>
+														</Br.Row>
+													</Br.Tooltip>
+
+													<Br.Row>
+														<Br.Tooltip text="Try a hex value, or a css color constant!" orientation="top" width="200" height="75">
+															<Br.Form.Input fieldKey="background" type="text" label="Background" placeholder="50px"/>
+														</Br.Tooltip>
+													</Br.Row>
+
+													<Br.Row>
+														<Br.Form.Toggle fieldKey="keepOpen" fieldLabel="Keep Open" mods={[this.state.workingResource.mods]} />
+													</Br.Row>
+												</Br.Column>
+
+											</Br.Form>
 										</Br.Column>
 									</Br.Row>
 								</div>
