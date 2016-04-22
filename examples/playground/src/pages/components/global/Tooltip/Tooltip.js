@@ -25,7 +25,7 @@ var Tooltip = React.createClass({
 			params         : {},
 			formIsValid    : true,
 			workingResource: {
-				text        : "I'm a tool tip!",
+				text        : "I'm a tooltip!",
 				orientation : "top",
 				width       : 300,
 				height      : 50,
