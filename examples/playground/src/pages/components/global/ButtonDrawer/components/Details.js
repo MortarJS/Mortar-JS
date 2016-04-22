@@ -95,13 +95,13 @@ var Details = React.createClass({
 				action: 'test',
 				handleAction: this.handleAction,
 				icon: 'times',
-				mod: 'danger'
+				mods: ['danger']
 			},
 			{
 				action: 'test',
 				handleAction: this.handleAction,
 				icon: 'pencil',
-				mod: 'success'
+				mods: 'success'
 			}
 		];
 
@@ -111,17 +111,21 @@ var Details = React.createClass({
 					<div id="content">
 						<Br.Row>
 							<Br.Column grid="lg" size="9">
-								<p>The ButtonDrawer component... </p>
+								<p>The ButtonDrawer component is useful for  </p>
 
 								<h3>Customizing</h3>
-								<p>The ButtonDrawer is built with icon fonts in mind.  We've made it compatible with any css-based icon font by adding the <b>iconClass</b> property to the component.</p>
+								<p>The ButtonDrawer is built with icon fonts in mind.  We've made it compatible with any css-based icon font by adding the <code>iconClass</code> property to the component. For example, to use the ButtonDrawer with <a href="http://fontawesome.io">Font Awesome</a>, you would set the ButtonDrawer's <code>ButtonDrawer iconClass="fa"</code></p>
+
+								<p>This allows for quick integration with your current workflow and styling choices.</p>
 
 								<p>We've included a few <a href="http://icomoon.io">icomoon</a> icons in Mortar that you can reference by default, which you can see below.</p>
+
+								<br />
 
 								{this.buildIcomoonButtonExamples()}
 							</Br.Column>
 
-							<Br.Column grid="lg" classes="col-lg-offset-3" size="3">
+							<Br.Column grid="lg" size="3">
 								<Br.Form key="modForm" formKey={this.formKey} bindResource={this.state.workingResource}>
 									<Br.Form.RadioButtons fieldKey='mod'
 										options={this.modOptions}
@@ -132,7 +136,7 @@ var Details = React.createClass({
 
 					</div>
 				</div>
-				<Br.ButtonDrawer icon="info-circle" mods={this.state.workingResource.mod} buttons={drawer1} />
+				<Br.ButtonDrawer handleAction={this.handleAction} icon="info-circle" mods={this.state.workingResource.mod} buttons={drawer1} />
 			</div>
 		);
 	}

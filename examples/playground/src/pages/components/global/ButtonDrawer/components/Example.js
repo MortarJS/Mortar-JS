@@ -4,7 +4,7 @@ var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
-var Br                     = MortarJS.require('components', 'Row', 'Column', 'Form', 'Table', 'Modal');
+var Br                     = MortarJS.require('components', 'Row', 'Column', 'Form', 'Table', 'Modal', 'ButtonDrawer');
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
@@ -44,10 +44,11 @@ var Example = React.createClass({
 					'username' : 'chewonthis',
 					'email'    : 'chewie@galaxyfarfaraway.com'
 				}],
-			params        : {},
-			openEditModal : false,
-			formIsValid   : true,
-			modalResource : {}
+			params          : {},
+			openCreateModal : false,
+			openDeleteModal : false,
+			formIsValid     : true,
+			modalResource   : {}
 
 		};
 	},
@@ -77,12 +78,20 @@ var Example = React.createClass({
 	},
 
 	handleAction: function(action, resource) {
+		console.log(action);
 		switch (action) {
-			case 'edit':
+			case 'add':
 				this.setState({
-					openEditModal: true,
-					modalResource: resource,
-					resourceOperation: action
+					openCreateModal   : true,
+					modalResource     : resource,
+					resourceOperation : action
+				});
+				break;
+			case 'delete':
+				this.setState({
+					openDeleteModal   : true,
+					modalResource     : resource,
+					resourceOperation : action
 				});
 				break;
 			default:
@@ -97,26 +106,34 @@ var Example = React.createClass({
 
 	closeModal: function () {
 		this.setState({
-			openEditModal: false
-		})
+			openCreateModal: false,
+			openDeleteModal: false
+		});
 	},
 
 	tableKeys: {
-		"Name"    : "name",
+		"Name"     : "name",
 		"Username" : "username",
 		"Email"    : "email"
 	},
 
+	drawerButtons: function() {
+		return [
+			{
+				action: 'add',
+				icon: 'pencil',
+				mods: 'success'
+			},
+			{
+				action: 'delete',
+				icon: 'times',
+				mods: 'danger'
+			}
+		];
+	},
+
 	render: function() {
 		var tableOptions = {};
-		var editableOptions = {
-			actionableRows: true,
-			actions: ['edit:primary'],
-			actionsCallback: this.handleAction,
-			mutators: {
-
-			}
-		};
 
 		return (
 			<div id="page-wrapper">
@@ -135,6 +152,36 @@ var Example = React.createClass({
 								title={'Table'}
 								options={tableOptions} />
 						</Br.Column>
+					</Br.Row>
+
+					<Br.ButtonDrawer handleAction={this.handleAction} icon="info-circle" mods={this.state.workingResource.mod} buttons={this.drawerButtons()} />
+
+					<Br.Row>
+						<Br.Modal
+							openWhen={this.state.openCreateModal}
+							title={'Add a row!'}
+							closeText={'cancel'}
+							confirmText={'save'}
+							afterClose={this.closeModal}
+							width={500} >
+
+							<p>Modals are highly customizable and serve as a shell for many other components.</p>
+
+						</Br.Modal>
+					</Br.Row>
+
+					<Br.Row>
+						<Br.Modal
+							openWhen={this.state.openDeleteModal}
+							title={'Delete Table Data'}
+							closeText={'cancel'}
+							confirmText={'confirm'}
+							afterClose={this.closeModal}
+							width={500} >
+
+							<p>Are you sure you'd like to delete all table data?</p>
+
+						</Br.Modal>
 					</Br.Row>
 				</div>
 			</div>
