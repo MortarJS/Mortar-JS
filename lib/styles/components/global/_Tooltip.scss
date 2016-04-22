@@ -60,6 +60,7 @@ $height: 50px;
     &.left {
       right: 100%;
       padding-right: 15px;
+      margin-right: 10px;
 
       &:after {
         right: -7px;
@@ -71,6 +72,7 @@ $height: 50px;
     &.right {
       left: 100%;
       padding-left: 15px;
+      margin-left: 10px;
 
       &:after {
         left: -7px;
@@ -82,6 +84,7 @@ $height: 50px;
     &.top {
       bottom: 100%;
       padding-bottom: 15px;
+      margin-bottom: 10px;
 
       &:after {
         bottom: -7px;
@@ -93,6 +96,7 @@ $height: 50px;
     &.bottom {
       top: 100%;
       padding-top: 15px;
+      margin-top: 10px;
 
       &:after {
         top: -7px;
