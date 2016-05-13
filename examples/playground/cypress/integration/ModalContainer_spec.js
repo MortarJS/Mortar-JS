@@ -1,6 +1,6 @@
 describe("ModalContainer", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080");
+		cy.visit("http://localhost:21356");
 	});
 
 	it("can navigate to ModalContainer", function () {
@@ -12,7 +12,7 @@ describe("ModalContainer", function () {
 	});
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/modalcontainer");
+		cy.visit("http://localhost:21356/#/components/modalcontainer");
 	});
 
 	context("Basic functionality", function() {

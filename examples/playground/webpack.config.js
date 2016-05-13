@@ -115,6 +115,9 @@ module.exports = {
 			}
 		]
 	},
+	devServer: {
+		port: 21356
+	},
 	plugins: [
 		new CleanWebpackPlugin(['build'], {
 			root   : __dirname + '/',

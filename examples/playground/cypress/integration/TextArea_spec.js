@@ -1,6 +1,6 @@
 describe("Text Area", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080")
+		cy.visit("http://localhost:21356")
 	});
 
 	it("can navigate to Text Area", function () {
@@ -12,7 +12,7 @@ describe("Text Area", function () {
 
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/textarea");
+		cy.visit("http://localhost:21356/#/components/textarea");
 	});
 
 	it("can type into the text area", function () {

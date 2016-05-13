@@ -1,6 +1,6 @@
 describe("RadioButtons", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080");
+		cy.visit("http://localhost:21356");
 	});
 
 	it("can navigate to RadioButtons", function () {
@@ -12,7 +12,7 @@ describe("RadioButtons", function () {
 
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/radio");
+		cy.visit("http://localhost:21356/#/components/radio");
 	});
 
 	it("can select a season and show it's been selected", function () {
