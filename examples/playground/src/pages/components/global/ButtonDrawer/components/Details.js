@@ -5,7 +5,7 @@ var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
 var Br                     = MortarJS.require('components', 'Row', 'Column', 'Form', 'ButtonDrawer', 'Tooltip');
-var icomoonConfig = require('json!../../../../../../../../lib/styles/fonts/icomoon/selection.json');
+var icomoonConfig          = require('json!../../../../../../../../lib/styles/fonts/icomoon/selection.json');
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
