@@ -67,7 +67,7 @@ var Tooltip = React.createClass({
 		{label: 'Top',    value: 'top'},
 		{label: 'Bottom', value: 'bottom'},
 		{label: 'Left',   value: 'left'},
-		{label: 'Right',  value: 'right'},
+		{label: 'Right',  value: 'right'}
 	],
 
 	doNothing: function() {},
@@ -90,7 +90,8 @@ var Tooltip = React.createClass({
 									<Br.Row>
 										<Br.Column grid="lg" size="12">
 											<br />
-											<p>Tooltips can be applies to any object!</p>
+											<p>Tooltips can be applied to any object! Simply wrap your component in the Mortar Tooltip component, and the tooltip will show up on hover.</p>
+											<p>Below are all the customization options that can be applied to the tooltip.</p>
 										</Br.Column>
 									</Br.Row>
 
@@ -120,14 +121,14 @@ var Tooltip = React.createClass({
 
 												<Br.Column grid="lg" size="4">
 													<Br.Row>
-														<Br.Form.Input fieldKey="text" type="text" label="Title" required="true" />
+														<Br.Form.Input fieldKey="text" type="text" label="text" required="true" />
 													</Br.Row>
 
 													<Br.Row>
-														<Br.Form.Input fieldKey="width" type="number" label="Width" placeholder="300px"/>
+														<Br.Form.Input fieldKey="width" type="number" label="width" placeholder="300px"/>
 													</Br.Row>
 													<Br.Row>
-														<Br.Form.Input fieldKey="height" type="number" label="Height" placeholder="50px"/>
+														<Br.Form.Input fieldKey="height" type="number" label="height" placeholder="50px"/>
 													</Br.Row>
 
 												</Br.Column>
@@ -135,26 +136,26 @@ var Tooltip = React.createClass({
 												<Br.Column grid="lg" size="4">
 													<Br.Row>
 														<Br.Form.RadioButtons fieldKey="orientation" options={this.orientations}
-															label="Orientation"
+															label="orientation"
 															required="true" />
 													</Br.Row>
 												</Br.Column>
 
 												<Br.Column grid="lg" size="4">
-													<Br.Tooltip text="Try a hex value, or a css color constant!" orientation="top" width="200" height="75">
+													<Br.Tooltip text="Try a hex value, a rgba declaration, or a css color constant!" orientation="top" width="200" height="75">
 														<Br.Row>
-															<Br.Form.Input fieldKey="color" type="text" label="Color" placeholder="50px"/>
+															<Br.Form.Input fieldKey="color" type="text" label="color" placeholder="50px"/>
 														</Br.Row>
 													</Br.Tooltip>
 
 													<Br.Row>
 														<Br.Tooltip text="Try a hex value, or a css color constant!" orientation="top" width="200" height="75">
-															<Br.Form.Input fieldKey="background" type="text" label="Background" placeholder="50px"/>
+															<Br.Form.Input fieldKey="background" type="text" label="background" placeholder="50px"/>
 														</Br.Tooltip>
 													</Br.Row>
 
 													<Br.Row>
-														<Br.Form.Toggle fieldKey="keepOpen" fieldLabel="Keep Open" mods={[this.state.workingResource.mods]} />
+														<Br.Form.Toggle fieldKey="keepOpen" fieldLabel="keepOpen" mods={[this.state.workingResource.mods]} />
 													</Br.Row>
 												</Br.Column>
 
