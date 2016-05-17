@@ -48,6 +48,7 @@ var Example = React.createClass({
 			openCreateModal : false,
 			openDeleteModal : false,
 			formIsValid     : true,
+			formData        : {},
 			modalResource   : {}
 
 		};
@@ -57,7 +58,8 @@ var Example = React.createClass({
 		return {
 			stores: [
 				{
-					store: FormStore
+					store: FormStore,
+					changeListener: this.bindResource
 				},
 				{
 					store: UsersStore,
@@ -77,8 +79,15 @@ var Example = React.createClass({
 		this._componentWillUnmount();
 	},
 
+	formKey: "ModalForm",
+
+	bindResource: function () {
+		this.setState({
+			formData: FormStore.getResource(this.formKey)
+		});
+	},
+
 	handleAction: function(action, resource) {
-		console.log(action);
 		switch (action) {
 			case 'add':
 				this.setState({
@@ -111,6 +120,25 @@ var Example = React.createClass({
 		});
 	},
 
+	deleteData: function() {
+		this.setState({
+			workingResource: [],
+			openCreateModal: false,
+			openDeleteModal: false
+		});
+	},
+
+	addTableRow: function() {
+		this.setState((previousState) => {
+			previousState.workingResource.push(previousState.formData);
+			previousState.formData = {};
+			previousState.openCreateModal = false;
+			previousState.openDeleteModal = false;
+
+			return previousState;
+		});
+	},
+
 	tableKeys: {
 		"Name"     : "name",
 		"Username" : "username",
@@ -133,7 +161,10 @@ var Example = React.createClass({
 	},
 
 	render: function() {
-		var tableOptions = {};
+		var tableOptions = {
+			hideSpinner: true,
+			emptyText: "These aren't the droids you're looking for."
+		};
 
 		return (
 			<div id="page-wrapper">
@@ -163,7 +194,14 @@ var Example = React.createClass({
 							closeText={'cancel'}
 							confirmText={'save'}
 							afterClose={this.closeModal}
+							afterConfirm={this.addTableRow}
 							width={500} >
+
+							<Br.Form key="ModalForm" formKey={this.formKey} bindResource={this.state.formData}>
+								<Br.Form.Input fieldKey="name"     type="text" label="Name"     placeholder="" required="true" />
+								<Br.Form.Input fieldKey="username" type="text" label="Username" placeholder="" required="true" />
+								<Br.Form.Input fieldKey="email"    type="text" label="Email"    placeholder="" required="true" />
+							</Br.Form>
 
 							<p>Modals are highly customizable and serve as a shell for many other components.</p>
 
@@ -177,6 +215,7 @@ var Example = React.createClass({
 							closeText={'cancel'}
 							confirmText={'confirm'}
 							afterClose={this.closeModal}
+							afterConfirm={this.deleteData}
 							width={500} >
 
 							<p>Are you sure you'd like to delete all table data?</p>

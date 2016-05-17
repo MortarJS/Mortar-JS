@@ -92,16 +92,16 @@ var Details = React.createClass({
 	render: function() {
 		let drawer1 = [
 			{
-				action: 'test',
-				handleAction: this.handleAction,
-				icon: 'times',
-				mods: ['danger']
+				action       : 'test',
+				handleAction : this.handleAction,
+				icon         : 'table',
+				mods         : ['info']
 			},
 			{
-				action: 'test',
-				handleAction: this.handleAction,
-				icon: 'pencil',
-				mods: 'success'
+				action       : 'test',
+				handleAction : this.handleAction,
+				icon         : 'paint-brush',
+				mods         : 'default'
 			}
 		];
 
