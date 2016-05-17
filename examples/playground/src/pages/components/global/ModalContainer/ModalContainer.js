@@ -94,35 +94,46 @@ var ModalContainer = React.createClass({
 									</Br.Row>
 
 									<Br.Row>
-										<Br.Column grid="lg" size="3">
+										<Br.Column grid="lg" size="12">
 											<h3>Customizable Options</h3>
 											<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>
-												<Br.Row>
-													<Br.Form.Input fieldKey="title" type="text" label="Title" required="true" />
-												</Br.Row>
-												<Br.Row>
-													<Br.Form.Input fieldKey="confirmText" type="text" label="Confirm Text" placeholder="Confirm"/>
-												</Br.Row>
-												<Br.Row>
-													<Br.Form.Input fieldKey="closeText" type="text" label="Close Text" placeholder="Close"/>
-												</Br.Row>
-												<Br.Row>
-													<Br.Form.Input fieldKey="width" type="text" label="Width" placeholder="600px"/>
-												</Br.Row>
+												<Br.Column grid="lg" size="5">
+													<Br.Row>
+														<Br.Form.Input fieldKey="title" type="text" label="Title" required="true" />
+													</Br.Row>
+													<Br.Row>
+														<Br.Form.Input fieldKey="confirmText" type="text" label="Confirm Text" placeholder="Confirm"/>
+													</Br.Row>
+													<Br.Row>
+														<Br.Form.Input fieldKey="closeText" type="text" label="Close Text" placeholder="Close"/>
+													</Br.Row>
+													<Br.Row>
+														<Br.Form.Input fieldKey="width" type="text" label="Width" placeholder="600px"/>
+													</Br.Row>
+												</Br.Column>
 
-												<Br.Row>
-													<Br.Form.Toggle fieldKey="toggleConfirm" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods]} />
-												</Br.Row>
-												<Br.Row>
-													<Br.Form.Toggle fieldKey="toggleKeepOpen" fieldLabel="Keep Modal Open" mods={[this.state.workingResource.mods]} />
-												</Br.Row>
 
-												<Br.Button
-													action='open'
-													text='Open Modal'
-													mods={['primary']}
-													handleAction={this.openModal}
-												/>
+												<Br.Column grid="lg" size="5" classes="col-lg-offset-1">
+													<Br.Row>
+														<Br.Form.Toggle fieldKey="toggleConfirm" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods]} />
+													</Br.Row>
+													<Br.Row>
+														<Br.Form.Toggle fieldKey="toggleKeepOpen" fieldLabel="Keep Modal Open" mods={[this.state.workingResource.mods]} />
+													</Br.Row>
+												</Br.Column>
+
+												<Br.Column grid="lg" size="12" >
+													<br />
+													<br />
+													<Br.Row>
+														<Br.Button
+															action='open'
+															text='Open Modal'
+															mods={['primary']}
+															handleAction={this.openModal}
+														/>
+													</Br.Row>
+												</Br.Column>
 
 											</Br.Form>
 										</Br.Column>

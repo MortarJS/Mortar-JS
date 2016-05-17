@@ -35,6 +35,8 @@ var TextArea       = require('./pages/components/form/TextArea/TextArea');
 var Table          = require('./pages/components/visualization/Table/Table');
 
 // Global Components
+var Tooltip        = require('./pages/components/global/Tooltip/Tooltip');
+var ButtonDrawer   = require('./pages/components/global/ButtonDrawer/ButtonDrawer');
 var ModalContainer = require('./pages/components/global/ModalContainer/ModalContainer');
 
 /**
@@ -52,7 +54,9 @@ var Routes = (
 
 		<Route name="table"          path="/components/table"          handler={Table} />
 
+		<Route name="tooltip"        path="/components/tooltip"        handler={Tooltip} />
 		<Route name="modalcontainer" path="/components/modalcontainer" handler={ModalContainer} />
+		<Route name="buttondrawer"   path="/components/buttondrawer"   handler={ButtonDrawer} />
 
 		<Route name="dropdown"       path="/components/dropdown"       handler={DropdownSelect} />
 		<Route name="input"          path="/components/input"          handler={Input} />
