@@ -111,9 +111,11 @@ var Details = React.createClass({
 					<div id="content">
 						<Br.Row>
 							<Br.Column grid="lg" size="9">
-								<p>The ButtonDrawer component is useful for  </p>
+								<h2>Overview</h2>
+								<p>The ButtonDrawer component is useful for adding multiple actionable events to a page without taking up a lot of valuable screen space.  Hover the fab button in the buttom right to see what it looks like in action.</p>
+								<p>Please note that the hidden button elements are shown by hovering the button drawer.  Since there are no hover events on mobile, tapping the drawer will show all buttons, and tapping outside the drawer will hide them.</p>
 
-								<h3>Customizing</h3>
+								<h2>Customizing</h2>
 								<p>The ButtonDrawer is built with icon fonts in mind.  We've made it compatible with any css-based icon font by adding the <code>iconClass</code> property to the component. For example, to use the ButtonDrawer with <a href="http://fontawesome.io">Font Awesome</a>, you would set the ButtonDrawer's <code>ButtonDrawer iconClass="fa"</code></p>
 
 								<p>This allows for quick integration with your current workflow and styling choices.</p>

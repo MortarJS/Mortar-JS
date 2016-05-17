@@ -89,9 +89,17 @@ var Tooltip = React.createClass({
 
 									<Br.Row>
 										<Br.Column grid="lg" size="12">
+											<h2>Overview</h2>
 											<br />
 											<p>Tooltips can be applied to any object! Simply wrap your component in the Mortar Tooltip component, and the tooltip will show up on hover.</p>
 											<p>Below are all the customization options that can be applied to the tooltip.</p>
+										</Br.Column>
+									</Br.Row>
+
+									<Br.Row>
+										<Br.Column grid="lg" size="12">
+											<h2>Customizing</h2>
+											<p>Below are all of the props that can be passed to the tooltip to customize it!  Try playing around to see how it changes!</p>
 										</Br.Column>
 									</Br.Row>
 
@@ -121,7 +129,7 @@ var Tooltip = React.createClass({
 
 												<Br.Column grid="lg" size="4">
 													<Br.Row>
-														<Br.Form.Input fieldKey="text" type="text" label="text" required="true" />
+														<Br.Form.Input fieldKey="text" type="text" label="text (required)" required={true} />
 													</Br.Row>
 
 													<Br.Row>
