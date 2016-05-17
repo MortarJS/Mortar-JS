@@ -77,7 +77,7 @@ module.exports = {
 			// stored in the compiled javascript file
 			{
 				test   : /\.css$/,
-				loaders: ['style', 'css', 'postcss'],
+				loaders: ['style', 'css', 'postcss']
 			},
 			// compile local images
 			// hash file names to prevent cacheing
@@ -117,7 +117,13 @@ module.exports = {
 			}
 		]
 	},
+
 	postcss: [ autoprefixer({ browsers: ['last 2 versions']  })  ],
+
+	devServer: {
+		port: 21356
+	},
+
 	plugins: [
 		new CleanWebpackPlugin(['build'], {
 			root   : __dirname + '/',

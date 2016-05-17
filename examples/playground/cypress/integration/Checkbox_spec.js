@@ -1,6 +1,6 @@
 describe("Checkbox", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080");
+		cy.visit("http://localhost:21356");
 	});
 
 	it("can navigate to Checkbox", function () {
@@ -11,7 +11,7 @@ describe("Checkbox", function () {
 	});
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/checkbox");
+		cy.visit("http://localhost:21356/#/components/checkbox");
 	});
 
 	context("Selecting Values", function() {

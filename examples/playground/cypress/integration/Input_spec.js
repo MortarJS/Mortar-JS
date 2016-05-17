@@ -1,6 +1,6 @@
 describe("Input", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080");
+		cy.visit("http://localhost:21356");
 	});
 
 	it("can navigate to Input", function () {
@@ -13,7 +13,7 @@ describe("Input", function () {
 
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/input");
+		cy.visit("http://localhost:21356/#/components/input");
 	});
 
 	it("can type username in input field", function () {
