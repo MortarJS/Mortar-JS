@@ -21,7 +21,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 var ToolTip = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
-	getInitialState: function () {
+	getInitialState: function() {
 		return {
 			params      : {},
 			formIsValid : true
@@ -35,10 +35,10 @@ var ToolTip = React.createClass({
 					store: FormStore
 				},
 				{
-					store: UsersStore,
-					bindTo: 'users',
-					action: UsersStore.getResourceListData,
-					options: this.getOptions
+					store   : UsersStore,
+					bindTo  : 'users',
+					action  : UsersStore.getResourceListData,
+					options : this.getOptions
 				}
 			]
 		};

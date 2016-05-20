@@ -30,7 +30,7 @@ var SpinnerToggle          = require('./components/SpinnerToggle');
 var Table = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation, TabbedComponentMixin],
 
-	getInitialState: function () {
+	getInitialState: function() {
 		return {
 			workingResource: [
 				{
@@ -53,7 +53,8 @@ var Table = React.createClass({
 					'hands'      : 1,
 					'occupation' : 'Jedi',
 					'email'      : 'lskywalker@galaxyfarfaraway.com'
-				}, {
+				},
+				{
 					'name'       : 'R2-D2',
 					'username'   : 'artoo',
 					'hands'      : 0,
@@ -73,7 +74,8 @@ var Table = React.createClass({
 					'hands'      : 2,
 					'occupation' : 'First Officer',
 					'email'      : 'starwarsfurlife@galaxyfarfaraway.com'
-				}],
+				}
+			],
 			params        : {},
 			openEditModal : false,
 			formIsValid   : true,
@@ -172,7 +174,6 @@ var Table = React.createClass({
 							<Br.Column grid="lg" size="6" classes="col-lg-offset-1">
 								<h1 className="page-header">Table</h1>
 							</Br.Column>
-
 						</Br.Row>
 						{this._buildTabView()}
 					</div>

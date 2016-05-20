@@ -21,7 +21,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 var DefaultTable = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
-	getInitialState: function () {
+	getInitialState: function() {
 		return {
 			params        : {},
 			formIsValid   : true
@@ -73,11 +73,9 @@ var DefaultTable = React.createClass({
 								options={tableOptions} />
 						</Br.Column>
 					</Br.Row>
-
 				</div>
 			</div>
 		);
-
 	}
 });
 
