@@ -1,0 +1,113 @@
+$width: 150px;
+$height: 50px;
+
+.mortar-tooltip-container {
+  position: relative;
+  display: inline-block;
+
+  .mortar-tooltip {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    opacity: 0;
+    visibility: hidden;
+
+    height: $height;
+    width: $width;
+    text-align: center;
+    line-height: $height / 2;
+    border-radius: 5px;
+    z-index: 1001;
+
+    -webkit-filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+
+    transition: opacity .2s ease-in-out;
+
+    &.left,
+    &.right,
+    &.top,
+    &.bottom {
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+
+        background: inherit;
+        transform: rotate(45deg);
+      }
+    }
+
+    &.left,
+    &.right {
+      top: 50%;
+      margin-top: -$height / 2;
+    }
+
+    &.top,
+    &.bottom {
+      left: 50%;
+      margin-left: -$width / 2;
+    }
+
+    &.left {
+      right: 100%;
+      padding-right: 15px;
+      margin-right: 10px;
+
+      &:after {
+        right: -7px;
+        left: initial;
+
+      }
+    }
+
+    &.right {
+      left: 100%;
+      padding-left: 15px;
+      margin-left: 10px;
+
+      &:after {
+        left: -7px;
+        right: initial;
+
+      }
+    }
+
+    &.top {
+      bottom: 100%;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+
+      &:after {
+        bottom: -7px;
+        top: initial;
+
+      }
+    }
+
+    &.bottom {
+      top: 100%;
+      padding-top: 15px;
+      margin-top: 10px;
+
+      &:after {
+        top: -7px;
+        bottom: initial;
+
+      }
+    }
+  }
+
+  &:hover .mortar-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}

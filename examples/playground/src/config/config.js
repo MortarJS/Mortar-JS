@@ -73,8 +73,16 @@ module.exports = {
 			"href"      : "",
 			"children"  : [
 				{
+					"buttonName": "Tooltip",
+					"href"      : "#/components/tooltip"
+				},
+				{
 					"buttonName": "ModalContainer",
 					"href"      : "#/components/modalcontainer"
+				},
+				{
+					"buttonName": "ButtonDrawer",
+					"href"      : "#/components/buttondrawer"
 				}
 			]
 		}

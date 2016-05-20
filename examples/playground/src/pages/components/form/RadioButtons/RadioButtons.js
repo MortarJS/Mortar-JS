@@ -96,7 +96,7 @@ var RadioButton = React.createClass({
 									<Br.Row>
 										<Br.Column grid="lg" size="10">
 											<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>
-												<Br.Row>
+												<Br.Row classes="season-select">
 													<h3>Radio Buttons</h3>
 													<Br.Column grid="lg" size="4">
 														<Br.Form.RadioButtons key="seasonRadio" fieldKey='season'
@@ -105,11 +105,11 @@ var RadioButton = React.createClass({
 													</Br.Column>
 													<Br.Column grid="lg" size="6">
 														<b>Season value:</b>
-														<p>{this.state.workingResource.season}</p>
+														<p className="season-value">{this.state.workingResource.season}</p>
 													</Br.Column>
 												</Br.Row>
 
-												<Br.Row>
+												<Br.Row classes="disabled-select">
 													<h3>Disabled Radio Buttons</h3>
 													<Br.Column grid="lg" size="4">
 														<Br.Form.RadioButtons key="colorRadio" fieldKey='colors'
@@ -119,7 +119,7 @@ var RadioButton = React.createClass({
 													</Br.Column>
 													<Br.Column grid="lg" size="6">
 														<b>Color value:</b>
-														<p>{this.state.workingResource.colors}</p>
+														<p className="disabled-value">{this.state.workingResource.colors}</p>
 													</Br.Column>
 												</Br.Row>
 											</Br.Form>
