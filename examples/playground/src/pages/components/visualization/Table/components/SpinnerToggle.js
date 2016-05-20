@@ -21,7 +21,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 var SpinnerToggle = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
-	getInitialState: function () {
+	getInitialState: function() {
 		return {
 			params          : {},
 			workingResource : [],
@@ -61,7 +61,7 @@ var SpinnerToggle = React.createClass({
 		}
 	},
 
-	handleToggle: function () {
+	handleToggle: function() {
 		this.setState({
 			emptyText: ! this.state.emptyText
 		});

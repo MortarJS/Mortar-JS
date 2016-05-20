@@ -21,7 +21,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 var DraggableTable = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
-	getInitialState: function () {
+	getInitialState: function() {
 		return {
 			params      : {},
 			formIsValid : true
@@ -35,10 +35,10 @@ var DraggableTable = React.createClass({
 					store: FormStore
 				},
 				{
-					store: UsersStore,
-					bindTo: 'users',
-					action: UsersStore.getResourceListData,
-					options: this.getOptions
+					store   : UsersStore,
+					bindTo  : 'users',
+					action  : UsersStore.getResourceListData,
+					options : this.getOptions
 				}
 			]
 		};
@@ -80,7 +80,6 @@ var DraggableTable = React.createClass({
 				</div>
 			</div>
 		);
-
 	}
 });
 

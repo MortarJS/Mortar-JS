@@ -21,7 +21,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 var EditableRows = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
-	getInitialState: function () {
+	getInitialState: function() {
 		return {
 			params        : {},
 			modalResource : {},
@@ -69,11 +69,11 @@ var EditableRows = React.createClass({
 		}
 	},
 
-	handleUpdate: function () {
+	handleUpdate: function() {
 
 	},
 
-	closeModal: function () {
+	closeModal: function() {
 		this.setState({
 			openEditModal: false
 		});
