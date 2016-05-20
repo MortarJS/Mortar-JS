@@ -83,6 +83,14 @@
  * Custom CSS
  */
 
+.btn-group {
+  button {
+    &.active {
+      background: rgba(0, 0, 0, .075) !important;
+    }
+  }
+}
+
 .alert-container {
   position: absolute;
   top: 5%;
