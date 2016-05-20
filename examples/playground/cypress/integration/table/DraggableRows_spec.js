@@ -1,6 +1,6 @@
 describe("Draggable Rows", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/table");
+		cy.visit("http://localhost:21356/#/components/table");
 	});
 
 // @TODO Dragging tests with Cypress

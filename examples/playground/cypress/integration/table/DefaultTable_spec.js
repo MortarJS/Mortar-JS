@@ -1,6 +1,6 @@
 describe("Table", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080");
+		cy.visit("http://localhost:21356");
 	});
 
 	it("can navigate to Table", function () {
@@ -13,7 +13,7 @@ describe("Table", function () {
 	});
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/table");
+		cy.visit("http://localhost:21356/#/components/table");
 	});
 
 	context("Navigate to Default Table", function () {

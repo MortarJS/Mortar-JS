@@ -1,6 +1,6 @@
 describe("Actionable Rows", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/table");
+		cy.visit("http://localhost:21356/#/components/table");
 	});
 
 	context("Navigate to Actionable Rows Table", function () {
