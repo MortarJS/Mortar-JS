@@ -1,6 +1,6 @@
 describe("DropdownSelect", function () {
 	beforeEach(function () {
-		cy.visit("http://localhost:8080");
+		cy.visit("http://localhost:21356");
 	});
 
 	it("can navigate to DropdownSelect", function () {
@@ -12,7 +12,7 @@ describe("DropdownSelect", function () {
 
 
 	beforeEach(function () {
-		cy.visit("http://localhost:8080/#/components/dropdown");
+		cy.visit("http://localhost:21356/#/components/dropdown");
 	});
 
 	context("Selecting Values", function() {

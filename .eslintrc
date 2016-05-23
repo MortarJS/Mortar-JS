@@ -54,7 +54,7 @@
     "consistent-return": 1,                // require return statements to either always or never specify values
     "curly": 1,                            // specify curly brace conventions for all control statements
     "default-case": 2,                     // require default case in switch statements (off by default)
-    "dot-location": "property",            // when seperating dot member expressions with newlines, dot should be on the newline
+    "dot-location": ["error", "property"],  // when seperating dot member expressions with newlines, dot should be on the newline
     "dot-notation": 1,                     // encourages use of dot notation whenever possible
     "eqeqeq": 1,                           // require the use of === and !==
     "guard-for-in": 1,                     // make sure for-in loops have an if statement (off by default)

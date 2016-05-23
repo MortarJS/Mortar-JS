@@ -1,6 +1,6 @@
-var React         = require('react');
+var React = require('react');
 
-import {Router, Route, Link, IndexRoute} from 'react-router';
+import {Route, IndexRoute} from 'react-router';
 
 /**
  * Components
@@ -31,6 +31,8 @@ var TextArea       = require('./pages/components/form/TextArea/TextArea');
 var Table          = require('./pages/components/visualization/Table/Table');
 
 // Global Components
+var Tooltip        = require('./pages/components/global/Tooltip/Tooltip');
+var ButtonDrawer   = require('./pages/components/global/ButtonDrawer/ButtonDrawer');
 var ModalContainer = require('./pages/components/global/ModalContainer/ModalContainer');
 
 /**
@@ -48,9 +50,9 @@ var Routes = (
 
 			<Route path="components/">
 				<Route path="table"          component={Table} />
-
-				<Route path="modalcontainer" component={ModalContainer} />
-
+				<Route name="tooltip"        component={Tooltip} />
+				<Route name="modalcontainer" component={ModalContainer} />
+				<Route name="buttondrawer"   component={ButtonDrawer} />
 				<Route path="dropdown"       component={DropdownSelect} />
 				<Route path="input"          component={Input} />
 				<Route path="toggle"         component={Toggle} />
