@@ -23,8 +23,8 @@ var DefaultTable = React.createClass({
 
 	getInitialState: function() {
 		return {
-			params        : {},
-			formIsValid   : true
+			params      : {},
+			formIsValid : true
 		};
 	},
 

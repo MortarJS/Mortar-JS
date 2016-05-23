@@ -9,7 +9,9 @@ describe("Actionable Rows", function () {
 				cy.contains("spinner").click();
 			});
 
-			cy.get(".table-responsive").find(".spinner-loader").should("exist");
+			cy.get(".table-responsive")
+				.find(".spinner-loader")
+				.should("exist");
 		});
 
 		it("can navigate to 'spinner' from tab options and toggle spinner off", function () {
@@ -18,10 +20,14 @@ describe("Actionable Rows", function () {
 			});
 
 			cy.get(".mortar-toggle").within(function () {
-				cy.get("label").last().click();
+				cy.get("label")
+					.last()
+					.click();
 			})
 
-			cy.get(".table-responsive").find(".table-empty-row").should("exist");
+			cy.get(".table-responsive")
+				.find(".table-empty-row")
+				.should("exist");
 		});
 	});
 });

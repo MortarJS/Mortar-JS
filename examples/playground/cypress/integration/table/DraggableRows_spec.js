@@ -11,8 +11,8 @@ describe("Draggable Rows", function () {
 			});
 			cy.get(".table-responsive").within(function () {
 				cy.get(".table-row")
-				.first()
-				.should("contain", "Darth Vader");
+					.first()
+					.should("contain", "Darth Vader");
 			});
 		});
 	});

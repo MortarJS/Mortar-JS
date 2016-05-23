@@ -6,16 +6,17 @@ describe("Actionable Rows", function () {
 	context("Navigate to Actionable Rows Table", function () {
 		it("can navigate to 'actionable rows' from tab options", function () {
 			cy.get(".btn-group").within(function () {
-				cy.contains("actionable rows").click();
+				cy.contains("actionable rows")
+					.click();
 			});
 			cy.get(".table-responsive").within(function () {
 				cy.get(".table-row")
-				.first()
-				.should("contain", "Darth Vader");
+					.first()
+					.should("contain", "Darth Vader");
 				cy.get(".table-row")
-				.first()
-				.contains("edit")
-				.click();
+					.first()
+					.contains("edit")
+					.click();
 			});
 		});
 	});

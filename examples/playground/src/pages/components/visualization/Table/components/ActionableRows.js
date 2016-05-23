@@ -112,21 +112,21 @@ var EditableRows = React.createClass({
 														type="text" label="Name"
 														placeholder="User's Name"
 													/>
-													<Br.Form.Input fieldKey="username"
+												<Br.Form.Input fieldKey="username"
 														type="text" label="Username"
 														placeholder="Username"
 													/>
-													<Br.Form.Input fieldKey="email"
+												<Br.Form.Input fieldKey="email"
 														type="text" label="Email"
 														placeholder="Email"
 													/>
-												</Br.Column>
-											</Br.Row>
-										</Br.Form>
-									</Br.Row>
-								</div>
-							</Br.Modal>
-						</Br.Row>
+											</Br.Column>
+										</Br.Row>
+									</Br.Form>
+								</Br.Row>
+							</div>
+						</Br.Modal>
+					</Br.Row>
 				</div>
 			</div>
 		);
