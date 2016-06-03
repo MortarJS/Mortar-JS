@@ -100,6 +100,7 @@ var Tooltip = React.createClass({
 										<Br.Column grid="lg" size="12">
 											<h2>Customizing</h2>
 											<p>Below are all of the props that can be passed to the tooltip to customize it!  Try playing around to see how it changes!</p>
+											<p>Please note that as of React 15, units are requred when specifying lengths.  As such, the <b>width</b> and <b>height</b> properties will require a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">valid CSS unit</a> to work properly.  If one is not provided, Mortar will do it's best to make sense of the input.</p>
 										</Br.Column>
 									</Br.Row>
 
