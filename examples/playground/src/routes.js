@@ -50,9 +50,9 @@ var Routes = (
 
 			<Route path="components/">
 				<Route path="table"          component={Table} />
-				<Route name="tooltip"        component={Tooltip} />
-				<Route name="modalcontainer" component={ModalContainer} />
-				<Route name="buttondrawer"   component={ButtonDrawer} />
+				<Route path="tooltip"        component={Tooltip} />
+				<Route path="modalcontainer" component={ModalContainer} />
+				<Route path="buttondrawer"   component={ButtonDrawer} />
 				<Route path="dropdown"       component={DropdownSelect} />
 				<Route path="input"          component={Input} />
 				<Route path="toggle"         component={Toggle} />
