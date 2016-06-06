@@ -48,10 +48,10 @@ var AuthenticationApi = {
 		var options = {
 			modifiers: {
 				user: {
-					app   : 'cms'
+					app: 'cms'
 				}
 			},
-			noAuth:    true
+			noAuth: true
 		};
 
 		// Apply the unknown set of keys to the options object
