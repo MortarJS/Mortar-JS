@@ -1,5 +1,4 @@
 var api = require('./ApiService');
-var assign = require('react/lib/Object.assign');
 var config = require('../config/config').base;
 
 var AuthenticationApi = {
@@ -12,7 +11,7 @@ var AuthenticationApi = {
 	},
 
 	login: function (requestObject, cb) {
-		var data = assign(this.client, {
+		var data = Object.assign(this.client, {
 			"grant_type" : "password"
 		});
 
@@ -25,7 +24,7 @@ var AuthenticationApi = {
 	},
 
 	refreshToken: function (refreshToken, cb, failedAuthHandler) {
-		var data = assign(this.client, {
+		var data = Object.assign(this.client, {
 			"grant_type"    : "refresh_token",
 			"refresh_token" : refreshToken,
 		});
@@ -65,7 +64,7 @@ var AuthenticationApi = {
 	},
 
 	resetPassword: function (data, options, cb) {
-		var data = assign(this.client, data);
+		var data = Object.assign(this.client, data);
 
 		options.noAuth = true;
 

@@ -108,11 +108,11 @@ describe("ModalContainer", function () {
 		});
 
 		it("can have variable width", function() {
-			cy.get('form').find("input").eq(3).clear().type('300');
+			cy.get('form').find("input").eq(3).clear().type('300px');
 			cy.get('button').contains("Open Modal").click();
 
-			cy.get('.mortar-modal-component').should(function($modal) {
-				expect(Cypress.$('.mortar-modal-dialog').width()).to.equal(300);
+			cy.get('.mortar-modal-dialog').should(function($modal) {
+				expect($modal.width()).to.equal(300);
 			});
 		});
 

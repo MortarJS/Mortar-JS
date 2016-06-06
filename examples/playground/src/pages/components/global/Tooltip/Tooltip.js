@@ -27,8 +27,8 @@ var Tooltip = React.createClass({
 			workingResource: {
 				text        : "I'm a tooltip!",
 				orientation : "top",
-				width       : 300,
-				height      : 50,
+				width       : "300px",
+				height      : "50px",
 				color       : "black",
 				background  : "white",
 				keepOpen    : true
@@ -100,6 +100,7 @@ var Tooltip = React.createClass({
 										<Br.Column grid="lg" size="12">
 											<h2>Customizing</h2>
 											<p>Below are all of the props that can be passed to the tooltip to customize it!  Try playing around to see how it changes!</p>
+											<p>Please note that as of React 15, units are requred when specifying lengths.  As such, the <b>width</b> and <b>height</b> properties will require a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">valid CSS unit</a> to work properly.  If one is not provided, Mortar will do it's best to make sense of the input.</p>
 										</Br.Column>
 									</Br.Row>
 
@@ -133,10 +134,10 @@ var Tooltip = React.createClass({
 													</Br.Row>
 
 													<Br.Row>
-														<Br.Form.Input fieldKey="width" type="number" label="width" placeholder="300px"/>
+														<Br.Form.Input fieldKey="width" type="text" label="width" placeholder="300px"/>
 													</Br.Row>
 													<Br.Row>
-														<Br.Form.Input fieldKey="height" type="number" label="height" placeholder="50px"/>
+														<Br.Form.Input fieldKey="height" type="text" label="height" placeholder="50px"/>
 													</Br.Row>
 
 												</Br.Column>
@@ -150,14 +151,14 @@ var Tooltip = React.createClass({
 												</Br.Column>
 
 												<Br.Column grid="lg" size="4">
-													<Br.Tooltip text="Try a hex value, a rgba declaration, or a css color constant!" orientation="top" width="200" height="75">
+													<Br.Tooltip text="Try a hex value, a rgba declaration, or a css color constant!" orientation="top" width="200px" height="110px">
 														<Br.Row>
 															<Br.Form.Input fieldKey="color" type="text" label="color" placeholder="50px"/>
 														</Br.Row>
 													</Br.Tooltip>
 
 													<Br.Row>
-														<Br.Tooltip text="Try a hex value, or a css color constant!" orientation="top" width="200" height="75">
+														<Br.Tooltip text="Try a hex value, a rgba declaration, or a css color constant!" orientation="top" width="200px" height="110px">
 															<Br.Form.Input fieldKey="background" type="text" label="background" placeholder="50px"/>
 														</Br.Tooltip>
 													</Br.Row>

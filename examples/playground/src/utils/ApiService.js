@@ -1,7 +1,6 @@
 var MortarJS = require('../bootstrap').MortarJS;
 var S = require('reqwest');
 var _ = require('lodash');
-var assign = require('react/lib/Object.assign');
 var ErrorHandler = MortarJS.Utils.ErrorHandler;
 var SuccessHandler = MortarJS.Utils.SuccessHandler;
 var PaginationActionCreators = MortarJS.Actions.PaginationActionCreators;
@@ -29,7 +28,7 @@ var ApiService = {
 	 * @returns {*|exports}
 	 */
 	mergeHeaders: function (userHeaders) {
-		return assign(this.authorizationHeader(), userHeaders);
+		return Object.assign(this.authorizationHeader(), userHeaders);
 	},
 
 	/**
