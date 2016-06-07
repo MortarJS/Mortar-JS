@@ -53,6 +53,10 @@ module.exports = {
 				{
 					"buttonName": "Text Area",
 					"href"      : "#/components/textarea"
+				},
+				{
+					"buttonName": "Time Picker",
+					"href"      : "#/components/timepicker"
 				}
 			]
 		},

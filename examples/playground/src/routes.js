@@ -26,6 +26,7 @@ var RadioButtons   = require('./pages/components/form/RadioButtons/RadioButtons'
 var Checkbox       = require('./pages/components/form/Checkbox/Checkbox');
 var FileInput      = require('./pages/components/form/FileInput/FileInput');
 var TextArea       = require('./pages/components/form/TextArea/TextArea');
+var TimePicker     = require('./pages/components/form/TimePicker/TimePicker');
 
 // Visualization Components
 var Table          = require('./pages/components/visualization/Table/Table');
@@ -61,6 +62,7 @@ var Routes = (
 			<Route path="checkbox"       component={Checkbox} />
 			<Route path="fileinput"      component={FileInput} />
 			<Route path="textarea"       component={TextArea} />
+			<Route path="timepicker"     component={TimePicker} />
 		</Route>
 
 
