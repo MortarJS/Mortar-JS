@@ -1,6 +1,5 @@
 var config = require('../config/config');
 var api = require('./ApiService');
-var assign = require('react/lib/Object.assign');
 
 var ResourceApi = {
 	baseUrl: config.base.apiVersionedUrl + 'users',

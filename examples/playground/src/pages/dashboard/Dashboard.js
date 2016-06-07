@@ -3,10 +3,10 @@ var React    = require('react');
 var MortarJS = require('../../app-container').MortarJS;
 
 // Assets
-var logo = require('../../public/images/logo.png');
+var logo     = require('../../public/images/logo.png');
 
 // Bricks
-var Br      = MortarJS.require('components', 'Row', 'Column', 'Form', 'Table');
+var Br       = MortarJS.require('components', 'Row', 'Column', 'Form', 'Table');
 
 /**
  * The Dashboard list page view component

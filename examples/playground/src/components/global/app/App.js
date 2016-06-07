@@ -1,14 +1,16 @@
-var MortarJS = require('../../../bootstrap').MortarJS;
-var React = require('react');
-var Router = require('react-router');
-var assign = require('react/lib/Object.assign');
-var RouteHandler = Router.RouteHandler;
-var Login = MortarJS.Components.Authentication.Login.Login;
-var AlertHandler = MortarJS.Components.Global.AlertHandler;
-var Header = require('../header/Header');
-var CmsUserStore = require('../../../stores/CmsUserStore');
-var SignOutConfirmationModal =  require('../../authentication/login/SignOutConfirmationModal');
-var RequireAuth = require('../../authentication/RequireAuthentication');
+var React                    = require('react');
+var MortarJS                 = require('../../../bootstrap').MortarJS;
+
+var Login                    = MortarJS.Components.Authentication.Login.Login;
+var Header                   = require('../header/Header');
+
+
+var RequireAuth              = require('../../authentication/RequireAuthentication');
+var AlertHandler             = MortarJS.Components.Global.AlertHandler;
+var CmsUserStore             = require('../../../stores/CmsUserStore');
+var SignOutConfirmationModal = require('../../authentication/login/SignOutConfirmationModal');
+
+import {Router} from 'react-router';''
 
 /**
  * Wrapper for the CMS application
@@ -79,7 +81,7 @@ var App = RequireAuth(
 					<div id="wrapper">
 						<Header />
 
-						<RouteHandler />
+						{this.props.children}
 
 						<AlertHandler />
 

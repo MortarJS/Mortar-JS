@@ -1,7 +1,6 @@
 var MortarJS = require('../bootstrap').MortarJS;
 var AppDispatcher = MortarJS.Dispatcher;
 var AppActionConstants = require('../constants/AppActionConstants');
-var assign = require('react/lib/Object.assign');
 var ModelStore = MortarJS.Stores.ModelStore;
 
 var ActionTypes = AppActionConstants.ActionTypes.cmsUser;
@@ -23,7 +22,7 @@ var _passwordResetSent = null;
 var _requestingSignOut = false;
 var _verifyingAccessToken = false;
 
-var CmsUserStore = assign({}, ModelStore, {
+var CmsUserStore = Object.assign({}, ModelStore, {
 	getToken: function () {
 		var tokenStore = this._getLocalTokenStore();
 		return tokenStore !== null ? tokenStore.accessToken : _user._tokenStore.accessToken;

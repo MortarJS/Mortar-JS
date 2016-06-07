@@ -290,33 +290,6 @@
   }
 }
 
-.typeahead-option {
-  background-color: aliceblue;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 100px;
-  margin-bottom: 4px;
-  max-width: 30%;
-  float: left;
-  margin-right: 1%;
-  text-decoration: none;
-  //  margin-left: 25%;
-}
-
-.typeahead-option:hover {
-  background-color: rgb(161, 182, 200);
-  text-decoration: none;
-}
-
-.typeahead-option-selected {
-  background-color: rgb(161, 182, 200);
-  text-decoration: none;
-}
-
-.typeahead-select-label {
-  display: block;
-}
-
 .upload-overlay span {
   position: absolute;
   top: 25%;
