@@ -18,6 +18,7 @@ var ActionableRows         = require('./components/ActionableRows');
 var DraggableRows          = require('./components/DraggableRows');
 var SummableRows           = require('./components/SummableRows');
 var SpinnerToggle          = require('./components/SpinnerToggle');
+var ToolTip                = require('./components/ToolTip');
 
 /**
  * Table
@@ -119,6 +120,10 @@ var Table = React.createClass({
 			'spinner': {
 				'mods'    : [],
 				'content' : <SpinnerToggle tableKeys={this.tableKeys} />
+			},
+			'tooltip': {
+				'mods'    : [],
+				'content' : <ToolTip tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
 			}
 		};
 	},
@@ -132,11 +137,11 @@ var Table = React.createClass({
 	},
 
 	tableKeys: {
-		"Name"                    : "name",
-		"Username"                : "username",
-		"Number of Organic Hands" : "hands",
-		"Occupation"              : "occupation",
-		"Email"                   : "email"
+		"Name"       : "name",
+		"Username"   : "username",
+		"Hands"      : "hands",
+		"Occupation" : "occupation",
+		"Email"      : "email"
 	},
 
 	render: function() {

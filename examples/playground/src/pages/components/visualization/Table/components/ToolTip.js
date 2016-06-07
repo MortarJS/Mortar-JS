@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
@@ -8,18 +7,17 @@ var Br                     = MortarJS.require('components', 'Row', 'Column', 'Ta
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
-var UsersStore             = require('../../../../../stores/UsersStore');
 
 // Mixins
 var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 
 /**
- * ToolTip
+ * Default Table
  *
  * @type {*|Function}
  */
 var ToolTip = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function() {
 		return {
@@ -33,12 +31,6 @@ var ToolTip = React.createClass({
 			stores: [
 				{
 					store: FormStore
-				},
-				{
-					store   : UsersStore,
-					bindTo  : 'users',
-					action  : UsersStore.getResourceListData,
-					options : this.getOptions
 				}
 			]
 		};
@@ -52,17 +44,10 @@ var ToolTip = React.createClass({
 		this._componentWillUnmount();
 	},
 
-	handleAction: function(action, resource) {
-		switch (action) {
-			default:
-				break;
-		}
-	},
-
 	render: function() {
 		var tableOptions = {
 			tooltips: {
-				'Number of Organic Hands': 'The number of organic hands each character has'
+				'Hands': 'Number of organic hands the user has.'
 			}
 		};
 
