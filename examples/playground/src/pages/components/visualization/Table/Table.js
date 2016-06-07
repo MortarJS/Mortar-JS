@@ -32,6 +32,7 @@ var Table = React.createClass({
 		return {
 			workingResource: [
 				{
+					'id'         : '0',
 					'name'       : 'Darth Vader',
 					'username'   : 'lilorphanannie',
 					'hands'      : 0,
@@ -39,6 +40,7 @@ var Table = React.createClass({
 					'email'      : 'lilorphanannie@galaxyfarfaraway.com'
 				},
 				{
+					'id'         : '1',
 					'name'       : 'Leia Organa',
 					'username'   : 'lorgana',
 					'hands'      : 2,
@@ -46,6 +48,7 @@ var Table = React.createClass({
 					'email'      : 'lorgana@galaxyfarfaraway.com'
 				},
 				{
+					'id'         : '2',
 					'name'       : 'Luke Skywalker',
 					'username'   : 'lskywalker',
 					'hands'      : 1,
@@ -53,6 +56,7 @@ var Table = React.createClass({
 					'email'      : 'lskywalker@galaxyfarfaraway.com'
 				},
 				{
+					'id'         : '3',
 					'name'       : 'R2-D2',
 					'username'   : 'artoo',
 					'hands'      : 0,
@@ -60,6 +64,7 @@ var Table = React.createClass({
 					'email'      : 'artoo@galaxyfarfaraway.com'
 				},
 				{
+					'id'         : '4',
 					'name'       : 'Han Solo',
 					'username'   : 'solocup',
 					'hands'      : 2,
@@ -67,6 +72,7 @@ var Table = React.createClass({
 					'email'      : 'solocup@galaxyfarfaraway.com'
 				},
 				{
+					'id'         : '5',
 					'name'       : 'Chewbacca',
 					'username'   : 'chewbaclava',
 					'hands'      : 2,

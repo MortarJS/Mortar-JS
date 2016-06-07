@@ -8,26 +8,26 @@ var Br                     = MortarJS.require('components', 'Row', 'Column', 'Fo
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
-var UsersStore             = require('../../../../../stores/UsersStore');
+// var UsersStore             = require('../../../../../stores/UsersStore');
 
 // Mixins
 var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 
 /**
- * Editable Rows
+ * Actionable Rows
  *
  * @type {*|Function}
  */
-var EditableRows = React.createClass({
+var ActionableRows = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
 	getInitialState: function() {
 		return {
-			params        : {},
-			modalResource : {},
-			openEditModal : false,
-			formIsValid   : true
-
+			params          : {},
+			modalResource   : {},
+			workingResource : this.props.workingResource,
+			openEditModal   : false,
+			formIsValid     : true
 		};
 	},
 
@@ -35,17 +35,14 @@ var EditableRows = React.createClass({
 		return {
 			stores: [
 				{
-					store: FormStore
-				},
-				{
-					store   : UsersStore,
-					bindTo  : 'users',
-					action  : UsersStore.getResourceListData,
-					options : this.getOptions
+					store          : FormStore,
+					changeListener : this.bindResource
 				}
 			]
 		};
 	},
+
+	formKey: 'userForm',
 
 	componentDidMount: function() {
 		this._componentDidMount();
@@ -55,13 +52,18 @@ var EditableRows = React.createClass({
 		this._componentWillUnmount();
 	},
 
-	handleAction: function (action, resource) {
+	bindResource: function() {
+		this.setState({
+			modalResource: FormStore.getResource(this.formKey)
+		});
+	},
+
+	handleAction: function(action, resource) {
 		switch (action) {
 			case 'edit':
 				this.setState({
-					openEditModal     : true,
-					modalResource     : resource,
-					resourceOperation : action
+					openEditModal : true,
+					modalResource : resource
 				});
 				break;
 			default:
@@ -69,8 +71,19 @@ var EditableRows = React.createClass({
 		}
 	},
 
-	handleUpdate: function() {
+	updateResource: function() {
+		this.setState((previousState) => {
+			previousState.workingResource.forEach((row, i) => {
+				if (row.id === previousState.modalResource.id) {
+					previousState.workingResource[i] = previousState.modalResource;
+				}
+			});
 
+			previousState.openEditModal = false;
+			previousState.modalResource = {};
+
+			return previousState;
+		});
 	},
 
 	closeModal: function() {
@@ -92,45 +105,46 @@ var EditableRows = React.createClass({
 				<div id="page-content">
 					<Br.Row>
 						<Br.Column grid="lg" size="12">
-							<Br.Table data={this.props.workingResource}
-								dataKeys={this.props.tableKeys}
-								title={'Table with Editable Rows'}
-								options={tableOptions} />
+							<Br.Table data={this.state.workingResource}
+							dataKeys={this.props.tableKeys}
+							title={'Table with Actionable Rows'}
+							options={tableOptions} />
 						</Br.Column>
-
-						<Br.Modal openWhen={this.state.openEditModal}
-							title="Edit User"
-							closeText="Close" saveText="Save"
-							afterClose={this.closeModal} beforeConfirm={this.handleUpdate}>
-							<div className="edit-modal">
-								<Br.Row>
-									<Br.Form key="editUser" formKey="modalForm"
-											bindResource={this.state.modalResource}>
-										<Br.Row>
-											<Br.Column grid="sm" size="6">
-												<Br.Form.Input fieldKey="name"
-														type="text" label="Name"
-														placeholder="User's Name"
-													/>
-												<Br.Form.Input fieldKey="username"
-														type="text" label="Username"
-														placeholder="Username"
-													/>
-												<Br.Form.Input fieldKey="email"
-														type="text" label="Email"
-														placeholder="Email"
-													/>
-											</Br.Column>
-										</Br.Row>
-									</Br.Form>
-								</Br.Row>
-							</div>
-						</Br.Modal>
 					</Br.Row>
+
+					<Br.Modal openWhen={this.state.openEditModal}
+						title="Edit User"
+						closeText="Close" saveText="Save"
+						afterClose={this.closeModal} beforeConfirm={this.updateResource}>
+						<div className="edit-modal">
+							<Br.Row>
+								<Br.Form key="editUser" formKey={this.formKey}
+									bindResource={this.state.modalResource} >
+									<Br.Row>
+										<Br.Column grid="sm" size="6">
+											<Br.Form.Input fieldKey="name"
+												type="text" label="Name"
+												placeholder="User's Name"
+											/>
+											<Br.Form.Input fieldKey="username"
+												type="text" label="Username"
+												placeholder="Username"
+											/>
+											<Br.Form.Input fieldKey="email"
+												type="text" label="Email"
+												placeholder="Email"
+											/>
+										</Br.Column>
+									</Br.Row>
+								</Br.Form>
+							</Br.Row>
+						</div>
+					</Br.Modal>
+
 				</div>
 			</div>
 		);
 	}
 });
 
-module.exports = EditableRows;
+module.exports = ActionableRows;
