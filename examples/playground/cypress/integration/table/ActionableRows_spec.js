@@ -15,7 +15,7 @@ describe("Actionable Rows", function () {
 					.contains("edit")
 					.click();
 			});
-			cy.get(".modal-component").within(function () {
+			cy.get(".modal-container").within(function () {
 				cy.contains("Name")
 					.get("input")
 					.first()
@@ -38,7 +38,7 @@ describe("Actionable Rows", function () {
 					.contains("edit")
 					.click();
 			});
-			cy.get(".modal-component").within(function () {
+			cy.get(".modal-container").within(function () {
 				cy.contains("Name")
 					.get("input")
 					.first()
