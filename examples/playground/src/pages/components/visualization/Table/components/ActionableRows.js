@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
@@ -8,7 +7,6 @@ var Br                     = MortarJS.require('components', 'Row', 'Column', 'Fo
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
-// var UsersStore             = require('../../../../../stores/UsersStore');
 
 // Mixins
 var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
@@ -19,7 +17,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var ActionableRows = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function() {
 		return {

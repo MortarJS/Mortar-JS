@@ -16,13 +16,11 @@ describe("Actionable Rows", function () {
 					.click();
 			});
 			cy.get(".modal-container").within(function () {
-				cy.contains("Name")
-					.get("input")
+				cy.get("input")
 					.first()
 					.clear()
 					.type('Dark Helmet');
-				cy.get("button")
-					.contains("Confirm")
+				cy.contains("Confirm")
 					.click();
 			});
 			cy.get(".table-responsive").within(function () {
@@ -31,6 +29,7 @@ describe("Actionable Rows", function () {
 					.should("contain", "Dark Helmet");
 			});
 		});
+
 		it("can edit and not save user's name", function () {
 			cy.get(".table-responsive").within(function () {
 				cy.get(".table-row")
@@ -39,13 +38,11 @@ describe("Actionable Rows", function () {
 					.click();
 			});
 			cy.get(".modal-container").within(function () {
-				cy.contains("Name")
-					.get("input")
+				cy.get("input")
 					.first()
 					.clear()
 					.type('Barf');
-				cy.get("button")
-					.contains("Close")
+				cy.contains("Close")
 					.click();
 			});
 			cy.get(".table-responsive").within(function () {

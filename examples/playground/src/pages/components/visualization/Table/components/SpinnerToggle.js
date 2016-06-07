@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
@@ -8,7 +7,6 @@ var Br                     = MortarJS.require('components', 'Row', 'Column', 'Ta
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
-var UsersStore             = require('../../../../../stores/UsersStore');
 
 // Mixins
 var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
@@ -19,13 +17,13 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var SpinnerToggle = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function() {
 		return {
 			params          : {},
 			workingResource : [],
-			emptyText       : false,
+			toggleState     : { spinnerToggle: false },
 			formIsValid     : true
 		};
 	},
@@ -34,13 +32,8 @@ var SpinnerToggle = React.createClass({
 		return {
 			stores: [
 				{
-					store: FormStore
-				},
-				{
-					store   : UsersStore,
-					bindTo  : 'users',
-					action  : UsersStore.getResourceListData,
-					options : this.getOptions
+					store          : FormStore,
+					changeListener : this.bindResource
 				}
 			]
 		};
@@ -54,21 +47,16 @@ var SpinnerToggle = React.createClass({
 		this._componentWillUnmount();
 	},
 
-	handleAction: function(action, resource) {
-		switch (action) {
-			default:
-				break;
-		}
-	},
+	formKey: "toggleForm",
 
-	handleToggle: function() {
+	bindResource: function () {
 		this.setState({
-			emptyText: ! this.state.emptyText
+			toggleState: FormStore.getResource(this.formKey)
 		});
 	},
 
 	render: function() {
-		if (this.state.emptyText === true) {
+		if (this.state.toggleState.spinnerToggle === true) {
 			var tableOptions = {
 				hideSpinner : true,
 				emptyText   : 'This isn\'t the table you\'re looking for.'
@@ -81,9 +69,9 @@ var SpinnerToggle = React.createClass({
 			<div id="page-wrapper">
 				<div id="page-content">
 					<Br.Row>
-						<Br.Form key="myFancyForm" formKey={'userForm'} bindResource={this.state.workingResource}>
+						<Br.Form key="myFancyForm" formKey="toggleForm" bindResource={this.state.toggleState}>
 							<Br.Column grid="lg" size="5">
-								<Br.Form.Toggle fieldKey="spinnerToggle" fieldLabel="Toggle the Spinner" mods={[this.state.workingResource.mods]} changeCallback={this.handleToggle} />
+								<Br.Form.Toggle fieldKey="spinnerToggle" fieldLabel="Toggle the Spinner" mods={[this.state.workingResource.mods]} />
 							</Br.Column>
 						</Br.Form>
 

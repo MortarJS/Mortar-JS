@@ -1,19 +1,19 @@
-describe("Actionable Rows", function () {
-	beforeEach(function () {
+describe("Table Spinner", () => {
+	beforeEach(() => {
 		cy.visit("http://localhost:21356/#/components/table");
 		cy.get(".btn-group").within(function () {
 			cy.contains("spinner").click();
 		});
 	});
 
-	context("Navigate to Spinner Table", function () {
-		it("has spinner loader", function () {
+	context("Spinner Table", () => {
+		it("has spinner", () => {
 			cy.get(".table-responsive")
 				.find(".spinner-loader")
 				.should("exist");
 		});
 
-		it("can toggle spinner off", function () {
+		it("can toggle spinner off", () => {
 			cy.get(".mortar-toggle").within(function () {
 				cy.get("label")
 					.last()

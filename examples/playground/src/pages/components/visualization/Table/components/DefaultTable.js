@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
@@ -8,7 +7,6 @@ var Br                     = MortarJS.require('components', 'Row', 'Column', 'Ta
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
-var UsersStore             = require('../../../../../stores/UsersStore');
 
 // Mixins
 var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
@@ -19,7 +17,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var DefaultTable = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function() {
 		return {
@@ -33,12 +31,6 @@ var DefaultTable = React.createClass({
 			stores: [
 				{
 					store: FormStore
-				},
-				{
-					store   : UsersStore,
-					bindTo  : 'users',
-					action  : UsersStore.getResourceListData,
-					options : this.getOptions
 				}
 			]
 		};
@@ -50,13 +42,6 @@ var DefaultTable = React.createClass({
 
 	componentWillUnmount: function() {
 		this._componentWillUnmount();
-	},
-
-	handleAction: function(action, resource) {
-		switch (action) {
-			default:
-				break;
-		}
 	},
 
 	render: function() {

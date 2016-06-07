@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
 
 // Bricks
@@ -8,12 +7,12 @@ var Br                     = MortarJS.require('components', 'Row', 'Column', 'Fo
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
-var UsersStore             = require('../../../../stores/UsersStore');
 
 // Mixins
 var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
 var TabbedComponentMixin   = MortarJS.Mixins.TabbedComponentMixin;
 
+// Components
 var DefaultTable           = require('./components/DefaultTable');
 var ActionableRows         = require('./components/ActionableRows');
 var DraggableRows          = require('./components/DraggableRows');
@@ -26,7 +25,7 @@ var SpinnerToggle          = require('./components/SpinnerToggle');
  * @type {*|Function}
  */
 var Table = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation, TabbedComponentMixin],
+	mixins: [ResourceComponentMixin, TabbedComponentMixin],
 
 	getInitialState: function() {
 		return {
@@ -94,12 +93,6 @@ var Table = React.createClass({
 			stores: [
 				{
 					store: FormStore
-				},
-				{
-					store   : UsersStore,
-					bindTo  : 'users',
-					action  : UsersStore.getResourceListData,
-					options : this.getOptions
 				}
 			]
 		};
@@ -136,21 +129,6 @@ var Table = React.createClass({
 
 	componentWillUnmount: function() {
 		this._componentWillUnmount();
-	},
-
-	handleAction: function(action, resource) {
-		switch (action) {
-			default:
-				break;
-		}
-	},
-
-	getOptions: {
-		modifiers: {}
-	},
-
-	options: {
-		summableRows: ['hands']
 	},
 
 	tableKeys: {
