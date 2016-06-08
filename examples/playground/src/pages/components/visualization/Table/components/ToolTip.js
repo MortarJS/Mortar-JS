@@ -47,7 +47,13 @@ var ToolTip = React.createClass({
 	render: function() {
 		var tableOptions = {
 			tooltips: {
-				'Hands': 'Number of organic hands the user has.'
+				'Hands' : 'Number of organic hands the user has.',
+				'Name'  : {
+					text        : 'Data as of \'A New Hope\'',
+					width       : '200px',
+					height      : '60px',
+					orientation : 'bottom'
+				}
 			}
 		};
 
