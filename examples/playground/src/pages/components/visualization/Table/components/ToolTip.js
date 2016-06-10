@@ -50,7 +50,7 @@ var ToolTip = React.createClass({
 				'Hands' : 'Number of organic hands the user has.',
 				'Name'  : {
 					text        : 'Data as of \'A New Hope\'',
-					width       : '200px',
+					width       : '230px',
 					height      : '60px',
 					orientation : 'bottom'
 				}
