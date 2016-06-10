@@ -166,5 +166,4 @@ ResourceActions.prototype.refreshResourceList = function (data) {
 	this.listResource(this.options);
 };
 
-module.exports = ResourceActions;;
-
+module.exports = ResourceActions;
