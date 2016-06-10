@@ -39,108 +39,51 @@ var Table = React.createClass({
 			workingResource : [
 				{
 					'id'         : '0',
-					'first_name' : 'Darth',
-					'last_name'  : 'Vader',
+					'name'       : 'Darth Vader',
 					'username'   : 'lilorphanannie',
 					'hands'      : 0,
 					'occupation' : 'Sith Lord',
-					'email'      : 'lilorphanannie@galaxyfarfaraway.com',
-					'birthday'   : '1931-01-17',
-					'vehicles'   : [
-						[
-							'TIE Fighter'
-						]
-					]
+					'email'      : 'lilorphanannie@galaxyfarfaraway.com'
 				},
 				{
 					'id'         : '1',
-					'first_name' : 'Leia',
-					'last_name'  : 'Organa',
+					'name'       : 'Leia Organa',
 					'username'   : 'lorgana',
 					'hands'      : 2,
 					'occupation' : 'Rebel',
-					'email'      : 'lorgana@galaxyfarfaraway.com',
-					'birthday'   : '1956-10-21',
-					'vehicles'   : [
-						[
-							'Alderaan Cruiser'
-						],
-						[
-							'Tantive IV'
-						]
-					]
+					'email'      : 'lorgana@galaxyfarfaraway.com'
 				},
 				{
 					'id'         : '2',
-					'first_name' : 'Luke',
-					'last_name'  : 'Skywalker',
+					'name'       : 'Luke Skywalker',
 					'username'   : 'lskywalker',
 					'hands'      : 1,
 					'occupation' : 'Jedi',
-					'email'      : 'lskywalker@galaxyfarfaraway.com',
-					'birthday'   : '1951-09-25',
-					'vehicles'   : [
-						[
-							'X-wing Starfighter'
-						],
-						[
-							'Snowspeeder'
-						],
-						[
-							'X-34 Landspeeder'
-						],
-						[
-							'T-16 Skyhopper'
-						]
-					]
+					'email'      : 'lskywalker@galaxyfarfaraway.com'
 				},
 				{
 					'id'         : '3',
-					'first_name' : 'R2-D2',
-					'last_name'  : '',
+					'name'       : 'R2-D2',
 					'username'   : 'artoo',
 					'hands'      : 0,
 					'occupation' : 'Rebel Spy',
-					'email'      : 'artoo@galaxyfarfaraway.com',
-					'birthday'   : '1970-01-01',
-					'vehicles'   : [
-						[
-							'X-wing Starfighter'
-						],
-						[
-							'Jedi Starfighter'
-						]
-					]
+					'email'      : 'artoo@galaxyfarfaraway.com'
 				},
 				{
 					'id'         : '4',
-					'first_name' : 'Han',
-					'last_name'  : 'Solo',
+					'name'       : 'Han Solo',
 					'username'   : 'solocup',
 					'hands'      : 2,
 					'occupation' : 'Smuggler',
-					'email'      : 'solocup@galaxyfarfaraway.com',
-					'birthday'   : '1942-07-13',
-					'vehicles'   : [
-						[
-							'Millenium Falcon'
-						]
-					]
+					'email'      : 'solocup@galaxyfarfaraway.com'
 				},
 				{
 					'id'         : '5',
-					'first_name' : 'Chewbacca',
-					'last_name'  : '',
+					'name'       : 'Chewbacca',
 					'username'   : 'chewbaclava',
 					'hands'      : 2,
 					'occupation' : 'First Officer',
-					'email'      : 'starwarsfurlife@galaxyfarfaraway.com',
-					'birthday'   : '1944-05-19',
-					'vehicles'   : [
-						[
-							'Millenium Falcon'
-						]
-					]
+					'email'      : 'starwarsfurlife@galaxyfarfaraway.com'
 				}
 			]
 		};
@@ -184,7 +127,7 @@ var Table = React.createClass({
 			},
 			'mutator': {
 				'mods'    : [],
-				'content' : <MutatorTable workingResource={this.state.workingResource} />
+				'content' : <MutatorTable />
 			}
 		};
 	},
