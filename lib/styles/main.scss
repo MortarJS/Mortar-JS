@@ -8,7 +8,6 @@
 @import 'components/all';
 
 /* @overrides */
-
 .row {
   margin-left: 0px;
   margin-right: 0px;
@@ -82,6 +81,14 @@
 /**
  * Custom CSS
  */
+
+.btn-group {
+  button {
+    &.active {
+      background: rgba(0, 0, 0, .075) !important;
+    }
+  }
+}
 
 .alert-container {
   position: absolute;

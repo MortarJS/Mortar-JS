@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
 
 // Bricks
@@ -8,10 +7,18 @@ var Br                     = MortarJS.require('components', 'Row', 'Column', 'Fo
 
 // Stores
 var FormStore              = MortarJS.Stores.FormStore;
-var UsersStore             = require('../../../../stores/UsersStore');
 
 // Mixins
 var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
+var TabbedComponentMixin   = MortarJS.Mixins.TabbedComponentMixin;
+
+// Components
+var DefaultTable           = require('./components/DefaultTable');
+var ActionableRows         = require('./components/ActionableRows');
+var DraggableRows          = require('./components/DraggableRows');
+var SummableRows           = require('./components/SummableRows');
+var SpinnerToggle          = require('./components/SpinnerToggle');
+var ToolTip                = require('./components/ToolTip');
 
 /**
  * Table
@@ -19,34 +26,64 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var Table = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin, TabbedComponentMixin],
 
-	getInitialState: function () {
+	getInitialState: function() {
 		return {
 			workingResource: [
 				{
-					'name'     : 'Leia Organa',
-					'username' : 'lorgana',
-					'email'    : 'lorgana@galaxyfarfaraway.com'
+					'id'         : '0',
+					'name'       : 'Darth Vader',
+					'username'   : 'lilorphanannie',
+					'hands'      : 0,
+					'occupation' : 'Sith Lord',
+					'email'      : 'lilorphanannie@galaxyfarfaraway.com'
 				},
 				{
-					'name'     : 'Luke Skywalker',
-					'username' : 'lskywalker',
-					'email'    : 'lskywalker@galaxyfarfaraway.com'
+					'id'         : '1',
+					'name'       : 'Leia Organa',
+					'username'   : 'lorgana',
+					'hands'      : 2,
+					'occupation' : 'Rebel',
+					'email'      : 'lorgana@galaxyfarfaraway.com'
 				},
 				{
-					'name'     : 'Han Solo',
-					'username' : 'solocup',
-					'email'    : 'solocup@galaxyfarfaraway.com'
+					'id'         : '2',
+					'name'       : 'Luke Skywalker',
+					'username'   : 'lskywalker',
+					'hands'      : 1,
+					'occupation' : 'Jedi',
+					'email'      : 'lskywalker@galaxyfarfaraway.com'
 				},
 				{
-					'name'     : 'Chewbacca',
-					'username' : 'chewonthis',
-					'email'    : 'chewie@galaxyfarfaraway.com'
-				}],
+					'id'         : '3',
+					'name'       : 'R2-D2',
+					'username'   : 'artoo',
+					'hands'      : 0,
+					'occupation' : 'Rebel Spy',
+					'email'      : 'artoo@galaxyfarfaraway.com'
+				},
+				{
+					'id'         : '4',
+					'name'       : 'Han Solo',
+					'username'   : 'solocup',
+					'hands'      : 2,
+					'occupation' : 'Smuggler',
+					'email'      : 'solocup@galaxyfarfaraway.com'
+				},
+				{
+					'id'         : '5',
+					'name'       : 'Chewbacca',
+					'username'   : 'chewbaclava',
+					'hands'      : 2,
+					'occupation' : 'First Officer',
+					'email'      : 'starwarsfurlife@galaxyfarfaraway.com'
+				}
+			],
 			params        : {},
 			openEditModal : false,
 			formIsValid   : true,
+			activeTab     : 'default',
 			modalResource : {}
 
 		};
@@ -57,14 +94,37 @@ var Table = React.createClass({
 			stores: [
 				{
 					store: FormStore
-				},
-				{
-					store: UsersStore,
-					bindTo: 'users',
-					action: UsersStore.getResourceListData,
-					options: this.getOptions
 				}
 			]
+		};
+	},
+
+	tabs: function() {
+		return {
+			'default': {
+				'mods'    : [],
+				'content' : <DefaultTable tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			},
+			'actionable rows': {
+				'mods'    : [],
+				'content' : <ActionableRows tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			},
+			'draggable rows': {
+				'mods'    : [],
+				'content' : <DraggableRows tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			},
+			'summable rows': {
+				'mods'    : [],
+				'content' : <SummableRows tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			},
+			'spinner': {
+				'mods'    : [],
+				'content' : <SpinnerToggle tableKeys={this.tableKeys} />
+			},
+			'tooltip': {
+				'mods'    : [],
+				'content' : <ToolTip tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			}
 		};
 	},
 
@@ -76,110 +136,30 @@ var Table = React.createClass({
 		this._componentWillUnmount();
 	},
 
-	handleAction: function(action, resource) {
-		switch (action) {
-			case 'edit':
-				this.setState({
-					openEditModal: true,
-					modalResource: resource,
-					resourceOperation: action
-				});
-				break;
-			default:
-				break;
-		}
-	},
-
-	getOptions: {
-		modifiers: {
-		}
-	},
-
-	closeModal: function () {
-		this.setState({
-			openEditModal: false
-		})
-	},
-
 	tableKeys: {
-		"Name"    : "name",
-		"Username" : "username",
-		"Email"    : "email"
+		"Name"       : "name",
+		"Username"   : "username",
+		"Hands"      : "hands",
+		"Occupation" : "occupation",
+		"Email"      : "email"
 	},
 
 	render: function() {
-		var tableOptions = {};
-		var editableOptions = {
-			actionableRows: true,
-			actions: ['edit:primary'],
-			actionsCallback: this.handleAction,
-			mutators: {
-
-			}
-		};
-
 		return (
 			<div id="page-wrapper">
 				<div id="page-content">
 					<div id="content">
 						<Br.Row>
-							<Br.Column grid="lg" size="6">
+							<Br.Column grid="lg" size="6" classes="col-lg-offset-1">
 								<h1 className="page-header">Table</h1>
 							</Br.Column>
 						</Br.Row>
+						{this._buildTabView()}
 					</div>
-					<Br.Row>
-						<Br.Column grid="lg" size="12">
-							<Br.Table data={this.state.workingResource}
-								dataKeys={this.tableKeys}
-								title={'Table'}
-								options={tableOptions} />
-						</Br.Column>
-					</Br.Row>
-
-					<Br.Row>
-						<Br.Column grid="lg" size="12">
-							<Br.Table data={this.state.workingResource}
-								dataKeys={this.tableKeys}
-								title={'Table with Editable Rows'}
-								options={editableOptions} />
-						</Br.Column>
-
-						<Br.Modal openWhen={this.state.openEditModal}
-								title="Edit User"
-								closeText="Close" saveText="Save"
-								afterClose={this.closeModal}>
-							<div className="edit-modal">
-								<Br.Row>
-									<Br.Form key="editUser" formKey="modalForm"
-										bindResource={this.state.modalResource}>
-										<Br.Row>
-											<Br.Column grid="sm" size="6">
-												<Br.Form.Input fieldKey="name"
-													type="text" label="Name"
-													placeholder="User's Name"
-												/>
-												<Br.Form.Input fieldKey="username"
-													type="text" label="Username"
-													placeholder="Username"
-												/>
-												<Br.Form.Input fieldKey="email"
-													type="text" label="Email"
-													placeholder="Email"
-												/>
-											</Br.Column>
-										</Br.Row>
-									</Br.Form>
-								</Br.Row>
-							</div>
-						</Br.Modal>
-					</Br.Row>
 				</div>
 			</div>
 		);
-
 	}
 });
 
 module.exports = Table;
-
