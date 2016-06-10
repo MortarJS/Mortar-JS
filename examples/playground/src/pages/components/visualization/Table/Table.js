@@ -19,6 +19,7 @@ var DraggableRows          = require('./components/DraggableRows');
 var SummableRows           = require('./components/SummableRows');
 var SpinnerToggle          = require('./components/SpinnerToggle');
 var ToolTip                = require('./components/ToolTip');
+var MutatorTable           = require('./components/MutatorTable');
 
 /**
  * Table
@@ -30,54 +31,111 @@ var Table = React.createClass({
 
 	getInitialState: function() {
 		return {
-			workingResource: [
+			workingResource : [
 				{
 					'id'         : '0',
-					'name'       : 'Darth Vader',
+					'first_name' : 'Darth',
+					'last_name'  : 'Vader',
 					'username'   : 'lilorphanannie',
 					'hands'      : 0,
 					'occupation' : 'Sith Lord',
-					'email'      : 'lilorphanannie@galaxyfarfaraway.com'
+					'email'      : 'lilorphanannie@galaxyfarfaraway.com',
+					'birthday'   : '1931-01-17',
+					'vehicles'   : [
+						[
+							'TIE Fighter'
+						]
+					]
 				},
 				{
 					'id'         : '1',
-					'name'       : 'Leia Organa',
+					'first_name' : 'Leia',
+					'last_name'  : 'Organa',
 					'username'   : 'lorgana',
 					'hands'      : 2,
 					'occupation' : 'Rebel',
-					'email'      : 'lorgana@galaxyfarfaraway.com'
+					'email'      : 'lorgana@galaxyfarfaraway.com',
+					'birthday'   : '1956-10-21',
+					'vehicles'   : [
+						[
+							'Alderaan Cruiser'
+						],
+						[
+							'Tantive IV'
+						]
+					]
 				},
 				{
 					'id'         : '2',
-					'name'       : 'Luke Skywalker',
+					'first_name' : 'Luke',
+					'last_name'  : 'Skywalker',
 					'username'   : 'lskywalker',
 					'hands'      : 1,
 					'occupation' : 'Jedi',
-					'email'      : 'lskywalker@galaxyfarfaraway.com'
+					'email'      : 'lskywalker@galaxyfarfaraway.com',
+					'birthday'   : '1951-09-25',
+					'vehicles'   : [
+						[
+							'X-wing Starfighter'
+						],
+						[
+							'Snowspeeder'
+						],
+						[
+							'X-34 Landspeeder'
+						],
+						[
+							'T-16 Skyhopper'
+						]
+					]
 				},
 				{
 					'id'         : '3',
-					'name'       : 'R2-D2',
+					'first_name' : 'R2-D2',
+					'last_name'  : '',
 					'username'   : 'artoo',
 					'hands'      : 0,
 					'occupation' : 'Rebel Spy',
-					'email'      : 'artoo@galaxyfarfaraway.com'
+					'email'      : 'artoo@galaxyfarfaraway.com',
+					'birthday'   : '1970-01-01',
+					'vehicles'   : [
+						[
+							'X-wing Starfighter'
+						],
+						[
+							'Jedi Starfighter'
+						]
+					]
 				},
 				{
 					'id'         : '4',
-					'name'       : 'Han Solo',
+					'first_name' : 'Han',
+					'last_name'  : 'Solo',
 					'username'   : 'solocup',
 					'hands'      : 2,
 					'occupation' : 'Smuggler',
-					'email'      : 'solocup@galaxyfarfaraway.com'
+					'email'      : 'solocup@galaxyfarfaraway.com',
+					'birthday'   : '1942-07-13',
+					'vehicles'   : [
+						[
+							'Millenium Falcon'
+						]
+					]
 				},
 				{
 					'id'         : '5',
-					'name'       : 'Chewbacca',
+					'first_name' : 'Chewbacca',
+					'last_name'  : '',
 					'username'   : 'chewbaclava',
 					'hands'      : 2,
 					'occupation' : 'First Officer',
-					'email'      : 'starwarsfurlife@galaxyfarfaraway.com'
+					'email'      : 'starwarsfurlife@galaxyfarfaraway.com',
+					'birthday'   : '1944-05-19',
+					'vehicles'   : [
+						[
+							'Millenium Falcon'
+						]
+					]
 				}
 			],
 			params        : {},
@@ -124,6 +182,10 @@ var Table = React.createClass({
 			'tooltip': {
 				'mods'    : [],
 				'content' : <ToolTip tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			},
+			'mutator': {
+				'mods'    : [],
+				'content' : <MutatorTable workingResource={this.state.workingResource} />
 			}
 		};
 	},
