@@ -31,6 +31,11 @@ var Table = React.createClass({
 
 	getInitialState: function() {
 		return {
+			params          : {},
+			openEditModal   : false,
+			formIsValid     : true,
+			activeTab       : 'default',
+			modalResource   : {},
 			workingResource : [
 				{
 					'id'         : '0',
@@ -137,13 +142,7 @@ var Table = React.createClass({
 						]
 					]
 				}
-			],
-			params        : {},
-			openEditModal : false,
-			formIsValid   : true,
-			activeTab     : 'default',
-			modalResource : {}
-
+			]
 		};
 	},
 
