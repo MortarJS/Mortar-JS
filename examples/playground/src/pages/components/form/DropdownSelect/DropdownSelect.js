@@ -22,9 +22,7 @@ var DropdownSelect = React.createClass({
 
 	getInitialState: function () {
 		return {
-			workingResource: {
-				colors: []
-			},
+			workingResource: {},
 			formIsValid: true
 		};
 	},
@@ -108,7 +106,7 @@ var DropdownSelect = React.createClass({
 													</Br.Column>
 													<Br.Column grid="lg" size="6">
 														<b>Colors value:</b>
-														<p>[ {this.state.workingResource.colors.join(', ')} ]</p>
+														<p>[ {this.state.workingResource.colors && (this.state.workingResource.colors.join(', '))} ]</p>
 													</Br.Column>
 												</Br.Row>
 

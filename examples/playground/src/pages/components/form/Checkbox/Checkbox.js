@@ -23,7 +23,6 @@ var Checkbox = React.createClass({
 	getInitialState: function () {
 		return {
 			workingResource: {
-				seasons: [],
 				colors: [
 					{label: 'Blue',   value: 'blue'},
 					{label: 'Pink',   value: 'pink'}
@@ -62,6 +61,10 @@ var Checkbox = React.createClass({
 	},
 
 	checkboxValue: function(array) {
+		if (! array) {
+			return false;
+		}
+
 		return array.map((value) => {
 			return value.label;
 		}).join(', ');
