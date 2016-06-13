@@ -33,7 +33,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 0,
 					'occupation' : 'Sith Lord',
 					'email'      : 'lilorphanannie@galaxyfarfaraway.com',
-					'birthday'   : '1931-01-17',
+					'birthday'   : '-1229385600',
 					'vehicles'   : [
 						[
 							'TIE Fighter'
@@ -48,7 +48,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 2,
 					'occupation' : 'Rebel',
 					'email'      : 'lorgana@galaxyfarfaraway.com',
-					'birthday'   : '1956-10-21',
+					'birthday'   : '-416448000',
 					'vehicles'   : [
 						[
 							'Alderaan Cruiser'
@@ -66,7 +66,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 1,
 					'occupation' : 'Jedi',
 					'email'      : 'lskywalker@galaxyfarfaraway.com',
-					'birthday'   : '1951-09-25',
+					'birthday'   : '-576547200',
 					'vehicles'   : [
 						[
 							'X-wing Starfighter'
@@ -90,7 +90,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 0,
 					'occupation' : 'Rebel Spy',
 					'email'      : 'artoo@galaxyfarfaraway.com',
-					'birthday'   : '1970-01-01',
+					'birthday'   : '0',
 					'vehicles'   : [
 						[
 							'X-wing Starfighter'
@@ -108,7 +108,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 2,
 					'occupation' : 'Smuggler',
 					'email'      : 'solocup@galaxyfarfaraway.com',
-					'birthday'   : '1942-07-13',
+					'birthday'   : '-866937600',
 					'vehicles'   : [
 						[
 							'Millenium Falcon'
@@ -123,7 +123,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 2,
 					'occupation' : 'First Officer',
 					'email'      : 'starwarsfurlife@galaxyfarfaraway.com',
-					'birthday'   : '1944-05-19',
+					'birthday'   : '-808531200',
 					'vehicles'   : [
 						[
 							'Millenium Falcon'
@@ -152,7 +152,7 @@ var MutatorTable = React.createClass({
 		this._componentWillUnmount();
 	},
 
-	tableKeys: {
+	mutatedTableKeys: {
 		"Name"                 : "first_name",
 		"Username"             : "username",
 		"Hands"                : "hands",
@@ -162,15 +162,32 @@ var MutatorTable = React.createClass({
 		"Vehicle(s) of Choice" : "vehicles"
 	},
 
+	tableKeys: {
+		"First Name"           : "first_name",
+		"Last Name"            : "last_name",
+		"Username"             : "username",
+		"Hands"                : "hands",
+		"Occupation"           : "occupation",
+		"Email"                : "email",
+		"Date of Birth"        : "birthday",
+		"Vehicle(s) of Choice" : "vehicles"
+	},
+
 	render: function() {
-		var tableOptions   = {},
+		var tableOptions   = {
+				mutators: {
+					vehicles: function(vehicles) {
+						return ('[' + vehicles.join(', ') + ']');
+					}
+				}
+			},
 			mutatedOptions = {
 				mutators: {
 					first_name: function(first_name, object) {
 						return first_name + ' ' + object.last_name;
 					},
 					birthday: function(birthday) {
-						return moment(birthday).format('MMMM D, YYYY');
+						return moment.unix(birthday).format('MMMM D, YYYY');
 					},
 					vehicles: function(vehicles) {
 						return vehicles.join(', ');
@@ -192,7 +209,7 @@ var MutatorTable = React.createClass({
 					<Br.Row>
 						<Br.Column grid="lg" size="12">
 							<Br.Table data={this.state.workingResource}
-								dataKeys={this.tableKeys}
+								dataKeys={this.mutatedTableKeys}
 								title={'Mutated Data'}
 								options={mutatedOptions} />
 						</Br.Column>
