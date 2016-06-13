@@ -33,7 +33,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 0,
 					'occupation' : 'Sith Lord',
 					'email'      : 'lilorphanannie@galaxyfarfaraway.com',
-					'birthday'   : '-1229385600',
+					'birthday'   : '1931-01-17T18:35:24+00:00',
 					'vehicles'   : [
 						[
 							'TIE Fighter'
@@ -48,7 +48,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 2,
 					'occupation' : 'Rebel',
 					'email'      : 'lorgana@galaxyfarfaraway.com',
-					'birthday'   : '-416448000',
+					'birthday'   : '1956-10-21T18:35:24+00:00',
 					'vehicles'   : [
 						[
 							'Alderaan Cruiser'
@@ -66,7 +66,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 1,
 					'occupation' : 'Jedi',
 					'email'      : 'lskywalker@galaxyfarfaraway.com',
-					'birthday'   : '-576547200',
+					'birthday'   : '1951-09-25T18:35:24+00:00',
 					'vehicles'   : [
 						[
 							'X-wing Starfighter'
@@ -83,20 +83,17 @@ var MutatorTable = React.createClass({
 					]
 				},
 				{
-					'id'         : '3',
-					'first_name' : 'R2-D2',
+					'id'         : '5',
+					'first_name' : 'Chewbacca',
 					'last_name'  : '',
-					'username'   : 'artoo',
-					'hands'      : 0,
-					'occupation' : 'Rebel Spy',
-					'email'      : 'artoo@galaxyfarfaraway.com',
-					'birthday'   : '0',
+					'username'   : 'chewbaclava',
+					'hands'      : 2,
+					'occupation' : 'First Officer',
+					'email'      : 'starwarsfurlife@galaxyfarfaraway.com',
+					'birthday'   : '1944-05-19T18:35:24+00:00',
 					'vehicles'   : [
 						[
-							'X-wing Starfighter'
-						],
-						[
-							'Jedi Starfighter'
+							'Millenium Falcon'
 						]
 					]
 				},
@@ -108,7 +105,7 @@ var MutatorTable = React.createClass({
 					'hands'      : 2,
 					'occupation' : 'Smuggler',
 					'email'      : 'solocup@galaxyfarfaraway.com',
-					'birthday'   : '-866937600',
+					'birthday'   : '1942-07-13T18:35:24+00:00',
 					'vehicles'   : [
 						[
 							'Millenium Falcon'
@@ -116,17 +113,20 @@ var MutatorTable = React.createClass({
 					]
 				},
 				{
-					'id'         : '5',
-					'first_name' : 'Chewbacca',
+					'id'         : '3',
+					'first_name' : 'R2-D2',
 					'last_name'  : '',
-					'username'   : 'chewbaclava',
-					'hands'      : 2,
-					'occupation' : 'First Officer',
-					'email'      : 'starwarsfurlife@galaxyfarfaraway.com',
-					'birthday'   : '-808531200',
+					'username'   : 'artoo',
+					'hands'      : 0,
+					'occupation' : 'Rebel Spy',
+					'email'      : 'artoo@galaxyfarfaraway.com',
+					'birthday'   : '1970-01-012T18:35:24+00:00',
 					'vehicles'   : [
 						[
-							'Millenium Falcon'
+							'X-wing Starfighter'
+						],
+						[
+							'Jedi Starfighter'
 						]
 					]
 				}
@@ -177,7 +177,7 @@ var MutatorTable = React.createClass({
 		var tableOptions   = {
 				mutators: {
 					vehicles: function(vehicles) {
-						return ('[' + vehicles.join(', ') + ']');
+						return '["' + vehicles.join('", "') + '"]';
 					}
 				}
 			},
@@ -187,7 +187,7 @@ var MutatorTable = React.createClass({
 						return first_name + ' ' + object.last_name;
 					},
 					birthday: function(birthday) {
-						return moment.unix(birthday).format('MMMM D, YYYY');
+						return moment(birthday).format('MMMM D, YYYY');
 					},
 					vehicles: function(vehicles) {
 						return vehicles.join(', ');
