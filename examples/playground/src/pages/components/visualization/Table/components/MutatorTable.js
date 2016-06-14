@@ -34,11 +34,7 @@ var MutatorTable = React.createClass({
 					'occupation' : 'Sith Lord',
 					'email'      : 'lilorphanannie@galaxyfarfaraway.com',
 					'birthday'   : '1931-01-17T18:35:24+00:00',
-					'vehicles'   : [
-						[
-							'TIE Fighter'
-						]
-					]
+					'vehicles'   : ['TIE Fighter']
 				},
 				{
 					'id'         : '1',
@@ -49,14 +45,7 @@ var MutatorTable = React.createClass({
 					'occupation' : 'Rebel',
 					'email'      : 'lorgana@galaxyfarfaraway.com',
 					'birthday'   : '1956-10-21T18:35:24+00:00',
-					'vehicles'   : [
-						[
-							'Alderaan Cruiser'
-						],
-						[
-							'Tantive IV'
-						]
-					]
+					'vehicles'   : ['Alderaan Cruiser', 'Tantive IV']
 				},
 				{
 					'id'         : '2',
@@ -67,20 +56,7 @@ var MutatorTable = React.createClass({
 					'occupation' : 'Jedi',
 					'email'      : 'lskywalker@galaxyfarfaraway.com',
 					'birthday'   : '1951-09-25T18:35:24+00:00',
-					'vehicles'   : [
-						[
-							'X-wing Starfighter'
-						],
-						[
-							'Snowspeeder'
-						],
-						[
-							'X-34 Landspeeder'
-						],
-						[
-							'T-16 Skyhopper'
-						]
-					]
+					'vehicles'   : ['X-wing Starfighter', 'Snowspeeder', 'X-34 Landspeeder', 'T-16 Skyhopper']
 				},
 				{
 					'id'         : '5',
@@ -91,11 +67,7 @@ var MutatorTable = React.createClass({
 					'occupation' : 'First Officer',
 					'email'      : 'starwarsfurlife@galaxyfarfaraway.com',
 					'birthday'   : '1944-05-19T18:35:24+00:00',
-					'vehicles'   : [
-						[
-							'Millenium Falcon'
-						]
-					]
+					'vehicles'   : ['Millenium Falcon']
 				},
 				{
 					'id'         : '4',
@@ -106,11 +78,7 @@ var MutatorTable = React.createClass({
 					'occupation' : 'Smuggler',
 					'email'      : 'solocup@galaxyfarfaraway.com',
 					'birthday'   : '1942-07-13T18:35:24+00:00',
-					'vehicles'   : [
-						[
-							'Millenium Falcon'
-						]
-					]
+					'vehicles'   : ['Millenium Falcon']
 				},
 				{
 					'id'         : '3',
@@ -121,14 +89,7 @@ var MutatorTable = React.createClass({
 					'occupation' : 'Rebel Spy',
 					'email'      : 'artoo@galaxyfarfaraway.com',
 					'birthday'   : '1970-01-012T18:35:24+00:00',
-					'vehicles'   : [
-						[
-							'X-wing Starfighter'
-						],
-						[
-							'Jedi Starfighter'
-						]
-					]
+					'vehicles'   : ['X-wing Starfighter', 'Jedi Starfighter']
 				}
 			]
 		};
