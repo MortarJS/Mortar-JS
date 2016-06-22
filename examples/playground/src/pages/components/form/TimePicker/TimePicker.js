@@ -23,7 +23,7 @@ var Input = React.createClass({
 	getInitialState: function () {
 		return {
 			workingResource: {
-				time: '02:23'
+				time: '03:14:33'
 			},
 			formIsValid: true
 		};
@@ -63,7 +63,7 @@ var Input = React.createClass({
 					<div id="content">
 						<Br.Row>
 							<Br.Column grid="lg" size="10"  classes="col-lg-offset-1">
-								<h1 className="page-header">Input</h1>
+								<h1 className="page-header">TimePicker</h1>
 							</Br.Column>
 						</Br.Row>
 
@@ -78,7 +78,7 @@ var Input = React.createClass({
 													<Br.Column grid="lg" size="6">
 														<Br.Column grid="lg" size="6">
 															<Br.Form.TimePicker fieldKey="time"
-																label="Time" placeholder="2"
+																label="Time" placeholder="10:23"
 																required="true" />
 														</Br.Column>
 														<Br.Column grid="lg" size="6">
