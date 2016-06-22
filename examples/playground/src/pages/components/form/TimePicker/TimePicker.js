@@ -23,7 +23,7 @@ var Input = React.createClass({
 	getInitialState: function () {
 		return {
 			workingResource: {
-				time: '03:14:33'
+				time: '03:14:33 AM'
 			},
 			formIsValid: true
 		};
