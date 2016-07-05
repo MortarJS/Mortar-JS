@@ -19,6 +19,7 @@ var DraggableRows          = require('./components/DraggableRows');
 var SummableRows           = require('./components/SummableRows');
 var SpinnerToggle          = require('./components/SpinnerToggle');
 var ToolTip                = require('./components/ToolTip');
+var MutatorTable           = require('./components/MutatorTable');
 
 /**
  * Table
@@ -30,7 +31,12 @@ var Table = React.createClass({
 
 	getInitialState: function() {
 		return {
-			workingResource: [
+			params          : {},
+			openEditModal   : false,
+			formIsValid     : true,
+			activeTab       : 'default',
+			modalResource   : {},
+			workingResource : [
 				{
 					'id'         : '0',
 					'name'       : 'Darth Vader',
@@ -79,13 +85,7 @@ var Table = React.createClass({
 					'occupation' : 'First Officer',
 					'email'      : 'starwarsfurlife@galaxyfarfaraway.com'
 				}
-			],
-			params        : {},
-			openEditModal : false,
-			formIsValid   : true,
-			activeTab     : 'default',
-			modalResource : {}
-
+			]
 		};
 	},
 
@@ -124,6 +124,10 @@ var Table = React.createClass({
 			'tooltip': {
 				'mods'    : [],
 				'content' : <ToolTip tableKeys={this.tableKeys} workingResource={this.state.workingResource} />
+			},
+			'mutator': {
+				'mods'    : [],
+				'content' : <MutatorTable />
 			}
 		};
 	},
