@@ -2,12 +2,11 @@ import { analytics, trackerId } from '../config/base-config';
 
 const ReactGA = require('react-ga');
 
-var HelperActions = {
-
+const GoogleAnalytics = {
 	/**
 	 * Log the page view in Google Analytics
 	 */
-	logPageView: function () {
+	logPageView: function() {
 		if (analytics) {
 			ReactGA.initialize(trackerId);
 			ReactGA.set({ page: window.location.hash });
@@ -16,5 +15,4 @@ var HelperActions = {
 	}
 };
 
-
-module.exports = HelperActions;
+export {GoogleAnalytics};
