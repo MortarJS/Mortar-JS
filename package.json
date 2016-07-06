@@ -68,6 +68,7 @@
     "normalize.css": "~3.0.3",
     "postcss-loader": "^0.8.2",
     "raw-loader": "^0.5.1",
+    "react-ga": "^2.1.0",
     "react-router": "2.2.x",
     "sass-loader": "^3.1.2",
     "script-loader": "^0.6.1",

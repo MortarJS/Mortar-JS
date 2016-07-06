@@ -9,8 +9,10 @@ var reactDOM = require('react-dom');
 var config = require('./config/config');
 var AppContainer = require('./app-container').MortarJS;
 
-import {Router, useRouterHistory} from 'react-router';
-import {createHashHistory} from 'history';
+import { Router, useRouterHistory } from 'react-router';
+import { createHashHistory } from 'history';
+
+import { GoogleAnalytics } from './actions/HelperActions';
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
@@ -26,7 +28,7 @@ window.__app_container = document.getElementById('root');
 
 reactDOM.render((
 	<div>
-		<Router history={appHistory} routes={Routes} />
+		<Router history={appHistory} routes={Routes} onUpdate={() => GoogleAnalytics.logPageView()} />
 		<footer>Made by <a href="http://fuzzproductions.com">Fuzz Productions</a></footer>
 	</div>
 ), window.__app_container)
