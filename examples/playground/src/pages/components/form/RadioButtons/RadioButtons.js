@@ -66,9 +66,9 @@ var RadioButton = React.createClass({
 	radioOptions2: [
 		{label: 'Red',    value: 'Red'},
 		{label: 'Blue',   value: 'Blue'},
+		{label: 'Pink',   value: 'Pink'},
 		{label: 'Green',  value: 'Green'},
 		{label: 'Yellow', value: 'Yellow'},
-		{label: 'Pink',   value: 'Pink'},
 		{label: 'Taupe',  value: 'Taupe'},
 		{label: 'Mauve',  value: 'Mauve'}
 	],
