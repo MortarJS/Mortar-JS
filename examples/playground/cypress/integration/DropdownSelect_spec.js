@@ -18,7 +18,7 @@ describe("DropdownSelect", function () {
 	context("Selecting Values", function() {
 		it("can select a season and show it's been selected", function () {
 			cy.contains("Select a Season").click()
-				.get(".dropdown-container").within(function () {
+				.get(".mortar-dropdown-container").within(function () {
 					cy.contains("Winter").click();
 				});
 
@@ -28,17 +28,17 @@ describe("DropdownSelect", function () {
 
 		it("will close after selecting a value for a single select", function () {
 			cy.contains("Select a Season").click()
-				.get(".dropdown-container").within(function () {
+				.get(".mortar-dropdown-container").within(function () {
 					cy.contains("Winter").click();
 				});
 
-			cy.get(".dropdown-container").first()
+			cy.get(".mortar-dropdown-container").first()
 				.should("have.class", "closed");
 		});
 
 		it("can select multiple colors and show they've been selected", function () {
 			cy.contains("Select a Color").click()
-				.get(".dropdown-container").within(function () {
+				.get(".mortar-dropdown-container").within(function () {
 					cy.contains("Red").click();
 					cy.contains("Taupe").click();
 				});
@@ -58,12 +58,12 @@ describe("DropdownSelect", function () {
 	context("Removing Values", function() {
 		it("can swap values in a single select dropdown", function () {
 			cy.contains("Select a Season").click()
-				.get(".dropdown-container").within(function () {
+				.get(".mortar-dropdown-container").within(function () {
 					cy.contains("Winter").click()
 				});
 
-			cy.get(".dropdown-container").contains("Winter").click()
-				.get(".dropdown-container").within(function () {
+			cy.get(".mortar-dropdown-container").contains("Winter").click()
+				.get(".mortar-dropdown-container").within(function () {
 					cy.contains("Summer").click()
 				});
 
@@ -73,7 +73,7 @@ describe("DropdownSelect", function () {
 
 		it("can remove a value by clicking the x on the selected bubble", function () {
 			cy.contains("Select a Color").click()
-				.get(".dropdown-container").within(function () {
+				.get(".mortar-dropdown-container").within(function () {
 					cy.contains("Red").click();
 					cy.contains("Taupe").click();
 				});
@@ -94,13 +94,13 @@ describe("DropdownSelect", function () {
 
 	context("Other", function() {
 		it("can close an open dropdown by clicking outside of it", function() {
-			cy.get(".dropdown-container").first()
+			cy.get(".mortar-dropdown-container").first()
 				.click()
 				.should("have.class", "open");
 
 			cy.get("h1").click("topLeft");
 
-			cy.get(".dropdown-container").first()
+			cy.get(".mortar-dropdown-container").first()
 				.should("have.class", "closed");
 		});
 	});
