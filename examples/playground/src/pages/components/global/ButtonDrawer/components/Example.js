@@ -195,7 +195,7 @@ var Example = React.createClass({
 							confirmText={'save'}
 							afterClose={this.closeModal}
 							afterConfirm={this.addTableRow}
-							width={500} >
+							width="500px" >
 
 							<Br.Form key="ModalForm" formKey={this.formKey} bindResource={this.state.formData}>
 								<Br.Form.Input fieldKey="name"     type="text" label="Name"     placeholder="" required="true" />
@@ -216,7 +216,7 @@ var Example = React.createClass({
 							confirmText={'confirm'}
 							afterClose={this.closeModal}
 							afterConfirm={this.deleteData}
-							width={500} >
+							width="500px" >
 
 							<p>Are you sure you'd like to delete all table data?</p>
 

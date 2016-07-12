@@ -61,12 +61,12 @@ describe("Checkbox", function () {
 		it("can deselect a multiple values", function () {
 			cy.get(".seasons-select")
 				.first()
-				.find(".checkbox-label")
+				.find(".mortar-checkbox-label")
 				.click({multiple: true});
 
 			cy.get(".seasons-select")
 				.first()
-				.find(".checkbox-label")
+				.find(".mortar-checkbox-label")
 				.click({multiple: true});
 
 			cy.get(".seasons-value")
