@@ -120,12 +120,12 @@ var FileInput = React.createClass({
 													<Br.Column grid="lg" size="12">
 														<Br.Form.File fieldKey='multipleImage'
 															options={{
-																height   : 120,
-																width    : 120,
+																height   : 125,
+																width    : 125,
 																multiple : true,
 																bgImage  : this.state.workingResource.multipleImage ? this.state.workingResource.multipleImage.preview : this.state.workingResource.multipleImage}}
-															accept="image"
-															label='Upload an image' />
+															accept="any"
+															label='Upload a file' />
 													</Br.Column>
 												</Br.Row>
 											</Br.Form>
