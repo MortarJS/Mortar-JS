@@ -1,0 +1,30 @@
+#mortar-file-upload-preview-container {
+  width: 100%;
+}
+
+.mortar-file-upload-preview-wrapper {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+
+  .remove-preview {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    background: rgba(224, 224, 224, 0.85);
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    transition: background .15s ease-out, box-shadow .15s ease-out;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+}

@@ -22,7 +22,10 @@ var FileInput = React.createClass({
 
 	getInitialState: function () {
 		return {
-			workingResource: {},
+			workingResource: {
+				singleImage: null,
+				multipleImage: ['http://playground.mortarjs.io/assets/img/img-683987.png']
+			},
 			formIsValid: true
 		};
 	},
@@ -96,18 +99,33 @@ var FileInput = React.createClass({
 									<Br.Row>
 										<Br.Column grid="lg" size="10">
 											<Br.Form key="myFancyForm" formKey={this.formKey} bindResource={this.state.workingResource}>
+
 												<Br.Row>
-													<h3>File Input</h3>
+													<h3>Single File Input</h3>
 													<Br.Column grid="lg" size="6">
 														<Br.Column grid="lg" size="6">
-														<Br.Form.File fieldKey='season'
+														<Br.Form.File fieldKey='singleImage'
 															options={{
 																height: 120,
 																width: 120,
-																bgImage : this.state.workingResource.season ? this.state.workingResource.season.preview : this.state.workingResource.season}}
+																bgImage : this.state.workingResource.singleImage ? this.state.workingResource.singleImage.preview : this.state.workingResource.singleImage}}
 															accept="image"
 															label='Upload an image' />
 														</Br.Column>
+													</Br.Column>
+												</Br.Row>
+
+												<Br.Row>
+													<h3>Multiple File Input</h3>
+													<Br.Column grid="lg" size="12">
+														<Br.Form.File fieldKey='multipleImage'
+															options={{
+																height   : 125,
+																width    : 125,
+																multiple : true,
+																bgImage  : this.state.workingResource.multipleImage ? this.state.workingResource.multipleImage.preview : this.state.workingResource.multipleImage}}
+															accept="any"
+															label='Upload a file' />
 													</Br.Column>
 												</Br.Row>
 											</Br.Form>
