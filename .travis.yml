@@ -4,7 +4,7 @@ node_js:
 - '5'
 - '4.2'
 - '4.0'
-- 'iojs'
+- iojs
 git:
   depth: 3
 install:
@@ -18,3 +18,10 @@ script:
 notifications:
   slack:
     secure: oUflnR3wApn/Mo3o4LIX9XS8knypW+na5/hj/hW3O4emotyb1Smqv4n9MDoeZZ2Xwc3uM0zfY9KVffSQ6ppO30YG45C1XKR6+OVXS7f2msUIS48LYBP7ksv4MIx9QAui+AIhhgWG7/GHWl+qFhIKqLCaeXLFHFJufpcGVfpSTJ9Rb4BgWL2msNxwwF26A4DaOVPbgmcH2W8r1J4UOLeGJS7zCTWUmA7U2rmPos9TkqjUb1E80JiKKCPGCQjwUb/JbmCrlJnZHA2a4csGMmRlzDTkB8ldR6vbrmRUZPVU6d/QxXN7eIZdKPTLPJR7q9bkP0fAok0geOtmi81LHuuAgIH9xRahGaFpa4shQS2XAh6yRlzANGIYbl3f5NVmmualaiT/iqsku5wEvWHBL3ubvogpYhZd1+/Q+0Algj3woiT305I27p0vZLZoGZmn8p/M5ckXEdLpzT1VDWyJyo81DNxqQaAvWliynAUtVrwAQGmQg79fUC5/o/yaODc/gXKnvkzjOBQy3dUQmdBAWdl25mKYM/PngfaHzElVl0QbCBLKhSY00tFPkY3ohDWZjkr2j261mZHTAuxmnpJna9i3lA/6L2BGzYpHIWBF9dtwbA3hCVXUfmaDx97H54wYNJHJA7YVdNTGgvM8jnk6rpxUI/tUNTTDAwXYAqwqvqX471k=
+deploy:
+  on: dev
+  provider: opsworks
+  access-key-id: AKIAIUP47M675F6XK3PA
+  app-id: 0baa60fd-d061-410e-9b89-76ecf1971982
+  secret-access-key:
+    secure: X69JvuVudGSBFp+mkevs4nw/LSNYFElgSviS+nW7UQbgIDb491SqCsi6yuCb8kV5wAe0Qwswb5wdEvoD1JXkdFjxw0vsudWq28iDWYRW/c0evkfXpf7TIo4SG841f+DYFjPPbL0LNsUoXYWtDywrkgMyWg/cxqc+yiU7jaM9d5+DoXLfVhZv2dr+1ATa/yPnweQMmkeZOmCzKgzLRRT9VR295RySs1XmQ1+Chf9Qi1nm/p+SC8gmcv3D9gZ9vpqIrhaxsjw96YAMuZM7IxKnTojuOij1+QIoObl4HKtusJSL8Zo+bPxDUChHknGIrIjV2S+ttLO0z1I7d0hXMnyP3ligLU153lhmwjQ5XcUizLTXXko0IDRgCDXiA2iFaT+3RvAYHiqa9XSR0fBkNEwizN0RGIbQBnz1TB+HIDRAeBqCXYcIEJt/xiYtqtSQBrcObJ3LlR5OMKjPeARMFf8UDY3834+PYiAR5w6UGkemr4j+6WGULdVNjs4l8nPuhhmIxr6FUb9vFj9hOrmjVZ3OulT2gBendVYKu4+q1QyUvu73OcWOv8iPtjNvTQNAYsDRov92htHId1mvX38OKf9DeCtqd7wA6IDtKrQkHFBFdSDShjzr4bXDQkQUO6E/+W0LtCbhvPGZZaiOfnGy67rXezktMwoRqiOHGd+p0ixzwMA=
