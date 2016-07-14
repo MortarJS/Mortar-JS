@@ -23,7 +23,8 @@ var Input = React.createClass({
 	getInitialState: function () {
 		return {
 			workingResource: {
-				mods: 'default'
+				mods       : 'default',
+				'toggle-6' : true
 			},
 			formIsValid: true
 		};
@@ -110,6 +111,22 @@ var Input = React.createClass({
 																fieldLabel="Simple Mortar Toggle With Labels"
 																labelBefore="True"
 																labelAfter="False"
+																mods={[this.state.workingResource.mods, 'simple']} />
+														</Br.Column>
+
+														<br /> <br /> <br /> <br /> <br />
+
+														<Br.Column grid="lg" size="5">
+															<Br.Form.Toggle fieldKey="toggle-5"
+																fieldLabel="Only a label before"
+																labelBefore="Only Before"
+																mods={[this.state.workingResource.mods]} />
+														</Br.Column>
+
+														<Br.Column grid="lg" size="5">
+															<Br.Form.Toggle fieldKey="toggle-6"
+																fieldLabel="Only a label after"
+																labelAfter="Only After"
 																mods={[this.state.workingResource.mods, 'simple']} />
 														</Br.Column>
 
