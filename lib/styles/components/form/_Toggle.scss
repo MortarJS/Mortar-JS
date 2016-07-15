@@ -1,5 +1,5 @@
 $red: #ff5555;
-$green: #8ce196;
+$green: #5ece6e;
 $gray: #ddd;
 $white: #fbfbfb;
 
@@ -78,7 +78,11 @@ $large-bar-w: 80px;
 
 .mortar-toggle {
   display: inline-block;
-  width: 300px;
+
+          user-select: none;
+      -ms-user-select: none;
+     -moz-user-select: none;
+  -webkit-user-select: none;
 
   input {
     position: absolute;
@@ -101,7 +105,6 @@ $large-bar-w: 80px;
       position: relative;
       cursor: pointer;
       outline: none;
-      user-select: none;
       padding: 2px;
       width: $reg-bar-w;
       height: $reg-ball;
@@ -170,4 +173,49 @@ $large-bar-w: 80px;
   margin-left: $reg-bar-w * (2/3) - 10px;
   background-color: $green;
   border-color: rgba($green, .5);
+}
+
+.mortar-toggle.control-label {
+  display: block;
+}
+
+.mortar-toggle.label-before,
+.mortar-toggle.label-after,
+.mortar-toggle-switch.inline {
+  display: inline-block !important;
+}
+
+.mortar-toggle.label-before,
+.mortar-toggle.label-after {
+  opacity: 0;
+  font-weight: 500;
+  transition: opacity 0.3s;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: top;
+  margin-top: 5px;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.mortar-toggle {
+  .label-before {
+    margin-right: 10px;
+  }
+
+  .label-after {
+    margin-left: 10px;
+  }
+
+  &:not(.simple) {
+    .label-before {
+      color: $red;
+    }
+
+    .label-after {
+      color: $green;
+    }
+  }
 }

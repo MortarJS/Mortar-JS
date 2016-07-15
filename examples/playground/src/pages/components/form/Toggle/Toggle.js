@@ -23,7 +23,8 @@ var Input = React.createClass({
 	getInitialState: function () {
 		return {
 			workingResource: {
-				mods: 'default'
+				mods       : 'default',
+				'toggle-6' : true
 			},
 			formIsValid: true
 		};
@@ -84,11 +85,51 @@ var Input = React.createClass({
 													<h3>Toggles</h3>
 													<Br.Column grid="lg" size="10">
 														<Br.Column grid="lg" size="5">
-															<Br.Form.Toggle fieldKey="toggle-1" fieldLabel="Default Mortar Toggle" mods={[this.state.workingResource.mods]} />
+															<Br.Form.Toggle fieldKey="toggle-1"
+																fieldLabel="Default Mortar Toggle"
+																mods={[this.state.workingResource.mods]} />
 														</Br.Column>
+
 														<Br.Column grid="lg" size="5">
-															<Br.Form.Toggle fieldKey="toggle-2" fieldLabel="Simple Mortar Toggle" mods={[this.state.workingResource.mods, 'simple']} />
+															<Br.Form.Toggle fieldKey="toggle-2"
+																fieldLabel="Simple Mortar Toggle"
+																mods={[this.state.workingResource.mods, 'simple']} />
 														</Br.Column>
+
+														<br /> <br /> <br /> <br /> <br />
+
+														<Br.Column grid="lg" size="5">
+															<Br.Form.Toggle fieldKey="toggle-3"
+																fieldLabel="Default Mortar Toggle With Labels"
+																labelBefore="Off"
+																labelAfter="On"
+																mods={[this.state.workingResource.mods]} />
+														</Br.Column>
+
+														<Br.Column grid="lg" size="5">
+															<Br.Form.Toggle fieldKey="toggle-4"
+																fieldLabel="Simple Mortar Toggle With Labels"
+																labelBefore="True"
+																labelAfter="False"
+																mods={[this.state.workingResource.mods, 'simple']} />
+														</Br.Column>
+
+														<br /> <br /> <br /> <br /> <br />
+
+														<Br.Column grid="lg" size="5">
+															<Br.Form.Toggle fieldKey="toggle-5"
+																fieldLabel="Only a label before"
+																labelBefore="Only Before"
+																mods={[this.state.workingResource.mods]} />
+														</Br.Column>
+
+														<Br.Column grid="lg" size="5">
+															<Br.Form.Toggle fieldKey="toggle-6"
+																fieldLabel="Only a label after"
+																labelAfter="Only After"
+																mods={[this.state.workingResource.mods, 'simple']} />
+														</Br.Column>
+
 													</Br.Column>
 													<Br.Column grid="lg" size="2" classes="pull-right">
 														<Br.Form.DropdownSelect fieldKey="mods" inputLabel="Toggle Size:" options={['small', 'default', 'large']} multiple={false} />
@@ -99,10 +140,10 @@ var Input = React.createClass({
 													<h3>Disabled Toggles</h3>
 													<Br.Column grid="lg" size="10">
 														<Br.Column grid="lg" size="5">
-															<Br.Form.Toggle fieldKey="toggle-3" fieldLabel="Disabled Mortar Toggle" disabled={true} mods={[this.state.workingResource.mods]} />
+															<Br.Form.Toggle fieldKey="toggle-disabled-1" fieldLabel="Disabled Mortar Toggle" disabled={true} mods={[this.state.workingResource.mods]} />
 														</Br.Column>
 														<Br.Column grid="lg" size="5">
-															<Br.Form.Toggle fieldKey="toggle-4" fieldLabel="Disabled and Checked Mortar Toggle" disabled={true} checked={true} mods={[this.state.workingResource.mods]} />
+															<Br.Form.Toggle fieldKey="toggle-disabled-2" fieldLabel="Disabled and Checked Mortar Toggle" disabled={true} checked={true} mods={[this.state.workingResource.mods]} />
 														</Br.Column>
 													</Br.Column>
 												</Br.Row>
