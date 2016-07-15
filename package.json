@@ -18,7 +18,8 @@
     "document": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json && open documentation/index.html",
     "doc": "jsdoc -p -r index.js lib -d documentation/ -R README.md -t ./node_modules/ink-docstrap/template -c jsdoc.conf.json",
     "serve-playground": "webpack-dev-server --progress --colors --watch --config examples/playground/webpack.config.js",
-    "open-playground": "open http://localhost:21356/webpack-dev-server/ && webpack-dev-server --progress --colors --watch --config examples/playground/webpack.config.js"
+    "open-playground": "open http://localhost:21356/webpack-dev-server/ && webpack-dev-server --progress --colors --watch --config examples/playground/webpack.config.js",
+    "production-playground": "webpack --config examples/playground/webpack.config.js -p"
   },
   "author": "Fuzz Productions <web@fuzzproductions.com> (http://www.fuzzproductions.com)",
   "contributors": [
