@@ -117,8 +117,13 @@ var ModalContainer = React.createClass({
 													<Br.Row>
 														<Br.Form.Toggle fieldKey="toggleConfirm" fieldLabel="Disable Confirm Button" mods={[this.state.workingResource.mods]} />
 													</Br.Row>
+
 													<Br.Row>
 														<Br.Form.Toggle fieldKey="toggleKeepOpen" fieldLabel="Keep Modal Open" mods={[this.state.workingResource.mods]} />
+													</Br.Row>
+
+													<Br.Row>
+														<Br.Form.Toggle fieldKey="hideButtons" fieldLabel="Hide Modal Buttons" mods={[this.state.workingResource.mods]} />
 													</Br.Row>
 												</Br.Column>
 
@@ -150,6 +155,7 @@ var ModalContainer = React.createClass({
 								confirmText={this.state.workingResource.confirmText}
 								afterClose={this.closeModal}
 								disableConfirm={this.state.workingResource.toggleConfirm}
+								hideButtons={this.state.workingResource.hideButtons}
 								options={{
 									keepOpen: this.state.workingResource.toggleKeepOpen
 								}}
