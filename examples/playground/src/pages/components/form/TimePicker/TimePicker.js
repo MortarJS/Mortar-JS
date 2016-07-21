@@ -2,6 +2,7 @@
 var React                  = require('react');
 var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
+var moment      = require('moment');
 
 // Bricks
 var Br                     = MortarJS.require('components', 'Row', 'Column', 'Form');
@@ -21,9 +22,10 @@ var Input = React.createClass({
 	mixins: [ResourceComponentMixin, Router.Navigation],
 
 	getInitialState: function () {
+		let time = moment().format('LTS');
 		return {
 			workingResource: {
-				time: '03:14:33 AM'
+				time: time
 			},
 			formIsValid: true
 		};
@@ -78,7 +80,7 @@ var Input = React.createClass({
 													<Br.Column grid="lg" size="6">
 														<Br.Column grid="lg" size="6">
 															<Br.Form.TimePicker fieldKey="time"
-																label="Time" placeholder="10:23"
+																label="Time" placeholder="10:23" format="hh:mm:ss A"
 																required="true" />
 														</Br.Column>
 														<Br.Column grid="lg" size="6">
