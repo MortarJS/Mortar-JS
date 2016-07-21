@@ -43,6 +43,7 @@
     "autoprefixer": "^6.0.3",
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "bootstrap": "~3.3.1",
