@@ -2,6 +2,23 @@
 	.mortar-form {
 		.mortar-form-time-picker {
 			border: 2px solid black;
+			display: inline-flex;
+
+			.time-picker-field {
+				width: 35px;
+				text-align: center;
+
+				.time-picker-input {
+					width: 30px;
+					text-align: center;
+				}
+			}
+		}
+
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
 		}
 	}
 }
