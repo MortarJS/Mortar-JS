@@ -155,8 +155,14 @@
             "afterColon": true
         },
         "multiLine": {
-            "align": "colon",                      // Enforces that objects align on the colon.  Breaks for the longest object.
-            "mode": "minimum"
+            "mode": "minimum",
+            "beforeColon": false,
+            "afterColon": true,
+            "align": {
+                "on": "colon",
+                "beforeColon": true,
+                "afterColon": true
+            }
         }
     }],
     "keyword-spacing": 2,                          // require a space after keywords
