@@ -1,6 +1,6 @@
 {
   "name": "mortarjs",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "homepage": "http://mortar.fuzzpro.com",
   "repository": {
     "type": "git",
@@ -49,7 +49,7 @@
     "bootstrap": "~3.3.1",
     "clean-webpack-plugin": "^0.1.6",
     "css-loader": "^0.23.1",
-    "eslint": "^2.4.0",
+    "eslint": "^3.2.2",
     "eslint-plugin-react": "^4.2.3",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.1",
