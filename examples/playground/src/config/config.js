@@ -15,74 +15,71 @@ module.exports = {
 	navbar: [
 		{
 			"text" : "Home",
-			"uri"  : "/#/"
+			"uri"  : "/"
 		},
 
 		{
 			"text"     : "Form Components",
-			"uri"      : "",
 			"children" : [
 				{
 					"text" : "Input",
-					"uri"  : "#/components/input"
+					"uri"  : "/components/input"
 				},
 				{
 					"text" : "DropdownSelect",
-					"uri"  : "#/components/dropdown"
+					"uri"  : "/components/dropdown"
 				},
 				{
 					"text" : "Radio Buttons",
-					"uri"  : "#/components/radio"
+					"uri"  : "/components/radio"
 				},
 				{
 					"text" : "Toggle",
-					"uri"  : "#/components/toggle"
+					"uri"  : "/components/toggle"
 				},
 				{
 					"text" : "Checkbox",
-					"uri"  : "#/components/checkbox"
+					"uri"  : "/components/checkbox"
 				},
 				{
 					"text" : "File Input",
-					"uri"  : "#/components/fileinput"
+					"uri"  : "/components/fileinput"
 				},
 				{
 					"text" : "Type-Ahead Input",
-					"uri"  : "#/components/typeaheadinput"
+					"uri"  : "/components/typeaheadinput"
 				},
 				{
 					"text" : "Text Area",
-					"uri"  : "#/components/textarea"
+					"uri"  : "/components/textarea"
 				}
 			]
 		},
 
 		{
 			"text"     : "Visualization Components",
-			"uri"      : "",
 			"children" : [
 				{
 					"text" : "Table",
-					"uri"  : "#/components/table"
+					"uri"  : "/components/table"
 				}
 			]
 		},
 
 		{
 			"text"     : "Global Components",
-			"uri"      : "",
 			"children" : [
 				{
 					"text" : "Tooltip",
-					"uri"  : "#/components/tooltip"
+					"uri"  : "/components/tooltip"
 				},
 				{
 					"text" : "ModalContainer",
-					"uri"  : "#/components/modalcontainer"
+					"uri"  : "/components/modalcontainer"
 				},
 				{
 					"text" : "ButtonDrawer",
-					"uri"  : "#/components/buttondrawer"
+					"uri"  : "/components/buttondrawer"
 				}
 			]
 		}
