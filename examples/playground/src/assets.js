@@ -1,9 +1,6 @@
 /**
  * Global scrips
  * @type {exports}
- */
-global.jQuery = require('jquery');
-require('bootstrap');
 /**
  * Styles
  * @type {exports}|string
