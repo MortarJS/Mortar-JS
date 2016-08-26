@@ -4,9 +4,7 @@ describe("Input", function () {
 	});
 
 	it("can navigate to Input", function () {
-		cy.contains("Form Components").click();
-
-		cy.contains("Input").click()
+		cy.contains("Input").click({force: true})
 			.hash().should("eq", "#/components/input")
 			.get("h1").should("contain", "Input");
 	});

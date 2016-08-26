@@ -4,8 +4,7 @@ describe("RadioButtons", function () {
 	});
 
 	it("can navigate to RadioButtons", function () {
-		cy.contains("Form Components").click();
-		cy.contains("Radio Buttons").click()
+		cy.contains("Radio Buttons").click({force: true})
 			.hash().should("eq", "#/components/radio")
 			.get("h1").should("contain", "Radio Buttons");
 	});
