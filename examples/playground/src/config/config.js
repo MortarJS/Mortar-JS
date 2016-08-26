@@ -14,75 +14,75 @@ module.exports = {
 
 	navbar: [
 		{
-			"buttonName": "Home",
-			"href"      : "/#/"
+			"text" : "Home",
+			"uri"  : "/#/"
 		},
 
 		{
-			"buttonName": "Form Components",
-			"href"      : "",
-			"children"  : [
+			"text"     : "Form Components",
+			"uri"      : "",
+			"children" : [
 				{
-					"buttonName": "Input",
-					"href"      : "#/components/input"
+					"text" : "Input",
+					"uri"  : "#/components/input"
 				},
 				{
-					"buttonName": "DropdownSelect",
-					"href"      : "#/components/dropdown"
+					"text" : "DropdownSelect",
+					"uri"  : "#/components/dropdown"
 				},
 				{
-					"buttonName": "Radio Buttons",
-					"href"      : "#/components/radio"
+					"text" : "Radio Buttons",
+					"uri"  : "#/components/radio"
 				},
 				{
-					"buttonName": "Toggle",
-					"href"      : "#/components/toggle"
+					"text" : "Toggle",
+					"uri"  : "#/components/toggle"
 				},
 				{
-					"buttonName": "Checkbox",
-					"href"      : "#/components/checkbox"
+					"text" : "Checkbox",
+					"uri"  : "#/components/checkbox"
 				},
 				{
-					"buttonName": "File Input",
-					"href"      : "#/components/fileinput"
+					"text" : "File Input",
+					"uri"  : "#/components/fileinput"
 				},
 				{
-					"buttonName": "Type-Ahead Input",
-					"href"      : "#/components/typeaheadinput"
+					"text" : "Type-Ahead Input",
+					"uri"  : "#/components/typeaheadinput"
 				},
 				{
-					"buttonName": "Text Area",
-					"href"      : "#/components/textarea"
+					"text" : "Text Area",
+					"uri"  : "#/components/textarea"
 				}
 			]
 		},
 
 		{
-			"buttonName": "Visualization Components",
-			"href"      : "",
-			"children"  : [
+			"text"     : "Visualization Components",
+			"uri"      : "",
+			"children" : [
 				{
-					"buttonName": "Table",
-					"href"      : "#/components/table"
+					"text" : "Table",
+					"uri"  : "#/components/table"
 				}
 			]
 		},
 
 		{
-			"buttonName": "Global Components",
-			"href"      : "",
-			"children"  : [
+			"text"     : "Global Components",
+			"uri"      : "",
+			"children" : [
 				{
-					"buttonName": "Tooltip",
-					"href"      : "#/components/tooltip"
+					"text" : "Tooltip",
+					"uri"  : "#/components/tooltip"
 				},
 				{
-					"buttonName": "ModalContainer",
-					"href"      : "#/components/modalcontainer"
+					"text" : "ModalContainer",
+					"uri"  : "#/components/modalcontainer"
 				},
 				{
-					"buttonName": "ButtonDrawer",
-					"href"      : "#/components/buttondrawer"
+					"text" : "ButtonDrawer",
+					"uri"  : "#/components/buttondrawer"
 				}
 			]
 		}

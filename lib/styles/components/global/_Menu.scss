@@ -1,0 +1,159 @@
+$header-height: 65px;
+$color-mortar: #eb6864;
+$white: #fff;
+
+.mortar-header {
+  height: $header-height;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: $color-mortar;
+
+  ul,
+  li {
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+  }
+
+  .mortar-navigation {
+    height: inherit;
+    line-height: $header-height;
+    & > .nav-items > .nav-group > .nav-group-items {
+      top: 100%;
+      left: 10px;
+    }
+  }
+
+  .nav-item { // Each single entry in the menu
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    width: 100%;
+    transition: background .1s linear;
+
+    &.first-child { // Fix for aligning the dropdowns
+      width: auto;
+    }
+
+    &:hover a {
+      text-decoration: underline;
+    }
+
+    a, // Links and group headers in the dropdown navigation
+    .nav-text {
+      color: $white;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    a { // Only a tags should be underlined
+      text-decoration: none;
+      color: $white;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .nav-item + .nav-group,
+  .nav-group + .nav-group { // Aligning nested nav-groups to their parent nav-item
+    display: inline-block;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .nav-group {
+    & > .nav-item {
+      &:after {
+        content: "\25bc";
+        color: $white;
+        font-size: 0.7em;
+        margin-left: -10px;
+      }
+    }
+
+    .nav-group-items {
+      opacity: 0;
+      visibility: hidden; // So the menu items aren't hover-able when hidden.
+      box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+
+      position: absolute;
+      line-height: 1.5em;
+      transition: opacity ease-in-out .3s, visibility 0s linear 500ms;
+
+      .nav-item {
+        background: darken($color-mortar, 4%);
+        display: block;
+        min-width: 125px;
+        min-height: 40px;
+        line-height: 40px;
+        color: $white;
+
+        &.even {
+          background: $color-mortar;
+        }
+      }
+    }
+
+    &:hover {
+      > .nav-group-items { // Animating the nav-group in on hover
+        opacity: 1;
+        z-index: 1000;
+        visibility: visible;
+        transition: opacity ease-in-out .3s .1s, visibility 0s linear 0s;
+      }
+
+      .nav-item:hover {
+        background: darken($color-mortar, 30%) !important;
+      }
+
+      &:not(.root) { // The root menu items should not get highlighted
+        background: darken($color-mortar, 30%) !important;
+
+        > .nav-item {
+          background: darken($color-mortar, 30%) !important;
+        }
+
+      }
+    }
+
+    &.root {
+      padding: 0;
+      padding-right: 10px;
+
+      > li > a { // root-items are inline for their :after alignment
+        display: inline;
+      }
+
+      &:hover {
+        >.nav-item {
+          background: $color-mortar !important;
+        }
+      }
+    }
+  }
+
+  .nav-group .nav-group {
+    padding: 0;
+    width: 100%;
+
+    & > .nav-item { // The > for nested dropdowns
+      &:after {
+        content: "\25B6";
+        position: absolute;
+        right: 15px;
+        top: 0;
+      }
+    }
+  }
+
+  .nav-group .nav-group .nav-group-items { // Aligning the secondary+ dropdown groups
+    top: 0;
+    left: 100%;
+    margin-left: -5px;
+  }
+
+}

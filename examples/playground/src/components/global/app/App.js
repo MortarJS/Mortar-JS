@@ -1,9 +1,9 @@
 var React                    = require('react');
+var config                   = require('../../../config/config');
 var MortarJS                 = require('../../../bootstrap').MortarJS;
 
 var Login                    = MortarJS.Components.Authentication.Login.Login;
-var Header                   = require('../header/Header');
-
+var Menu                     = MortarJS.Components.Global.Menu;
 
 var RequireAuth              = require('../../authentication/RequireAuthentication');
 var AlertHandler             = MortarJS.Components.Global.AlertHandler;
@@ -79,7 +79,7 @@ var App = RequireAuth(
 			//} else {
 				return (
 					<div id="wrapper">
-						<Header />
+						<Menu items={config.navbar} />
 
 						{this.props.children}
 

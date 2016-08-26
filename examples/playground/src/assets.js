@@ -25,13 +25,6 @@ require('../../../lib/styles/main.scss');
 require('../../../lib/styles/spinners.scss');
 
 /**
- * Javascript
- * @type {exports}|string
- */
-//require('imports!metismenu/dist/metisMenu.js');
-//require('imports!./menu.js');
-
-/**
  * Images
  */
 // require('images/*.png');

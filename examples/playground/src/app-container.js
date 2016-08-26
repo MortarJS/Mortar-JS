@@ -24,11 +24,6 @@ MortarJS.Components.Visualization.Exports = {
 	Exporter: require('./components/visualization/exports/Exporter')
 };
 
-MortarJS.Components.Global.Header = {
-	Header: require('./components/global/header/Header'),
-	NavBar: require('./components/global/header/navigation/NavBar')
-};
-
 MortarJS.Components.Global.App = require('./components/global/app/App');
 
 MortarJS.Stores.CmsUserStore = require('./stores/CmsUserStore');

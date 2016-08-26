@@ -6,8 +6,7 @@
  */
 var React = require('react');
 var reactDOM = require('react-dom');
-var config = require('./config/config');
-var AppContainer = require('./app-container').MortarJS;
+var Mortar = require('./app-container').MortarJS;
 
 import { Router, useRouterHistory } from 'react-router';
 import { createHashHistory } from 'history';
@@ -26,12 +25,12 @@ var Routes = require('./routes');
 // Attach react router
 window.__app_container = document.getElementById('root');
 
-reactDOM.render((
+reactDOM.render(
 	<div>
 		<Router history={appHistory} routes={Routes} onUpdate={() => GoogleAnalytics.logPageView()} />
 		<footer>Made by <a href="http://fuzzproductions.com">Fuzz Productions</a></footer>
 	</div>
-), window.__app_container)
+, window.__app_container);
 
 /**
  * Pull in index.html!
