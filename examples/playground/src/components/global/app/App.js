@@ -2,13 +2,9 @@ var React                    = require('react');
 var config                   = require('../../../config/config');
 var MortarJS                 = require('../../../bootstrap').MortarJS;
 
-var Login                    = MortarJS.Components.Authentication.Login.Login;
 var Menu                     = MortarJS.Components.Global.Menu;
-
-var RequireAuth              = require('../../authentication/RequireAuthentication');
 var AlertHandler             = MortarJS.Components.Global.AlertHandler;
 var CmsUserStore             = require('../../../stores/CmsUserStore');
-var SignOutConfirmationModal = require('../../authentication/login/SignOutConfirmationModal');
 
 import {Router} from 'react-router';''
 
@@ -17,84 +13,52 @@ import {Router} from 'react-router';''
  *
  * @type {*|exports}
  */
-var App = RequireAuth(
-	React.createClass({
-		/**
-		 * Used to state based on user authentication status
-		 *
-		 * @returns {{loggedIn: boolean}}
-		 * @private
-		 */
-		_getLoginState: function () {
-			return {
-				loggedIn: !!CmsUserStore.isAuthenticated(),
-				userIsRequestingSignOut: CmsUserStore.isRequestingSignOut()
-			}
-		},
+var App = React.createClass({
+	/**
+	 * Register a change listener with the CMS User Store
+	 */
+	componentDidMount: function () {
+		this.changeListener = this._onChange;
+		CmsUserStore.addChangeListener(this.changeListener);
+	},
 
-		getInitialState: function () {
-			return this._getLoginState();
-		},
+	/**
+	 * Handle change events
+	 *
+	 * @private
+	 */
+	_onChange: function () {
+		this.setState(this._getLoginState());
+	},
 
-		/**
-		 * Register a change listener with the CMS User Store
-		 */
-		componentDidMount: function () {
-			this.changeListener = this._onChange;
-			CmsUserStore.addChangeListener(this.changeListener);
-		},
+	/**
+	 * Deregister change listener
+	 */
+	componentWillUnmount: function () {
+		CmsUserStore.removeChangeListener(this.changeListener);
+	},
 
-		/**
-		 * Handle change events
-		 *
-		 * @private
-		 */
-		_onChange: function () {
-			this.setState(this._getLoginState());
-		},
+	/**
+	 * Decide whether to render the app or a login page
+	 *
+	 * @returns {JSX}
+	 */
+	renderApp: function () {
+			return (
+				<div id="wrapper">
+					<Menu items={config.navbar} />
 
-		/**
-		 * Deregister change listener
-		 */
-		componentWillUnmount: function () {
-			CmsUserStore.removeChangeListener(this.changeListener);
-		},
+					{this.props.children}
 
-		/**
-		 * Decide whether to render the app or a login page
-		 *
-		 * @returns {JSX}
-		 */
-		renderApp: function () {
-			//if (! this.state.loggedIn) {
-			//	return (
-			//		<div id="wrapper">
-			//			{! CmsUserStore.isVeryifyingAccessToken() && (
-			//				<Login />
-			//			)}
-			//
-			//			<AlertHandler />
-			//		</div>
-			//	)
-			//} else {
-				return (
-					<div id="wrapper">
-						<Menu items={config.navbar} />
+					<AlertHandler />
+				</div>
+			)
+	},
 
-						{this.props.children}
-
-						<AlertHandler />
-
-						<SignOutConfirmationModal openWhen={this.state.userIsRequestingSignOut} />
-					</div>
-				)
-		},
-
-		render: function () {
-			return this.renderApp();
-		}
-	})
-);
+	render: function () {
+		return this.renderApp();
+	}
+})
 
 module.exports = App;
 
