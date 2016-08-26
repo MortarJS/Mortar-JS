@@ -4,8 +4,7 @@ describe("Table", () => {
 	});
 
 	it("can navigate to Table", () => {
-		cy.contains("Visualization Components").click();
-		cy.contains("Table").click()
+		cy.contains("Table").click({force: true})
 			.hash()
 			.should("eq", "#/components/table");
 	});

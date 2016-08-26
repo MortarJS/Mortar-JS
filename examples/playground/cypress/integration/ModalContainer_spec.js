@@ -4,9 +4,7 @@ describe("ModalContainer", function () {
 	});
 
 	it("can navigate to ModalContainer", function () {
-		cy.contains("Global Components").click();
-
-		cy.contains("Modal Container").click()
+		cy.contains("Modal Container").click({force: true})
 			.hash().should("eq", "#/components/modalcontainer")
 			.get("h1").should("contain", "Modal Container");
 	});

@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
@@ -19,7 +18,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var Details = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function () {
 		return {
@@ -34,8 +33,8 @@ var Details = React.createClass({
 		return {
 			stores: [
 				{
-					store: FormStore,
-					changeListener: this.bindResource
+					store          : FormStore,
+					changeListener : this.bindResource
 				}
 			]
 		};
@@ -51,9 +50,7 @@ var Details = React.createClass({
 		this._componentWillUnmount();
 	},
 
-	handleAction: function(action, resource) {
-
-	},
+	handleAction: function() { },
 
 	bindResource: function() {
 		this.setState({

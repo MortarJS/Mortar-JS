@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
 
 // Bricks
@@ -18,13 +17,13 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var Input = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function () {
 		return {
 			workingResource: {
-				username: '',
-				email: 'luke@galaxyfarfaraway.com'
+				username : '',
+				email    : 'luke@galaxyfarfaraway.com'
 			},
 			formIsValid: true
 		};
@@ -34,8 +33,8 @@ var Input = React.createClass({
 		return {
 			stores: [
 				{
-					store: FormStore,
-					changeListener: this.bindResource
+					store          : FormStore,
+					changeListener : this.bindResource
 				}
 			]
 		};

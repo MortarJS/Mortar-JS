@@ -6,27 +6,8 @@ var MortarJS = require('./bootstrap').MortarJS;
 MortarJS.Actions.AuthenticationServerActionCreators = require('./actions/AuthenticationServerActionCreators');
 MortarJS.Actions.ResourceActions = require('./actions/ResourceActionCreators');
 
-MortarJS.Components.Authentication = {
-	Login: {
-		Login:  require('./components/authentication/login/Login'),
-		Logout: require('./components/authentication/login/Logout'),
-		SignOutConfirmationModal: require('./components/authentication/login/SignOutConfirmationModal'),
-		PasswordResetModal: require('./components/authentication/login/PasswordResetModal'),
-		ForgotPasswordModal: require('./components/authentication/login/ForgotPasswordModal'),
-		SignOutHeaderLink: require('./components/authentication/login/SignOutHeaderLink')
-	},
-
-	RequireAuthentication: require('./components/authentication/RequireAuthentication'),
-	RequirePermissions:    require('./components/authentication/RequirePermissions')
-};
-
 MortarJS.Components.Visualization.Exports = {
 	Exporter: require('./components/visualization/exports/Exporter')
-};
-
-MortarJS.Components.Global.Header = {
-	Header: require('./components/global/header/Header'),
-	NavBar: require('./components/global/header/navigation/NavBar')
 };
 
 MortarJS.Components.Global.App = require('./components/global/app/App');

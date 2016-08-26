@@ -4,8 +4,7 @@ describe("DropdownSelect", function () {
 	});
 
 	it("can navigate to DropdownSelect", function () {
-		cy.contains("Form Components").click();
-		cy.contains("DropdownSelect").click()
+        cy.contains("DropdownSelect").click({force: true})
 			.hash().should("eq", "#/components/dropdown")
 			.get("h1").should("contain", "Dropdown Select");
 	});

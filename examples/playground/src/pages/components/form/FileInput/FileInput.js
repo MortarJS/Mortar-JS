@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
 
 // Bricks
@@ -18,13 +17,13 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var FileInput = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function () {
 		return {
 			workingResource: {
-				singleImage: null,
-				multipleImage: ['http://playground.mortarjs.io/assets/img/img-683987.png']
+				singleImage   : null,
+				multipleImage : ['http : //playground.mortarjs.io/assets/img/img-683987.png']
 			},
 			formIsValid: true
 		};
@@ -34,8 +33,8 @@ var FileInput = React.createClass({
 		return {
 			stores: [
 				{
-					store: FormStore,
-					changeListener: this.bindResource
+					store          : FormStore,
+					changeListener : this.bindResource
 				}
 			]
 		};
@@ -75,8 +74,6 @@ var FileInput = React.createClass({
 	],
 
 	render: function() {
-		var tableOptions = {};
-
 		return (
 			<div id="page-wrapper">
 				<div id="page-content">
@@ -106,8 +103,8 @@ var FileInput = React.createClass({
 														<Br.Column grid="lg" size="6">
 														<Br.Form.File fieldKey='singleImage'
 															options={{
-																height: 120,
-																width: 120,
+																height  : 120,
+																width   : 120,
 																bgImage : this.state.workingResource.singleImage ? this.state.workingResource.singleImage.preview : this.state.workingResource.singleImage}}
 															accept="image"
 															label='Upload an image' />
