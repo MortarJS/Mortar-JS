@@ -14,6 +14,7 @@ before_script:
 - npm run serve-playground -- --silent &
 script:
 - cd examples/playground
+- cypress install --cypress-version 0.16.5
 - cypress ci
 notifications:
   slack:
