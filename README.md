@@ -1,4 +1,4 @@
-# [Mortar JS](http://mortar.fuzzpro.io) [![Build Status](https://img.shields.io/travis/fuzz-productions/Mortar-JS/dev.svg?style=flat)](https://travis-ci.org/fuzz-productions/Mortar-JS)
+# [Mortar JS](http://mortar.fuzzpro.io) [![Build Status](https://img.shields.io/travis/fuzz-productions/Mortar-JS/dev.svg?style=flat)](https://travis-ci.org/fuzz-productions/Mortar-JS) [![Slack Status](https://fuzz-opensource.herokuapp.com/badge.svg)](https://fuzz-opensource.herokuapp.com/)
 
 <p align="center">
   <img src="https://cdn.rawgit.com/fuzz-productions/mortar-js/dev/assets/logo.svg" />
