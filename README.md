@@ -45,6 +45,4 @@ If you contribute and your changes get merged into the project we will send you 
   <img src="https://avatars3.githubusercontent.com/u/3419382?v=3&s=200" />
 </p>
 
-Mortar was developed internally at [Fuzz Productions](http://www.fuzzproductions.com) for client work.  After the second project that leveraged Mortar to create an Admin UI, it became clear that this could be a valuable resource to the open source community.
-
-Right now, Mortar is being used on multiple production sites, with more on the way.
+Mortar was developed for internal use [Fuzz Productions](http://www.fuzzproductions.com). Now, Mortar's development is sponsored by Fuzz and maintained by open source contributors.
