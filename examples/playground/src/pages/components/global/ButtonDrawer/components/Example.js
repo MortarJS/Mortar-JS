@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
@@ -19,7 +18,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var Example = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function () {
 		return {
@@ -58,14 +57,14 @@ var Example = React.createClass({
 		return {
 			stores: [
 				{
-					store: FormStore,
-					changeListener: this.bindResource
+					store          : FormStore,
+					changeListener : this.bindResource
 				},
 				{
-					store: UsersStore,
-					bindTo: 'users',
-					action: UsersStore.getResourceListData,
-					options: this.getOptions
+					store   : UsersStore,
+					bindTo  : 'users',
+					action  : UsersStore.getResourceListData,
+					options : this.getOptions
 				}
 			]
 		};
@@ -115,16 +114,16 @@ var Example = React.createClass({
 
 	closeModal: function () {
 		this.setState({
-			openCreateModal: false,
-			openDeleteModal: false
+			openCreateModal : false,
+			openDeleteModal : false
 		});
 	},
 
 	deleteData: function() {
 		this.setState({
-			workingResource: [],
-			openCreateModal: false,
-			openDeleteModal: false
+			workingResource : [],
+			openCreateModal : false,
+			openDeleteModal : false
 		});
 	},
 
@@ -148,22 +147,22 @@ var Example = React.createClass({
 	drawerButtons: function() {
 		return [
 			{
-				action: 'add',
-				icon: 'pencil',
-				mods: 'success'
+				action : 'add',
+				icon   : 'pencil',
+				mods   : 'success'
 			},
 			{
-				action: 'delete',
-				icon: 'times',
-				mods: 'danger'
+				action : 'delete',
+				icon   : 'times',
+				mods   : 'danger'
 			}
 		];
 	},
 
 	render: function() {
 		var tableOptions = {
-			hideSpinner: true,
-			emptyText: "These aren't the droids you're looking for."
+			hideSpinner : true,
+			emptyText   : "These aren't the droids you're looking for."
 		};
 
 		return (

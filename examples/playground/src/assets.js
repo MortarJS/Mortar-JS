@@ -1,9 +1,6 @@
 /**
  * Global scrips
  * @type {exports}
- */
-global.jQuery = require('jquery');
-require('bootstrap');
 /**
  * Styles
  * @type {exports}|string
@@ -23,13 +20,6 @@ require('../../../lib/styles/main.scss');
  * Optional spinners css
  */
 require('../../../lib/styles/spinners.scss');
-
-/**
- * Javascript
- * @type {exports}|string
- */
-//require('imports!metismenu/dist/metisMenu.js');
-//require('imports!./menu.js');
 
 /**
  * Images

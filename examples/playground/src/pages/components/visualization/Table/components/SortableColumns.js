@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../../app-container').MortarJS;
 
 // Bricks
@@ -19,7 +18,12 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var SortableColumns = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
+
+	propTypes: {
+		workingResource : React.PropTypes.object,
+		tableKeys       : React.PropTypes.object
+	},
 
 	getInitialState: function() {
 		return {
@@ -52,7 +56,7 @@ var SortableColumns = React.createClass({
 		this._componentWillUnmount();
 	},
 
-	handleAction: function(action, resource) {
+	handleAction: function(action) {
 		switch (action) {
 			case 'sort':
 				break;

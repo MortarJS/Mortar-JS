@@ -4,8 +4,7 @@ describe("Text Area", function () {
 	});
 
 	it("can navigate to Text Area", function () {
-		cy.contains("Form Components").click();
-		cy.contains("Text Area").click()
+		cy.contains("Text Area").click({force: true})
 			.hash().should("eq", "#/components/textarea")
 			.get("h1").should("contain", "Text Area");
 	});

@@ -1,6 +1,5 @@
 // External Requirements
 var React                  = require('react');
-var Router                 = require('react-router');
 var MortarJS               = require('../../../../app-container').MortarJS;
 
 // Bricks
@@ -18,13 +17,13 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var Tooltip = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function () {
 		return {
-			params         : {},
-			formIsValid    : true,
-			workingResource: {
+			params          : {},
+			formIsValid     : true,
+			workingResource : {
 				text        : "I'm a tooltip!",
 				orientation : "top",
 				width       : "300px",

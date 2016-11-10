@@ -18,7 +18,7 @@ var ResourceComponentMixin = MortarJS.Mixins.ResourceComponentMixin;
  * @type {*|Function}
  */
 var Checkbox = React.createClass({
-	mixins: [ResourceComponentMixin, Router.Navigation],
+	mixins: [ResourceComponentMixin],
 
 	getInitialState: function () {
 		return {

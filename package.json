@@ -1,10 +1,10 @@
 {
   "name": "mortarjs",
-  "version": "2.1.5",
-  "homepage": "http://mortar.fuzzpro.com",
+  "version": "2.1.7",
+  "homepage": "http://mortarjs.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fuzz-productions/Mortar-JS"
+    "url": "https://github.com/MortarJS/Mortar-JS"
   },
   "description": "Mortar JS - an Admin UI framework",
   "main": "dist/index.js",
@@ -21,10 +21,11 @@
     "open-playground": "open http://localhost:21356/webpack-dev-server/ && webpack-dev-server --progress --colors --watch --config examples/playground/webpack.config.js",
     "production-playground": "webpack --config examples/playground/webpack.config.js -p"
   },
-  "author": "Fuzz Productions <web@fuzzproductions.com> (http://www.fuzzproductions.com)",
+  "author": "The MortarJS Team",
   "contributors": [
-    "Simon Yousoufov <syousoufov@fuzzproductions.com>",
-    "Kyle Mendes <kmendes@fuzzproductions.com>"
+    "Simon Yousoufov <simon.yous@gmail.com>",
+    "Kyle Mendes <kyleamendes@gmail.com>",
+    "Walter Beller-Morales <walter.beller.morales@gmail.com>"
   ],
   "dependencies": {
     "classnames": "^2.1.1",
@@ -33,9 +34,11 @@
     "js-schema": "git+https://github.com/fuzz-productions/js-schema.git",
     "keymirror": "^0.1.1",
     "lodash": "^3.9.3",
-    "react-bootstrap": "0.22.6",
     "react": "^15.0.0 || 0.14.0",
+    "react-bootstrap": "0.22.6",
     "react-dom": "^15.0.0 || ^0.14.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
     "reqwest": "^1.1.5",
     "validator": "^3.40.0"
   },
@@ -62,7 +65,6 @@
     "history": "^2.0.2",
     "imports-loader": "^0.6.3",
     "ink-docstrap": "^1.1.0",
-    "jquery": "^2.1.4",
     "jsdoc": "^3.4.0",
     "json-loader": "^0.5.4",
     "moment": "^2.10.6",
@@ -71,7 +73,7 @@
     "postcss-loader": "^0.8.2",
     "raw-loader": "^0.5.1",
     "react-ga": "^2.1.0",
-    "react-router": "2.2.x",
+    "react-router": "2.7.x",
     "sass-loader": "^3.1.2",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",

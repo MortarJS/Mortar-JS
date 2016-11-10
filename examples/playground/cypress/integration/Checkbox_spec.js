@@ -4,8 +4,7 @@ describe("Checkbox", function () {
 	});
 
 	it("can navigate to Checkbox", function () {
-		cy.contains("Form Components").click();
-		cy.contains("Checkbox").click()
+		cy.contains("Checkbox").click({force: true})
 			.hash().should("eq", "#/components/checkbox")
 			.get("h1").should("contain", "Checkboxes");
 	});
