@@ -1,0 +1,1 @@
+"use strict";var AppDispatcher=require("../dispatcher/AppDispatcher"),PaginationStore=require("../stores/PaginationStore"),AppActionConstants=require("../constants/AppActionConstants"),ActionTypes=AppActionConstants.ActionTypes.cms.pagination;module.exports={acceptPaginatedData:function(t){AppDispatcher.dispatch({type:ActionTypes.RECEIVED_PAGINATED_DATA,paginationObject:t})}};

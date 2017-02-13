@@ -1,8 +1,6 @@
 !./lib
 .idea
 .DS_Store
-dist
-build
 
 npm-debug.log
 

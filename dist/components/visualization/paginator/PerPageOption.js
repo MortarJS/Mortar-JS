@@ -1,0 +1,1 @@
+"use strict";var React=require("react"),PerPageOption=React.createClass({displayName:"PerPageOption",propTypes:{value:React.PropTypes.string,onChangeCallback:React.PropTypes.func},setPerPage:function(){this.props.onChangeCallback(this.props.value)},render:function(){return React.createElement("option",{value:this.props.value},this.props.value)}});module.exports=PerPageOption;
