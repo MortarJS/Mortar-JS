@@ -17,13 +17,6 @@ describe("Mutator Table", function () {
 					.should("not.contain", "1931-01-17T18:35:24+00:00")
 					.should("contain", "TIE Fighter")
 					.should("not.contain", "[\"TIE Fighter\"]");
-				cy.get(".table-row")
-					.last()
-					.should("contain", "R2-D2")
-					.should("contain", "January 1, 1970")
-					.should("not.contain", "1970-01-01T18:35:24+00:00")
-					.should("contain", "X-wing Starfighter, Jedi Starfighter")
-					.should("not.contain", "[\"X-wing Starfighter\", \"Jedi Starfighter\"]");
 			});
 		});
 	});
